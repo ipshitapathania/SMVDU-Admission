@@ -30,11 +30,11 @@ model StudentApplication {
   email           String
   jeeCRL          Int
   category        String
-  subCategory     String
-  categoryRank    Int
-  sptMarks        Int
-  cdpPriority     Int
-  pwdRank         Int
+  subCategory     String?
+  categoryRank    Int?
+  sptMarks        Int?
+  cdpPriority     Int?
+  pwdRank         Int?
   courseChoice1   String?
   courseChoice2   String?
   courseChoice3   String?
@@ -50,7 +50,7 @@ model SeatMatrix {
   id           Int        @id @default(autoincrement())
   departmentId String
   category     String
-  subCategory  String
+  subCategory  String?
   totalSeats   Int
   department   Department @relation(fields: [departmentId], references: [id])
 
@@ -59,11 +59,11 @@ model SeatMatrix {
 
 model AllocatedSeat {
   id              Int                @id @default(autoincrement())
-  studentId       String             @relation(fields: [studentApplicationId], references: [id])
-  departmentId    String             @relation(fields: [departmentId], references: [id])
+  studentId       String
+  departmentId    String
   allocationRound Int
   category        String
-  subCategory     String
+  subCategory     String?
   allocatedAt     DateTime           @default(now())
   student         StudentApplication @relation(fields: [studentId], references: [applicationNumber])
   department      Department         @relation(fields: [departmentId], references: [id])

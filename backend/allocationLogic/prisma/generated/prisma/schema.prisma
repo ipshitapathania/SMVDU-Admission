@@ -69,7 +69,36 @@ model AllocatedSeat {
   department      Department         @relation(fields: [departmentId], references: [id])
   choiceNumber    Int
   jeeRank         Int
-  freeze          Boolean? // true = locked, false = not yet decided
-  float           Boolean? // true = participate in next round
+}
+
+model round2input {
+  id              Int      @id @default(autoincrement())
+  studentId       String
+  departmentId    String
+  allocationRound Int
+  category        String
+  subCategory     String?
+  allocatedAt     DateTime @default(now())
+  choiceNumber    Int
+  jeeRank         Int
+  status          String // FREEZE = locked, FLOAT = participate in next round
   feesPaid        Boolean? // true = fees paid
+
+  @@index([studentId])
+  @@index([departmentId])
+}
+
+model freezeAllocation {
+  id              Int      @id @default(autoincrement())
+  studentId       String
+  departmentId    String
+  allocationRound Int
+  category        String
+  subCategory     String?
+  allocatedAt     DateTime @default(now())
+  choiceNumber    Int
+  jeeRank         Int
+
+  @@index([studentId])
+  @@index([departmentId])
 }

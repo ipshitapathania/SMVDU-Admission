@@ -2550,11 +2550,11 @@ export namespace Prisma {
     email: string
     jeeCRL: number
     category: string
-    subCategory: string
-    categoryRank: number
-    sptMarks: number
-    cdpPriority: number
-    pwdRank: number
+    subCategory: string | null
+    categoryRank: number | null
+    sptMarks: number | null
+    cdpPriority: number | null
+    pwdRank: number | null
     courseChoice1: string | null
     courseChoice2: string | null
     courseChoice3: string | null
@@ -2699,11 +2699,11 @@ export namespace Prisma {
       email: string
       jeeCRL: number
       category: string
-      subCategory: string
-      categoryRank: number
-      sptMarks: number
-      cdpPriority: number
-      pwdRank: number
+      subCategory: string | null
+      categoryRank: number | null
+      sptMarks: number | null
+      cdpPriority: number | null
+      pwdRank: number | null
       courseChoice1: string | null
       courseChoice2: string | null
       courseChoice3: string | null
@@ -3759,7 +3759,7 @@ export namespace Prisma {
     id: number
     departmentId: string
     category: string
-    subCategory: string
+    subCategory: string | null
     totalSeats: number
     _count: SeatMatrixCountAggregateOutputType | null
     _avg: SeatMatrixAvgAggregateOutputType | null
@@ -3837,7 +3837,7 @@ export namespace Prisma {
       id: number
       departmentId: string
       category: string
-      subCategory: string
+      subCategory: string | null
       totalSeats: number
     }, ExtArgs["result"]["seatMatrix"]>
     composites: {}
@@ -4889,7 +4889,7 @@ export namespace Prisma {
     departmentId: string
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory: string | null
     allocatedAt: Date
     choiceNumber: number
     jeeRank: number
@@ -4994,7 +4994,7 @@ export namespace Prisma {
       departmentId: string
       allocationRound: number
       category: string
-      subCategory: string
+      subCategory: string | null
       allocatedAt: Date
       choiceNumber: number
       jeeRank: number
@@ -6062,11 +6062,11 @@ export namespace Prisma {
     email?: StringFilter<"StudentApplication"> | string
     jeeCRL?: IntFilter<"StudentApplication"> | number
     category?: StringFilter<"StudentApplication"> | string
-    subCategory?: StringFilter<"StudentApplication"> | string
-    categoryRank?: IntFilter<"StudentApplication"> | number
-    sptMarks?: IntFilter<"StudentApplication"> | number
-    cdpPriority?: IntFilter<"StudentApplication"> | number
-    pwdRank?: IntFilter<"StudentApplication"> | number
+    subCategory?: StringNullableFilter<"StudentApplication"> | string | null
+    categoryRank?: IntNullableFilter<"StudentApplication"> | number | null
+    sptMarks?: IntNullableFilter<"StudentApplication"> | number | null
+    cdpPriority?: IntNullableFilter<"StudentApplication"> | number | null
+    pwdRank?: IntNullableFilter<"StudentApplication"> | number | null
     courseChoice1?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice2?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice3?: StringNullableFilter<"StudentApplication"> | string | null
@@ -6086,11 +6086,11 @@ export namespace Prisma {
     email?: SortOrder
     jeeCRL?: SortOrder
     category?: SortOrder
-    subCategory?: SortOrder
-    categoryRank?: SortOrder
-    sptMarks?: SortOrder
-    cdpPriority?: SortOrder
-    pwdRank?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    categoryRank?: SortOrderInput | SortOrder
+    sptMarks?: SortOrderInput | SortOrder
+    cdpPriority?: SortOrderInput | SortOrder
+    pwdRank?: SortOrderInput | SortOrder
     courseChoice1?: SortOrderInput | SortOrder
     courseChoice2?: SortOrderInput | SortOrder
     courseChoice3?: SortOrderInput | SortOrder
@@ -6113,11 +6113,11 @@ export namespace Prisma {
     email?: StringFilter<"StudentApplication"> | string
     jeeCRL?: IntFilter<"StudentApplication"> | number
     category?: StringFilter<"StudentApplication"> | string
-    subCategory?: StringFilter<"StudentApplication"> | string
-    categoryRank?: IntFilter<"StudentApplication"> | number
-    sptMarks?: IntFilter<"StudentApplication"> | number
-    cdpPriority?: IntFilter<"StudentApplication"> | number
-    pwdRank?: IntFilter<"StudentApplication"> | number
+    subCategory?: StringNullableFilter<"StudentApplication"> | string | null
+    categoryRank?: IntNullableFilter<"StudentApplication"> | number | null
+    sptMarks?: IntNullableFilter<"StudentApplication"> | number | null
+    cdpPriority?: IntNullableFilter<"StudentApplication"> | number | null
+    pwdRank?: IntNullableFilter<"StudentApplication"> | number | null
     courseChoice1?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice2?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice3?: StringNullableFilter<"StudentApplication"> | string | null
@@ -6137,11 +6137,11 @@ export namespace Prisma {
     email?: SortOrder
     jeeCRL?: SortOrder
     category?: SortOrder
-    subCategory?: SortOrder
-    categoryRank?: SortOrder
-    sptMarks?: SortOrder
-    cdpPriority?: SortOrder
-    pwdRank?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    categoryRank?: SortOrderInput | SortOrder
+    sptMarks?: SortOrderInput | SortOrder
+    cdpPriority?: SortOrderInput | SortOrder
+    pwdRank?: SortOrderInput | SortOrder
     courseChoice1?: SortOrderInput | SortOrder
     courseChoice2?: SortOrderInput | SortOrder
     courseChoice3?: SortOrderInput | SortOrder
@@ -6168,11 +6168,11 @@ export namespace Prisma {
     email?: StringWithAggregatesFilter<"StudentApplication"> | string
     jeeCRL?: IntWithAggregatesFilter<"StudentApplication"> | number
     category?: StringWithAggregatesFilter<"StudentApplication"> | string
-    subCategory?: StringWithAggregatesFilter<"StudentApplication"> | string
-    categoryRank?: IntWithAggregatesFilter<"StudentApplication"> | number
-    sptMarks?: IntWithAggregatesFilter<"StudentApplication"> | number
-    cdpPriority?: IntWithAggregatesFilter<"StudentApplication"> | number
-    pwdRank?: IntWithAggregatesFilter<"StudentApplication"> | number
+    subCategory?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
+    categoryRank?: IntNullableWithAggregatesFilter<"StudentApplication"> | number | null
+    sptMarks?: IntNullableWithAggregatesFilter<"StudentApplication"> | number | null
+    cdpPriority?: IntNullableWithAggregatesFilter<"StudentApplication"> | number | null
+    pwdRank?: IntNullableWithAggregatesFilter<"StudentApplication"> | number | null
     courseChoice1?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
     courseChoice2?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
     courseChoice3?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
@@ -6190,7 +6190,7 @@ export namespace Prisma {
     id?: IntFilter<"SeatMatrix"> | number
     departmentId?: StringFilter<"SeatMatrix"> | string
     category?: StringFilter<"SeatMatrix"> | string
-    subCategory?: StringFilter<"SeatMatrix"> | string
+    subCategory?: StringNullableFilter<"SeatMatrix"> | string | null
     totalSeats?: IntFilter<"SeatMatrix"> | number
     department?: XOR<DepartmentScalarRelationFilter, DepartmentWhereInput>
   }
@@ -6199,7 +6199,7 @@ export namespace Prisma {
     id?: SortOrder
     departmentId?: SortOrder
     category?: SortOrder
-    subCategory?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
     totalSeats?: SortOrder
     department?: DepartmentOrderByWithRelationInput
   }
@@ -6212,7 +6212,7 @@ export namespace Prisma {
     NOT?: SeatMatrixWhereInput | SeatMatrixWhereInput[]
     departmentId?: StringFilter<"SeatMatrix"> | string
     category?: StringFilter<"SeatMatrix"> | string
-    subCategory?: StringFilter<"SeatMatrix"> | string
+    subCategory?: StringNullableFilter<"SeatMatrix"> | string | null
     totalSeats?: IntFilter<"SeatMatrix"> | number
     department?: XOR<DepartmentScalarRelationFilter, DepartmentWhereInput>
   }, "id" | "departmentId_category_subCategory">
@@ -6221,7 +6221,7 @@ export namespace Prisma {
     id?: SortOrder
     departmentId?: SortOrder
     category?: SortOrder
-    subCategory?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
     totalSeats?: SortOrder
     _count?: SeatMatrixCountOrderByAggregateInput
     _avg?: SeatMatrixAvgOrderByAggregateInput
@@ -6237,7 +6237,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"SeatMatrix"> | number
     departmentId?: StringWithAggregatesFilter<"SeatMatrix"> | string
     category?: StringWithAggregatesFilter<"SeatMatrix"> | string
-    subCategory?: StringWithAggregatesFilter<"SeatMatrix"> | string
+    subCategory?: StringNullableWithAggregatesFilter<"SeatMatrix"> | string | null
     totalSeats?: IntWithAggregatesFilter<"SeatMatrix"> | number
   }
 
@@ -6250,7 +6250,7 @@ export namespace Prisma {
     departmentId?: StringFilter<"AllocatedSeat"> | string
     allocationRound?: IntFilter<"AllocatedSeat"> | number
     category?: StringFilter<"AllocatedSeat"> | string
-    subCategory?: StringFilter<"AllocatedSeat"> | string
+    subCategory?: StringNullableFilter<"AllocatedSeat"> | string | null
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
@@ -6264,7 +6264,7 @@ export namespace Prisma {
     departmentId?: SortOrder
     allocationRound?: SortOrder
     category?: SortOrder
-    subCategory?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
@@ -6281,7 +6281,7 @@ export namespace Prisma {
     departmentId?: StringFilter<"AllocatedSeat"> | string
     allocationRound?: IntFilter<"AllocatedSeat"> | number
     category?: StringFilter<"AllocatedSeat"> | string
-    subCategory?: StringFilter<"AllocatedSeat"> | string
+    subCategory?: StringNullableFilter<"AllocatedSeat"> | string | null
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
@@ -6295,7 +6295,7 @@ export namespace Prisma {
     departmentId?: SortOrder
     allocationRound?: SortOrder
     category?: SortOrder
-    subCategory?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
@@ -6315,7 +6315,7 @@ export namespace Prisma {
     departmentId?: StringWithAggregatesFilter<"AllocatedSeat"> | string
     allocationRound?: IntWithAggregatesFilter<"AllocatedSeat"> | number
     category?: StringWithAggregatesFilter<"AllocatedSeat"> | string
-    subCategory?: StringWithAggregatesFilter<"AllocatedSeat"> | string
+    subCategory?: StringNullableWithAggregatesFilter<"AllocatedSeat"> | string | null
     allocatedAt?: DateTimeWithAggregatesFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntWithAggregatesFilter<"AllocatedSeat"> | number
     jeeRank?: IntWithAggregatesFilter<"AllocatedSeat"> | number
@@ -6372,11 +6372,11 @@ export namespace Prisma {
     email: string
     jeeCRL: number
     category: string
-    subCategory: string
-    categoryRank: number
-    sptMarks: number
-    cdpPriority: number
-    pwdRank: number
+    subCategory?: string | null
+    categoryRank?: number | null
+    sptMarks?: number | null
+    cdpPriority?: number | null
+    pwdRank?: number | null
     courseChoice1?: string | null
     courseChoice2?: string | null
     courseChoice3?: string | null
@@ -6396,11 +6396,11 @@ export namespace Prisma {
     email: string
     jeeCRL: number
     category: string
-    subCategory: string
-    categoryRank: number
-    sptMarks: number
-    cdpPriority: number
-    pwdRank: number
+    subCategory?: string | null
+    categoryRank?: number | null
+    sptMarks?: number | null
+    cdpPriority?: number | null
+    pwdRank?: number | null
     courseChoice1?: string | null
     courseChoice2?: string | null
     courseChoice3?: string | null
@@ -6420,11 +6420,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     jeeCRL?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
-    categoryRank?: IntFieldUpdateOperationsInput | number
-    sptMarks?: IntFieldUpdateOperationsInput | number
-    cdpPriority?: IntFieldUpdateOperationsInput | number
-    pwdRank?: IntFieldUpdateOperationsInput | number
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    categoryRank?: NullableIntFieldUpdateOperationsInput | number | null
+    sptMarks?: NullableIntFieldUpdateOperationsInput | number | null
+    cdpPriority?: NullableIntFieldUpdateOperationsInput | number | null
+    pwdRank?: NullableIntFieldUpdateOperationsInput | number | null
     courseChoice1?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice2?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice3?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6444,11 +6444,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     jeeCRL?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
-    categoryRank?: IntFieldUpdateOperationsInput | number
-    sptMarks?: IntFieldUpdateOperationsInput | number
-    cdpPriority?: IntFieldUpdateOperationsInput | number
-    pwdRank?: IntFieldUpdateOperationsInput | number
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    categoryRank?: NullableIntFieldUpdateOperationsInput | number | null
+    sptMarks?: NullableIntFieldUpdateOperationsInput | number | null
+    cdpPriority?: NullableIntFieldUpdateOperationsInput | number | null
+    pwdRank?: NullableIntFieldUpdateOperationsInput | number | null
     courseChoice1?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice2?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice3?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6468,11 +6468,11 @@ export namespace Prisma {
     email: string
     jeeCRL: number
     category: string
-    subCategory: string
-    categoryRank: number
-    sptMarks: number
-    cdpPriority: number
-    pwdRank: number
+    subCategory?: string | null
+    categoryRank?: number | null
+    sptMarks?: number | null
+    cdpPriority?: number | null
+    pwdRank?: number | null
     courseChoice1?: string | null
     courseChoice2?: string | null
     courseChoice3?: string | null
@@ -6491,11 +6491,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     jeeCRL?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
-    categoryRank?: IntFieldUpdateOperationsInput | number
-    sptMarks?: IntFieldUpdateOperationsInput | number
-    cdpPriority?: IntFieldUpdateOperationsInput | number
-    pwdRank?: IntFieldUpdateOperationsInput | number
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    categoryRank?: NullableIntFieldUpdateOperationsInput | number | null
+    sptMarks?: NullableIntFieldUpdateOperationsInput | number | null
+    cdpPriority?: NullableIntFieldUpdateOperationsInput | number | null
+    pwdRank?: NullableIntFieldUpdateOperationsInput | number | null
     courseChoice1?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice2?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice3?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6514,11 +6514,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     jeeCRL?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
-    categoryRank?: IntFieldUpdateOperationsInput | number
-    sptMarks?: IntFieldUpdateOperationsInput | number
-    cdpPriority?: IntFieldUpdateOperationsInput | number
-    pwdRank?: IntFieldUpdateOperationsInput | number
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    categoryRank?: NullableIntFieldUpdateOperationsInput | number | null
+    sptMarks?: NullableIntFieldUpdateOperationsInput | number | null
+    cdpPriority?: NullableIntFieldUpdateOperationsInput | number | null
+    pwdRank?: NullableIntFieldUpdateOperationsInput | number | null
     courseChoice1?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice2?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice3?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6531,7 +6531,7 @@ export namespace Prisma {
 
   export type SeatMatrixCreateInput = {
     category: string
-    subCategory: string
+    subCategory?: string | null
     totalSeats: number
     department: DepartmentCreateNestedOneWithoutSeatMatrixInput
   }
@@ -6540,13 +6540,13 @@ export namespace Prisma {
     id?: number
     departmentId: string
     category: string
-    subCategory: string
+    subCategory?: string | null
     totalSeats: number
   }
 
   export type SeatMatrixUpdateInput = {
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     totalSeats?: IntFieldUpdateOperationsInput | number
     department?: DepartmentUpdateOneRequiredWithoutSeatMatrixNestedInput
   }
@@ -6555,7 +6555,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     departmentId?: StringFieldUpdateOperationsInput | string
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     totalSeats?: IntFieldUpdateOperationsInput | number
   }
 
@@ -6563,13 +6563,13 @@ export namespace Prisma {
     id?: number
     departmentId: string
     category: string
-    subCategory: string
+    subCategory?: string | null
     totalSeats: number
   }
 
   export type SeatMatrixUpdateManyMutationInput = {
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     totalSeats?: IntFieldUpdateOperationsInput | number
   }
 
@@ -6577,14 +6577,14 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     departmentId?: StringFieldUpdateOperationsInput | string
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     totalSeats?: IntFieldUpdateOperationsInput | number
   }
 
   export type AllocatedSeatCreateInput = {
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -6598,7 +6598,7 @@ export namespace Prisma {
     departmentId: string
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -6607,7 +6607,7 @@ export namespace Prisma {
   export type AllocatedSeatUpdateInput = {
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -6621,7 +6621,7 @@ export namespace Prisma {
     departmentId?: StringFieldUpdateOperationsInput | string
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -6633,7 +6633,7 @@ export namespace Prisma {
     departmentId: string
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -6642,7 +6642,7 @@ export namespace Prisma {
   export type AllocatedSeatUpdateManyMutationInput = {
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -6654,7 +6654,7 @@ export namespace Prisma {
     departmentId?: StringFieldUpdateOperationsInput | string
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -6752,6 +6752,17 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -6887,6 +6898,22 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -7117,6 +7144,14 @@ export namespace Prisma {
     set?: string | null
   }
 
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
@@ -7247,6 +7282,17 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -7302,7 +7348,7 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -7310,7 +7356,23 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -7329,14 +7391,14 @@ export namespace Prisma {
 
   export type SeatMatrixCreateWithoutDepartmentInput = {
     category: string
-    subCategory: string
+    subCategory?: string | null
     totalSeats: number
   }
 
   export type SeatMatrixUncheckedCreateWithoutDepartmentInput = {
     id?: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     totalSeats: number
   }
 
@@ -7353,7 +7415,7 @@ export namespace Prisma {
   export type AllocatedSeatCreateWithoutDepartmentInput = {
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -7365,7 +7427,7 @@ export namespace Prisma {
     studentId: string
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -7404,7 +7466,7 @@ export namespace Prisma {
     id?: IntFilter<"SeatMatrix"> | number
     departmentId?: StringFilter<"SeatMatrix"> | string
     category?: StringFilter<"SeatMatrix"> | string
-    subCategory?: StringFilter<"SeatMatrix"> | string
+    subCategory?: StringNullableFilter<"SeatMatrix"> | string | null
     totalSeats?: IntFilter<"SeatMatrix"> | number
   }
 
@@ -7433,7 +7495,7 @@ export namespace Prisma {
     departmentId?: StringFilter<"AllocatedSeat"> | string
     allocationRound?: IntFilter<"AllocatedSeat"> | number
     category?: StringFilter<"AllocatedSeat"> | string
-    subCategory?: StringFilter<"AllocatedSeat"> | string
+    subCategory?: StringNullableFilter<"AllocatedSeat"> | string | null
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
@@ -7442,7 +7504,7 @@ export namespace Prisma {
   export type AllocatedSeatCreateWithoutStudentInput = {
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -7454,7 +7516,7 @@ export namespace Prisma {
     departmentId: string
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -7534,11 +7596,11 @@ export namespace Prisma {
     email: string
     jeeCRL: number
     category: string
-    subCategory: string
-    categoryRank: number
-    sptMarks: number
-    cdpPriority: number
-    pwdRank: number
+    subCategory?: string | null
+    categoryRank?: number | null
+    sptMarks?: number | null
+    cdpPriority?: number | null
+    pwdRank?: number | null
     courseChoice1?: string | null
     courseChoice2?: string | null
     courseChoice3?: string | null
@@ -7557,11 +7619,11 @@ export namespace Prisma {
     email: string
     jeeCRL: number
     category: string
-    subCategory: string
-    categoryRank: number
-    sptMarks: number
-    cdpPriority: number
-    pwdRank: number
+    subCategory?: string | null
+    categoryRank?: number | null
+    sptMarks?: number | null
+    cdpPriority?: number | null
+    pwdRank?: number | null
     courseChoice1?: string | null
     courseChoice2?: string | null
     courseChoice3?: string | null
@@ -7613,11 +7675,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     jeeCRL?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
-    categoryRank?: IntFieldUpdateOperationsInput | number
-    sptMarks?: IntFieldUpdateOperationsInput | number
-    cdpPriority?: IntFieldUpdateOperationsInput | number
-    pwdRank?: IntFieldUpdateOperationsInput | number
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    categoryRank?: NullableIntFieldUpdateOperationsInput | number | null
+    sptMarks?: NullableIntFieldUpdateOperationsInput | number | null
+    cdpPriority?: NullableIntFieldUpdateOperationsInput | number | null
+    pwdRank?: NullableIntFieldUpdateOperationsInput | number | null
     courseChoice1?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice2?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice3?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7636,11 +7698,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     jeeCRL?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
-    categoryRank?: IntFieldUpdateOperationsInput | number
-    sptMarks?: IntFieldUpdateOperationsInput | number
-    cdpPriority?: IntFieldUpdateOperationsInput | number
-    pwdRank?: IntFieldUpdateOperationsInput | number
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    categoryRank?: NullableIntFieldUpdateOperationsInput | number | null
+    sptMarks?: NullableIntFieldUpdateOperationsInput | number | null
+    cdpPriority?: NullableIntFieldUpdateOperationsInput | number | null
+    pwdRank?: NullableIntFieldUpdateOperationsInput | number | null
     courseChoice1?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice2?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice3?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7677,7 +7739,7 @@ export namespace Prisma {
   export type SeatMatrixCreateManyDepartmentInput = {
     id?: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     totalSeats: number
   }
 
@@ -7686,7 +7748,7 @@ export namespace Prisma {
     studentId: string
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -7694,28 +7756,28 @@ export namespace Prisma {
 
   export type SeatMatrixUpdateWithoutDepartmentInput = {
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     totalSeats?: IntFieldUpdateOperationsInput | number
   }
 
   export type SeatMatrixUncheckedUpdateWithoutDepartmentInput = {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     totalSeats?: IntFieldUpdateOperationsInput | number
   }
 
   export type SeatMatrixUncheckedUpdateManyWithoutDepartmentInput = {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     totalSeats?: IntFieldUpdateOperationsInput | number
   }
 
   export type AllocatedSeatUpdateWithoutDepartmentInput = {
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -7727,7 +7789,7 @@ export namespace Prisma {
     studentId?: StringFieldUpdateOperationsInput | string
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -7738,7 +7800,7 @@ export namespace Prisma {
     studentId?: StringFieldUpdateOperationsInput | string
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -7749,7 +7811,7 @@ export namespace Prisma {
     departmentId: string
     allocationRound: number
     category: string
-    subCategory: string
+    subCategory?: string | null
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
@@ -7758,7 +7820,7 @@ export namespace Prisma {
   export type AllocatedSeatUpdateWithoutStudentInput = {
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -7770,7 +7832,7 @@ export namespace Prisma {
     departmentId?: StringFieldUpdateOperationsInput | string
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
@@ -7781,7 +7843,7 @@ export namespace Prisma {
     departmentId?: StringFieldUpdateOperationsInput | string
     allocationRound?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
-    subCategory?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number

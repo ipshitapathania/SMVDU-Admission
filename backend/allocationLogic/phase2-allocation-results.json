@@ -1,5 +1,102 @@
 {
-  "allocated": [],
+  "allocated": [
+    {
+      "studentId": "20250000825",
+      "departmentId": "ece",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 2
+    },
+    {
+      "studentId": "20250000709",
+      "departmentId": "ai_robotics",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 4
+    },
+    {
+      "studentId": "20250000708",
+      "departmentId": "ee",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 5
+    },
+    {
+      "studentId": "20250001023",
+      "departmentId": "me",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 6
+    },
+    {
+      "studentId": "20250000807",
+      "departmentId": "ce",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 7
+    }
+  ],
   "failures": [],
-  "vacated": []
+  "vacated": [
+    {
+      "id": 647,
+      "studentId": "20250000825",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T18:09:14.358Z",
+      "choiceNumber": 3,
+      "jeeRank": 177098,
+      "department": {
+        "id": "ai_robotics",
+        "name": "\tArtificial Intelligence and Robotics"
+      }
+    },
+    {
+      "id": 654,
+      "studentId": "20250000709",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T18:09:14.387Z",
+      "choiceNumber": 5,
+      "jeeRank": 228792,
+      "department": {
+        "id": "ee",
+        "name": "\tElectrical and Electronics Engineering"
+      }
+    },
+    {
+      "id": 660,
+      "studentId": "20250000708",
+      "departmentId": "me",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T18:09:14.408Z",
+      "choiceNumber": 6,
+      "jeeRank": 274350,
+      "department": {
+        "id": "me",
+        "name": "\tMechanical Engineering"
+      }
+    },
+    {
+      "id": 662,
+      "studentId": "20250001023",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T18:09:14.416Z",
+      "choiceNumber": 7,
+      "jeeRank": 302015,
+      "department": {
+        "id": "ce",
+        "name": "\tCivil Engineering"
+      }
+    }
+  ]
 }

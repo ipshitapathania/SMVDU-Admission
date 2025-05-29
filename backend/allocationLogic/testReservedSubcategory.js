@@ -47,6 +47,11 @@ async function main() {
             );
         });
 
+        // Save report
+        const reportPath = path.join('./', `reserved_subcategory_results_${new Date().toISOString().slice(0,10)}.csv`);
+        fs.writeFileSync(reportPath, report.join('\n'));
+        console.log(`Report saved to ${reportPath}`);
+
     } catch (error) {
         console.error('Test failed:', error);
     } finally {

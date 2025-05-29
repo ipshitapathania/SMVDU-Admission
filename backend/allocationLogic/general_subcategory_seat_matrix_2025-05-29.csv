@@ -1,4 +1,5 @@
 Department,SubCategory,Initial_Seats,Allocated,Remaining_Seats
+ce,GNCDP,0,0,0
 cs,GNPWD,0,0,0
 cs,GNCDP,0,0,0
 cs,GNCPF,0,0,0
@@ -14,7 +15,6 @@ ee,GNPWD,0,0,0
 ee,GNCDP,0,0,0
 ee,GNCPF,0,0,0
 ee,GNSPT,1,0,1
-ce,GNCDP,0,0,0
 mnc,GNPWD,0,0,0
 mnc,GNCPF,0,0,0
 mnc,GNSPT,0,0,0

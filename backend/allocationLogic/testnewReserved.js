@@ -45,6 +45,11 @@ async function main() {
             console.log(`- ${vacated.departmentId} (${vacated.category}-${vacated.subCategory})`);
         });
 
+        // Save results to file
+        const outputPath = path.join(process.cwd(), 'phase2-allocation-results.json');
+        fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
+        console.log(`\nResults saved to ${outputPath}`);
+
         // Verification checks
         await verifyAllocationQuality(results);
 

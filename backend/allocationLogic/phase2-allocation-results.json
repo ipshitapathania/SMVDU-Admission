@@ -1,5 +1,110 @@
 {
-  "allocated": [],
+  "allocated": [
+    {
+      "studentId": "20250000825",
+      "departmentId": "ece",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 2
+    },
+    {
+      "studentId": "20250000709",
+      "departmentId": "ai_robotics",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 4
+    },
+    {
+      "studentId": "20250000708",
+      "departmentId": "ee",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 5
+    },
+    {
+      "studentId": "20250001023",
+      "departmentId": "me",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 6
+    },
+    {
+      "studentId": "20250000807",
+      "departmentId": "ce",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 7
+    }
+  ],
   "failures": [],
-  "vacated": []
+  "vacated": [
+    {
+      "id": 791,
+      "studentId": "20250000825",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.293Z",
+      "choiceNumber": 3,
+      "jeeRank": 177098,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ai_robotics",
+        "name": "\tArtificial Intelligence and Robotics"
+      }
+    },
+    {
+      "id": 798,
+      "studentId": "20250000709",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.319Z",
+      "choiceNumber": 5,
+      "jeeRank": 228792,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ee",
+        "name": "\tElectrical and Electronics Engineering"
+      }
+    },
+    {
+      "id": 804,
+      "studentId": "20250000708",
+      "departmentId": "me",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.340Z",
+      "choiceNumber": 6,
+      "jeeRank": 274350,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "me",
+        "name": "\tMechanical Engineering"
+      }
+    },
+    {
+      "id": 806,
+      "studentId": "20250001023",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.349Z",
+      "choiceNumber": 7,
+      "jeeRank": 302015,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ce",
+        "name": "\tCivil Engineering"
+      }
+    }
+  ]
 }

@@ -1,31 +1,716 @@
 {
-  "allocated": [],
-  "failures": [
+  "allocated": [
     {
-      "student": "20250000417",
-      "error": "Existing department allocation",
-      "details": "Already has ai_robotics"
+      "studentId": "20250000599",
+      "departmentId": "cs",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 1
     },
     {
-      "student": "20250000286",
+      "studentId": "20250001058",
+      "departmentId": "cs",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 1
+    },
+    {
+      "studentId": "20250000287",
+      "departmentId": "ece",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 2
+    },
+    {
+      "studentId": "20250001024",
+      "departmentId": "ece",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 1
+    },
+    {
+      "studentId": "20250000825",
+      "departmentId": "ai_robotics",
+      "category": "EWS",
+      "subCategory": "EWS",
+      "choiceNumber": 3
+    },
+    {
+      "studentId": "20250000545",
+      "departmentId": "cs",
+      "category": "RLAC",
+      "subCategory": "RLAC",
+      "choiceNumber": 1
+    },
+    {
+      "studentId": "20250000463",
+      "departmentId": "cs",
+      "category": "ST1",
+      "subCategory": "ST1",
+      "choiceNumber": 1
+    },
+    {
+      "id": 794,
+      "studentId": "20250000357",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.305Z",
+      "choiceNumber": 1,
+      "jeeRank": 204653,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 795,
+      "studentId": "20250001126",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.307Z",
+      "choiceNumber": 1,
+      "jeeRank": 211938,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 796,
+      "studentId": "20250000945",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.311Z",
+      "choiceNumber": 2,
+      "jeeRank": 222498,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 797,
+      "studentId": "20250001192",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "RLAC",
+      "subCategory": "RLAC",
+      "allocatedAt": "2025-05-29T19:09:48.314Z",
+      "choiceNumber": 2,
+      "jeeRank": 223042,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 798,
+      "studentId": "20250000709",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.319Z",
+      "choiceNumber": 5,
+      "jeeRank": 228792,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 799,
+      "studentId": "20250000758",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "RLAC",
+      "subCategory": "RLAC",
+      "allocatedAt": "2025-05-29T19:09:48.322Z",
+      "choiceNumber": 2,
+      "jeeRank": 233259,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 800,
+      "studentId": "20250000563",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "ST1",
+      "subCategory": "ST1",
+      "allocatedAt": "2025-05-29T19:09:48.324Z",
+      "choiceNumber": 1,
+      "jeeRank": 238723,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 801,
+      "studentId": "20250000350",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.327Z",
+      "choiceNumber": 1,
+      "jeeRank": 244085,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 802,
+      "studentId": "20250000627",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.331Z",
+      "choiceNumber": 5,
+      "jeeRank": 251445,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 803,
+      "studentId": "20250000765",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.335Z",
+      "choiceNumber": 4,
+      "jeeRank": 265460,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 804,
+      "studentId": "20250000708",
+      "departmentId": "me",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.340Z",
+      "choiceNumber": 6,
+      "jeeRank": 274350,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 805,
+      "studentId": "20250000982",
+      "departmentId": "me",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.343Z",
+      "choiceNumber": 2,
+      "jeeRank": 283899,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 806,
+      "studentId": "20250001023",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.349Z",
+      "choiceNumber": 7,
+      "jeeRank": 302015,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 807,
+      "studentId": "20250001191",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "OBC",
+      "subCategory": "OBC",
+      "allocatedAt": "2025-05-29T19:09:48.352Z",
+      "choiceNumber": 1,
+      "jeeRank": 315403,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 808,
+      "studentId": "20250000856",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.356Z",
+      "choiceNumber": 3,
+      "jeeRank": 340738,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 809,
+      "studentId": "20250000882",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "EWS",
+      "subCategory": "EWS",
+      "allocatedAt": "2025-05-29T19:09:48.363Z",
+      "choiceNumber": 7,
+      "jeeRank": 358209,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 810,
+      "studentId": "20250000217",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "RBA",
+      "subCategory": "RBA",
+      "allocatedAt": "2025-05-29T19:09:48.369Z",
+      "choiceNumber": 1,
+      "jeeRank": 374302,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 811,
+      "studentId": "20250000417",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "ST2",
+      "subCategory": "ST2",
+      "allocatedAt": "2025-05-29T19:09:48.371Z",
+      "choiceNumber": 1,
+      "jeeRank": 382653,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 812,
+      "studentId": "20250000645",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "RBA",
+      "subCategory": "RBA",
+      "allocatedAt": "2025-05-29T19:09:48.374Z",
+      "choiceNumber": 1,
+      "jeeRank": 384815,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 813,
+      "studentId": "20250001068",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "ST1",
+      "subCategory": "ST1",
+      "allocatedAt": "2025-05-29T19:09:48.381Z",
+      "choiceNumber": 1,
+      "jeeRank": 471610,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 814,
+      "studentId": "20250000253",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "OBC",
+      "subCategory": "OBC",
+      "allocatedAt": "2025-05-29T19:09:48.384Z",
+      "choiceNumber": 2,
+      "jeeRank": 505577,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 815,
+      "studentId": "20250000326",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "RBA",
+      "subCategory": "RBA",
+      "allocatedAt": "2025-05-29T19:09:48.386Z",
+      "choiceNumber": 1,
+      "jeeRank": 510820,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 816,
+      "studentId": "20250000286",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "ST2",
+      "subCategory": "ST2",
+      "allocatedAt": "2025-05-29T19:09:48.404Z",
+      "choiceNumber": 1,
+      "jeeRank": 596940,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 817,
+      "studentId": "20250000557",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.406Z",
+      "choiceNumber": 1,
+      "jeeRank": 667577,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 818,
+      "studentId": "20250000980",
+      "departmentId": "cs",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.413Z",
+      "choiceNumber": 1,
+      "jeeRank": 698873,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 819,
+      "studentId": "20250000762",
+      "departmentId": "ece",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.416Z",
+      "choiceNumber": 2,
+      "jeeRank": 713561,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 820,
+      "studentId": "20250000619",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "ST2",
+      "subCategory": "ST2",
+      "allocatedAt": "2025-05-29T19:09:48.418Z",
+      "choiceNumber": 1,
+      "jeeRank": 732166,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 821,
+      "studentId": "20250000071",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "OBC",
+      "subCategory": "OBC",
+      "allocatedAt": "2025-05-29T19:09:48.421Z",
+      "choiceNumber": 2,
+      "jeeRank": 736863,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 822,
+      "studentId": "20250001123",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "RLAC",
+      "subCategory": "RLAC",
+      "allocatedAt": "2025-05-29T19:09:48.437Z",
+      "choiceNumber": 2,
+      "jeeRank": 774206,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 823,
+      "studentId": "20250000301",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.439Z",
+      "choiceNumber": 1,
+      "jeeRank": 776231,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 824,
+      "studentId": "20250000168",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "ST1",
+      "subCategory": "ST1",
+      "allocatedAt": "2025-05-29T19:09:48.442Z",
+      "choiceNumber": 2,
+      "jeeRank": 786819,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 825,
+      "studentId": "20250000715",
+      "departmentId": "ai_robotics",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.445Z",
+      "choiceNumber": 2,
+      "jeeRank": 832707,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 826,
+      "studentId": "20250000691",
+      "departmentId": "ece",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.449Z",
+      "choiceNumber": 3,
+      "jeeRank": 844756,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 827,
+      "studentId": "20250000592",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.453Z",
+      "choiceNumber": 4,
+      "jeeRank": 873069,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 828,
+      "studentId": "20250000226",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "ST2",
+      "subCategory": "ST2",
+      "allocatedAt": "2025-05-29T19:09:48.459Z",
+      "choiceNumber": 1,
+      "jeeRank": 912247,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 829,
+      "studentId": "20250001194",
+      "departmentId": "ece",
+      "allocationRound": 1,
+      "category": "RBA",
+      "subCategory": "RBA",
+      "allocatedAt": "2025-05-29T19:09:48.463Z",
+      "choiceNumber": 2,
+      "jeeRank": 931022,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 830,
+      "studentId": "20250000683",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.465Z",
+      "choiceNumber": 2,
+      "jeeRank": 989254,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 831,
+      "studentId": "20250000701",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.473Z",
+      "choiceNumber": 4,
+      "jeeRank": 1326935,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 832,
+      "studentId": "20250001149",
+      "departmentId": "me",
+      "allocationRound": 1,
+      "category": "RBA",
+      "subCategory": "RBA",
+      "allocatedAt": "2025-05-29T19:09:48.477Z",
+      "choiceNumber": 2,
+      "jeeRank": 1333932,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 833,
+      "studentId": "20250000447",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "SC",
+      "subCategory": "SC",
+      "allocatedAt": "2025-05-29T19:09:48.481Z",
+      "choiceNumber": 4,
+      "jeeRank": 1351537,
+      "status": null,
+      "feesPaid": null
+    }
+  ],
+  "failures": [
+    {
+      "student": "20250000746",
       "error": "Existing department allocation",
       "details": "Already has cs"
     },
     {
-      "student": "20250000071",
+      "student": "20250000908",
       "error": "Existing department allocation",
-      "details": "Already has ai_robotics"
+      "details": "Already has cs"
     },
     {
-      "student": "20250001194",
+      "student": "20250000571",
       "error": "Existing department allocation",
-      "details": "Already has ece"
+      "details": "Already has mnc"
     },
     {
-      "student": "20250000447",
+      "student": "20250000187",
       "error": "Existing department allocation",
       "details": "Already has mnc"
     }
   ],
-  "vacated": []
+  "vacated": [
+    {
+      "id": 728,
+      "studentId": "20250000599",
+      "departmentId": "ece",
+      "allocationRound": 1,
+      "category": "GEN",
+      "subCategory": "GNGN",
+      "allocatedAt": "2025-05-29T19:09:39.401Z",
+      "choiceNumber": 2,
+      "jeeRank": 112697,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ece",
+        "name": "\tElectronics and Communication Engineering"
+      }
+    },
+    {
+      "id": 736,
+      "studentId": "20250001058",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "GEN",
+      "subCategory": "GNGN",
+      "allocatedAt": "2025-05-29T19:09:39.558Z",
+      "choiceNumber": 2,
+      "jeeRank": 131747,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "mnc",
+        "name": "\tMathematics and Computing"
+      }
+    },
+    {
+      "id": 750,
+      "studentId": "20250000287",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "GEN",
+      "subCategory": "GNGN",
+      "allocatedAt": "2025-05-29T19:09:39.799Z",
+      "choiceNumber": 3,
+      "jeeRank": 152056,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "mnc",
+        "name": "\tMathematics and Computing"
+      }
+    },
+    {
+      "id": 763,
+      "studentId": "20250001024",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "GEN",
+      "subCategory": "GNGN",
+      "allocatedAt": "2025-05-29T19:09:40.102Z",
+      "choiceNumber": 4,
+      "jeeRank": 170457,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ee",
+        "name": "\tElectrical and Electronics Engineering"
+      }
+    },
+    {
+      "id": 770,
+      "studentId": "20250000825",
+      "departmentId": "ee",
+      "allocationRound": 1,
+      "category": "GEN",
+      "subCategory": "GNGN",
+      "allocatedAt": "2025-05-29T19:09:40.386Z",
+      "choiceNumber": 4,
+      "jeeRank": 177098,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ee",
+        "name": "\tElectrical and Electronics Engineering"
+      }
+    },
+    {
+      "id": 775,
+      "studentId": "20250000545",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "GEN",
+      "subCategory": "GNGN",
+      "allocatedAt": "2025-05-29T19:09:40.540Z",
+      "choiceNumber": 4,
+      "jeeRank": 186129,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ce",
+        "name": "\tCivil Engineering"
+      }
+    },
+    {
+      "id": 776,
+      "studentId": "20250000463",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "GEN",
+      "subCategory": "GNGN",
+      "allocatedAt": "2025-05-29T19:09:40.562Z",
+      "choiceNumber": 6,
+      "jeeRank": 193705,
+      "status": null,
+      "feesPaid": null,
+      "department": {
+        "id": "ce",
+        "name": "\tCivil Engineering"
+      }
+    }
+  ]
 }

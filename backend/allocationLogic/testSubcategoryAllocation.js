@@ -88,11 +88,6 @@ async function main() {
             );
         });
 
-        const csvOutput = csvLines.join('\n');
-        const outputPath = path.join('./', `general_subcategory_results_${new Date().toISOString().slice(0,10)}.csv`);
-        fs.writeFileSync(outputPath, csvOutput);
-        console.log(`\n✅ Detailed CSV report saved to: ${outputPath}`);
-
         // Generate seat matrix comparison report
         console.log('\nGenerating seat matrix comparison report...');
         const preMatrix = await prisma.seatMatrix.findMany({
@@ -129,10 +124,6 @@ async function main() {
                 `${seat.totalSeats},${allocated},${postSeat?.totalSeats || 0}`
             );
         });
-
-        const matrixPath = path.join('./', `general_subcategory_seat_matrix_${new Date().toISOString().slice(0,10)}.csv`);
-        fs.writeFileSync(matrixPath, matrixReport.join('\n'));
-        console.log(`✅ Seat matrix report saved to: ${matrixPath}`);
 
     } catch (error) {
         console.error('Error in general subcategory allocation test:', error);

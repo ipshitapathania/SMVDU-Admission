@@ -35,11 +35,6 @@ async function main() {
             console.log(`- ${vacated.departmentId} (${vacated.category}-${vacated.subCategory})`);
         });
 
-        // Optional: Save results to file
-        const outputPath = path.join(process.cwd(), 'allocation-results.json');
-        fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
-        console.log(`\nResults saved to ${outputPath}`);
-
     } catch (error) {
         console.error('Error in testReservedLogic:', error);
     } finally {

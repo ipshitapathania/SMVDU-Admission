@@ -165,7 +165,10 @@ exports.Prisma.AllocatedSeatScalarFieldEnum = {
   subCategory: 'subCategory',
   allocatedAt: 'allocatedAt',
   choiceNumber: 'choiceNumber',
-  jeeRank: 'jeeRank'
+  jeeRank: 'jeeRank',
+  freeze: 'freeze',
+  float: 'float',
+  feesPaid: 'feesPaid'
 };
 
 exports.Prisma.SortOrder = {

@@ -69,7 +69,8 @@ model AllocatedSeat {
   department      Department         @relation(fields: [departmentId], references: [id])
   choiceNumber    Int
   jeeRank         Int
-  freeze          Boolean? // true = locked, false = not yet decided
-  float           Boolean? // true = participate in next round
-  feesPaid        Boolean? // true = fees paid
+  freeze          Boolean?           // true = locked, false = not yet decided
+  float           Boolean?           // true = participate in next round
+  feesPaid        Boolean?           // true = fees paid
+
 }

@@ -107,12 +107,12 @@ async function main() {
   try {
     await runScript("testInitialAllocation.js");
     await runScript("testSubcategoryAllocation.js");
-    await runUntilNoMoreAllocations("testnewinitial.js");
+    await runUntilNoMoreAllocations("testnewInitial.js");
     await runScript("testReservedLogic.js");
-    await runUntilNoMoreAllocations("testnewinitial.js");
+    await runUntilNoMoreAllocations("testnewInitial.js");
     await runScript("testReservedSubcategory.js");
     await runScript("testnewReserved.js");
-    await runScript("testnewinitial.js");
+    await runScript("testnewInitial.js");
 
     await generateAllocationCSV();
 

@@ -4718,8 +4718,7 @@ export namespace Prisma {
     allocatedAt: Date | null
     choiceNumber: number | null
     jeeRank: number | null
-    freeze: boolean | null
-    float: boolean | null
+    status: string | null
     feesPaid: boolean | null
   }
 
@@ -4733,8 +4732,7 @@ export namespace Prisma {
     allocatedAt: Date | null
     choiceNumber: number | null
     jeeRank: number | null
-    freeze: boolean | null
-    float: boolean | null
+    status: string | null
     feesPaid: boolean | null
   }
 
@@ -4748,8 +4746,7 @@ export namespace Prisma {
     allocatedAt: number
     choiceNumber: number
     jeeRank: number
-    freeze: number
-    float: number
+    status: number
     feesPaid: number
     _all: number
   }
@@ -4779,8 +4776,7 @@ export namespace Prisma {
     allocatedAt?: true
     choiceNumber?: true
     jeeRank?: true
-    freeze?: true
-    float?: true
+    status?: true
     feesPaid?: true
   }
 
@@ -4794,8 +4790,7 @@ export namespace Prisma {
     allocatedAt?: true
     choiceNumber?: true
     jeeRank?: true
-    freeze?: true
-    float?: true
+    status?: true
     feesPaid?: true
   }
 
@@ -4809,8 +4804,7 @@ export namespace Prisma {
     allocatedAt?: true
     choiceNumber?: true
     jeeRank?: true
-    freeze?: true
-    float?: true
+    status?: true
     feesPaid?: true
     _all?: true
   }
@@ -4911,8 +4905,7 @@ export namespace Prisma {
     allocatedAt: Date
     choiceNumber: number
     jeeRank: number
-    freeze: boolean | null
-    float: boolean | null
+    status: string | null
     feesPaid: boolean | null
     _count: AllocatedSeatCountAggregateOutputType | null
     _avg: AllocatedSeatAvgAggregateOutputType | null
@@ -4945,8 +4938,7 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    freeze?: boolean
-    float?: boolean
+    status?: boolean
     feesPaid?: boolean
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
@@ -4962,8 +4954,7 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    freeze?: boolean
-    float?: boolean
+    status?: boolean
     feesPaid?: boolean
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
@@ -4979,8 +4970,7 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    freeze?: boolean
-    float?: boolean
+    status?: boolean
     feesPaid?: boolean
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
@@ -4996,12 +4986,11 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    freeze?: boolean
-    float?: boolean
+    status?: boolean
     feesPaid?: boolean
   }
 
-  export type AllocatedSeatOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "studentId" | "departmentId" | "allocationRound" | "category" | "subCategory" | "allocatedAt" | "choiceNumber" | "jeeRank" | "freeze" | "float" | "feesPaid", ExtArgs["result"]["allocatedSeat"]>
+  export type AllocatedSeatOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "studentId" | "departmentId" | "allocationRound" | "category" | "subCategory" | "allocatedAt" | "choiceNumber" | "jeeRank" | "status" | "feesPaid", ExtArgs["result"]["allocatedSeat"]>
   export type AllocatedSeatInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
@@ -5031,8 +5020,7 @@ export namespace Prisma {
       allocatedAt: Date
       choiceNumber: number
       jeeRank: number
-      freeze: boolean | null
-      float: boolean | null
+      status: string | null
       feesPaid: boolean | null
     }, ExtArgs["result"]["allocatedSeat"]>
     composites: {}
@@ -5468,8 +5456,7 @@ export namespace Prisma {
     readonly allocatedAt: FieldRef<"AllocatedSeat", 'DateTime'>
     readonly choiceNumber: FieldRef<"AllocatedSeat", 'Int'>
     readonly jeeRank: FieldRef<"AllocatedSeat", 'Int'>
-    readonly freeze: FieldRef<"AllocatedSeat", 'Boolean'>
-    readonly float: FieldRef<"AllocatedSeat", 'Boolean'>
+    readonly status: FieldRef<"AllocatedSeat", 'String'>
     readonly feesPaid: FieldRef<"AllocatedSeat", 'Boolean'>
   }
     
@@ -5954,8 +5941,7 @@ export namespace Prisma {
     allocatedAt: 'allocatedAt',
     choiceNumber: 'choiceNumber',
     jeeRank: 'jeeRank',
-    freeze: 'freeze',
-    float: 'float',
+    status: 'status',
     feesPaid: 'feesPaid'
   };
 
@@ -6303,8 +6289,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
-    freeze?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
-    float?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
+    status?: StringNullableFilter<"AllocatedSeat"> | string | null
     feesPaid?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
     student?: XOR<StudentApplicationScalarRelationFilter, StudentApplicationWhereInput>
     department?: XOR<DepartmentScalarRelationFilter, DepartmentWhereInput>
@@ -6320,8 +6305,7 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    freeze?: SortOrderInput | SortOrder
-    float?: SortOrderInput | SortOrder
+    status?: SortOrderInput | SortOrder
     feesPaid?: SortOrderInput | SortOrder
     student?: StudentApplicationOrderByWithRelationInput
     department?: DepartmentOrderByWithRelationInput
@@ -6340,8 +6324,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
-    freeze?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
-    float?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
+    status?: StringNullableFilter<"AllocatedSeat"> | string | null
     feesPaid?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
     student?: XOR<StudentApplicationScalarRelationFilter, StudentApplicationWhereInput>
     department?: XOR<DepartmentScalarRelationFilter, DepartmentWhereInput>
@@ -6357,8 +6340,7 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    freeze?: SortOrderInput | SortOrder
-    float?: SortOrderInput | SortOrder
+    status?: SortOrderInput | SortOrder
     feesPaid?: SortOrderInput | SortOrder
     _count?: AllocatedSeatCountOrderByAggregateInput
     _avg?: AllocatedSeatAvgOrderByAggregateInput
@@ -6380,8 +6362,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeWithAggregatesFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntWithAggregatesFilter<"AllocatedSeat"> | number
     jeeRank?: IntWithAggregatesFilter<"AllocatedSeat"> | number
-    freeze?: BoolNullableWithAggregatesFilter<"AllocatedSeat"> | boolean | null
-    float?: BoolNullableWithAggregatesFilter<"AllocatedSeat"> | boolean | null
+    status?: StringNullableWithAggregatesFilter<"AllocatedSeat"> | string | null
     feesPaid?: BoolNullableWithAggregatesFilter<"AllocatedSeat"> | boolean | null
   }
 
@@ -6652,8 +6633,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
     student: StudentApplicationCreateNestedOneWithoutAllocationsInput
     department: DepartmentCreateNestedOneWithoutAllocationsInput
@@ -6669,8 +6649,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
   }
 
@@ -6681,8 +6660,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     student?: StudentApplicationUpdateOneRequiredWithoutAllocationsNestedInput
     department?: DepartmentUpdateOneRequiredWithoutAllocationsNestedInput
@@ -6698,8 +6676,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
@@ -6713,8 +6690,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
   }
 
@@ -6725,8 +6701,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
@@ -6740,8 +6715,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
@@ -7080,8 +7054,7 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    freeze?: SortOrder
-    float?: SortOrder
+    status?: SortOrder
     feesPaid?: SortOrder
   }
 
@@ -7102,8 +7075,7 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    freeze?: SortOrder
-    float?: SortOrder
+    status?: SortOrder
     feesPaid?: SortOrder
   }
 
@@ -7117,8 +7089,7 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    freeze?: SortOrder
-    float?: SortOrder
+    status?: SortOrder
     feesPaid?: SortOrder
   }
 
@@ -7543,8 +7514,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
     student: StudentApplicationCreateNestedOneWithoutAllocationsInput
   }
@@ -7558,8 +7528,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
   }
 
@@ -7629,8 +7598,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
-    freeze?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
-    float?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
+    status?: StringNullableFilter<"AllocatedSeat"> | string | null
     feesPaid?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
   }
 
@@ -7641,8 +7609,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
     department: DepartmentCreateNestedOneWithoutAllocationsInput
   }
@@ -7656,8 +7623,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
   }
 
@@ -7891,8 +7857,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
   }
 
@@ -7923,8 +7888,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     student?: StudentApplicationUpdateOneRequiredWithoutAllocationsNestedInput
   }
@@ -7938,8 +7902,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
@@ -7952,8 +7915,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
@@ -7966,8 +7928,7 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    freeze?: boolean | null
-    float?: boolean | null
+    status?: string | null
     feesPaid?: boolean | null
   }
 
@@ -7978,8 +7939,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     department?: DepartmentUpdateOneRequiredWithoutAllocationsNestedInput
   }
@@ -7993,8 +7953,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
@@ -8007,8 +7966,7 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    freeze?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    float?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 

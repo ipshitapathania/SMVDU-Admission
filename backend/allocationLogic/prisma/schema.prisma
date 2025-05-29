@@ -69,7 +69,7 @@ model AllocatedSeat {
   department      Department         @relation(fields: [departmentId], references: [id])
   choiceNumber    Int
   jeeRank         Int
-  status          String             // FREEZE = locked, FLOAT = participate in next round @default(NO)
+  status          String?             // FREEZE = locked, FLOAT = participate in next round @default(NO)
   feesPaid        Boolean?           // true = fees paid
 
 }

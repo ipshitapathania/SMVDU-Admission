@@ -1,30 +1,81 @@
 {
-  "allocated": [],
+  "allocated": [
+    {
+      "id": 161,
+      "studentId": "20250000619",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "ST2",
+      "subCategory": "ST2",
+      "allocatedAt": "2025-05-30T08:15:41.291Z",
+      "choiceNumber": 3,
+      "jeeRank": 732166,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 162,
+      "studentId": "20250000071",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "OBC",
+      "subCategory": "OBC",
+      "allocatedAt": "2025-05-30T08:15:41.300Z",
+      "choiceNumber": 3,
+      "jeeRank": 736863,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 163,
+      "studentId": "20250000168",
+      "departmentId": "mnc",
+      "allocationRound": 1,
+      "category": "ST1",
+      "subCategory": "ST1",
+      "allocatedAt": "2025-05-30T08:15:41.341Z",
+      "choiceNumber": 4,
+      "jeeRank": 786819,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 164,
+      "studentId": "20250001194",
+      "departmentId": "ece",
+      "allocationRound": 1,
+      "category": "RBA",
+      "subCategory": "RBA",
+      "allocatedAt": "2025-05-30T08:15:41.368Z",
+      "choiceNumber": 2,
+      "jeeRank": 931022,
+      "status": null,
+      "feesPaid": null
+    },
+    {
+      "id": 165,
+      "studentId": "20250001149",
+      "departmentId": "ce",
+      "allocationRound": 1,
+      "category": "RBA",
+      "subCategory": "RBA",
+      "allocatedAt": "2025-05-30T08:15:41.392Z",
+      "choiceNumber": 3,
+      "jeeRank": 1333932,
+      "status": null,
+      "feesPaid": null
+    }
+  ],
   "failures": [
     {
-      "student": "20250000417",
+      "student": "20250000563",
       "error": "Existing department allocation",
-      "details": "Already has ai_robotics"
+      "details": "Already has ce"
     },
     {
       "student": "20250000286",
       "error": "Existing department allocation",
       "details": "Already has cs"
-    },
-    {
-      "student": "20250000071",
-      "error": "Existing department allocation",
-      "details": "Already has ai_robotics"
-    },
-    {
-      "student": "20250001194",
-      "error": "Existing department allocation",
-      "details": "Already has ece"
-    },
-    {
-      "student": "20250000447",
-      "error": "Existing department allocation",
-      "details": "Already has mnc"
     }
   ],
   "vacated": []

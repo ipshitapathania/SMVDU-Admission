@@ -9,11 +9,11 @@ ce,GNSPT,0,0,0
 ece,GNPWD,0,0,0
 ece,GNCDP,0,0,0
 ece,GNCPF,0,0,0
-ece,GNSPT,1,0,1
 ee,GNPWD,0,0,0
 ee,GNCDP,0,0,0
 ee,GNCPF,0,0,0
 ee,GNSPT,1,0,1
+ece,GNSPT,0,0,0
 ce,GNCDP,0,0,0
 mnc,GNPWD,0,0,0
 mnc,GNCPF,0,0,0

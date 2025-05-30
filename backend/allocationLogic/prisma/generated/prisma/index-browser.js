@@ -168,8 +168,7 @@ exports.Prisma.AllocatedSeatScalarFieldEnum = {
   allocatedAt: 'allocatedAt',
   choiceNumber: 'choiceNumber',
   jeeRank: 'jeeRank',
-  freeze: 'freeze',
-  float: 'float',
+  status: 'status',
   feesPaid: 'feesPaid'
 };
 

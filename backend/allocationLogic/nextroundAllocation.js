@@ -129,7 +129,6 @@ async function main() {
     console.log(
       `\n📊 Total valid students for Round ${round}: ${validStudentIds.length}`
     );
-    return;
     console.log(`\n✅ Final valid students for Round ${round}:`);
     validStudentIds.forEach((id) => {
       const student = finalValidStudentsDetailsMap.get(id);

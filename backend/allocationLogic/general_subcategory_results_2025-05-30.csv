@@ -1,8 +1,8 @@
 ApplicationNumber,Category,SubCategory,JEE_Rank,Category_Rank,Special_Criteria,Previous_Department,Previous_Choice,New_Department,New_Choice,Status
-20250000656,GEN,GNSPT,167506,167506,1,None,2,,,Failed,No better allocation possible
-20250000699,GEN,GNCDP,145242,145242,6,None,2,,,Failed,No better allocation possible
-20250001200,GEN,GNCDP,285429,285429,6,None,3,,,Failed,No better allocation possible
-20250000550,GEN,GNCDP,349564,349564,6,None,4,,,Failed,No better allocation possible
+20250000656,GEN,GNSPT,167506,167506,1,None,3,,,Failed,No better allocation possible
+20250000699,GEN,GNCDP,145242,145242,6,None,None,,,Failed,No better allocation possible
+20250001200,GEN,GNCDP,285429,285429,6,None,None,,,Failed,No better allocation possible
+20250000550,GEN,GNCDP,349564,349564,6,None,None,,,Failed,No better allocation possible
 20250000464,GEN,GNCDP,385788,385788,6,None,None,,,Failed,No better allocation possible
 20250000561,GEN,GNCDP,746547,746547,6,None,None,,,Failed,No better allocation possible
 20250000335,GEN,GNCDP,844757,844757,6,None,None,,,Failed,No better allocation possible
@@ -13,8 +13,8 @@ ApplicationNumber,Category,SubCategory,JEE_Rank,Category_Rank,Special_Criteria,P
 20250000736,GEN,GNCDP,405858,405858,8,None,None,,,Failed,No better allocation possible
 20250000269,GEN,GNCDP,427753,427753,8,None,None,,,Failed,No better allocation possible
 20250000650,GEN,GNCDP,487588,487588,8,None,None,,,Failed,No better allocation possible
-20250000755,GEN,GNCPF,140891,140891,1000000,None,2,,,Failed,No better allocation possible
-20250000750,GEN,GNCPF,147186,147186,1000000,None,2,,,Failed,No better allocation possible
+20250000755,GEN,GNCPF,140891,140891,1000000,None,None,,,Failed,No better allocation possible
+20250000750,GEN,GNCPF,147186,147186,1000000,None,None,,,Failed,No better allocation possible
 20250000294,GEN,GNCPF,227283,227283,1000000,None,None,,,Failed,No better allocation possible
 20250000211,GEN,GNCPF,231056,231056,1000000,None,None,,,Failed,No better allocation possible
 20250000261,GEN,GNCPF,255062,255062,1000000,None,None,,,Failed,No better allocation possible

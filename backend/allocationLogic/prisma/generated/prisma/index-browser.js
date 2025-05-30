@@ -145,7 +145,9 @@ exports.Prisma.StudentApplicationScalarFieldEnum = {
   courseChoice5: 'courseChoice5',
   courseChoice6: 'courseChoice6',
   courseChoice7: 'courseChoice7',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  status: 'status',
+  feesPaid: 'feesPaid'
 };
 
 exports.Prisma.SeatMatrixScalarFieldEnum = {

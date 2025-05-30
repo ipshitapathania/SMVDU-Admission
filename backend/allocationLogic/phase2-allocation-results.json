@@ -39,13 +39,13 @@
   "failures": [],
   "vacated": [
     {
-      "id": 791,
+      "id": 82,
       "studentId": "20250000825",
       "departmentId": "ai_robotics",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
-      "allocatedAt": "2025-05-29T19:09:48.293Z",
+      "allocatedAt": "2025-05-30T07:48:25.657Z",
       "choiceNumber": 3,
       "jeeRank": 177098,
       "status": null,
@@ -56,13 +56,13 @@
       }
     },
     {
-      "id": 798,
+      "id": 89,
       "studentId": "20250000709",
       "departmentId": "ee",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
-      "allocatedAt": "2025-05-29T19:09:48.319Z",
+      "allocatedAt": "2025-05-30T07:48:25.678Z",
       "choiceNumber": 5,
       "jeeRank": 228792,
       "status": null,
@@ -73,13 +73,13 @@
       }
     },
     {
-      "id": 804,
+      "id": 95,
       "studentId": "20250000708",
       "departmentId": "me",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
-      "allocatedAt": "2025-05-29T19:09:48.340Z",
+      "allocatedAt": "2025-05-30T07:48:25.697Z",
       "choiceNumber": 6,
       "jeeRank": 274350,
       "status": null,
@@ -90,13 +90,13 @@
       }
     },
     {
-      "id": 806,
+      "id": 97,
       "studentId": "20250001023",
       "departmentId": "ce",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
-      "allocatedAt": "2025-05-29T19:09:48.349Z",
+      "allocatedAt": "2025-05-30T07:48:25.705Z",
       "choiceNumber": 7,
       "jeeRank": 302015,
       "status": null,

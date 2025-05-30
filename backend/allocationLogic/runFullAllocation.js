@@ -35,9 +35,8 @@ async function runUntilNoMoreAllocations(scriptName) {
   return totalAllocated;
 }
 
-async function main() {
+export async function main() {
   try {
-    
     await runScript("testInitialAllocation.js");
     await runScript("testSubcategoryAllocation.js");
     await runUntilNoMoreAllocations("testnewinitial.js");

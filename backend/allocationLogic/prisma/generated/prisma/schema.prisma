@@ -44,6 +44,8 @@ model StudentApplication {
   courseChoice7     String?
   createdAt         DateTime        @default(now())
   allocations       AllocatedSeat[]
+  status            String? // FREEZE = locked, FLOAT = participate in next round
+  feesPaid          Boolean? // true = fees paid 
 }
 
 model SeatMatrix {
@@ -69,6 +71,6 @@ model AllocatedSeat {
   department      Department         @relation(fields: [departmentId], references: [id])
   choiceNumber    Int
   jeeRank         Int
-  status          String? // FREEZE = locked, FLOAT = participate in next round @default(NO)
-  feesPaid        Boolean? // true = fees paid
+  status          String? // FREEZE = locked, FLOAT = participate in next round 
+  feesPaid        Boolean? // true = fees paid 
 }

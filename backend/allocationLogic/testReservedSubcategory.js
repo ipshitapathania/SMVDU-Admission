@@ -22,7 +22,7 @@ async function main() {
         console.log(`Starting reserved subcategory allocation with ${students.length} students`);
 
         // Run allocation (typically round 3+)
-        const results = await runReservedSubcategoryAllocation(students, 3);
+        const results = await runReservedSubcategoryAllocation(students, 1);
 
         // Generate report
         const report = [

@@ -2320,6 +2320,8 @@ export namespace Prisma {
     courseChoice6: string | null
     courseChoice7: string | null
     createdAt: Date | null
+    status: string | null
+    feesPaid: boolean | null
   }
 
   export type StudentApplicationMaxAggregateOutputType = {
@@ -2343,6 +2345,8 @@ export namespace Prisma {
     courseChoice6: string | null
     courseChoice7: string | null
     createdAt: Date | null
+    status: string | null
+    feesPaid: boolean | null
   }
 
   export type StudentApplicationCountAggregateOutputType = {
@@ -2366,6 +2370,8 @@ export namespace Prisma {
     courseChoice6: number
     courseChoice7: number
     createdAt: number
+    status: number
+    feesPaid: number
     _all: number
   }
 
@@ -2407,6 +2413,8 @@ export namespace Prisma {
     courseChoice6?: true
     courseChoice7?: true
     createdAt?: true
+    status?: true
+    feesPaid?: true
   }
 
   export type StudentApplicationMaxAggregateInputType = {
@@ -2430,6 +2438,8 @@ export namespace Prisma {
     courseChoice6?: true
     courseChoice7?: true
     createdAt?: true
+    status?: true
+    feesPaid?: true
   }
 
   export type StudentApplicationCountAggregateInputType = {
@@ -2453,6 +2463,8 @@ export namespace Prisma {
     courseChoice6?: true
     courseChoice7?: true
     createdAt?: true
+    status?: true
+    feesPaid?: true
     _all?: true
   }
 
@@ -2563,6 +2575,8 @@ export namespace Prisma {
     courseChoice6: string | null
     courseChoice7: string | null
     createdAt: Date
+    status: string | null
+    feesPaid: boolean | null
     _count: StudentApplicationCountAggregateOutputType | null
     _avg: StudentApplicationAvgAggregateOutputType | null
     _sum: StudentApplicationSumAggregateOutputType | null
@@ -2605,6 +2619,8 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
+    status?: boolean
+    feesPaid?: boolean
     allocations?: boolean | StudentApplication$allocationsArgs<ExtArgs>
     _count?: boolean | StudentApplicationCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["studentApplication"]>
@@ -2630,6 +2646,8 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
+    status?: boolean
+    feesPaid?: boolean
   }, ExtArgs["result"]["studentApplication"]>
 
   export type StudentApplicationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2653,6 +2671,8 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
+    status?: boolean
+    feesPaid?: boolean
   }, ExtArgs["result"]["studentApplication"]>
 
   export type StudentApplicationSelectScalar = {
@@ -2676,9 +2696,11 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
+    status?: boolean
+    feesPaid?: boolean
   }
 
-  export type StudentApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"applicationNumber" | "studentName" | "fatherMotherName" | "phoneNumber" | "email" | "jeeCRL" | "category" | "subCategory" | "categoryRank" | "sptMarks" | "cdpPriority" | "pwdRank" | "courseChoice1" | "courseChoice2" | "courseChoice3" | "courseChoice4" | "courseChoice5" | "courseChoice6" | "courseChoice7" | "createdAt", ExtArgs["result"]["studentApplication"]>
+  export type StudentApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"applicationNumber" | "studentName" | "fatherMotherName" | "phoneNumber" | "email" | "jeeCRL" | "category" | "subCategory" | "categoryRank" | "sptMarks" | "cdpPriority" | "pwdRank" | "courseChoice1" | "courseChoice2" | "courseChoice3" | "courseChoice4" | "courseChoice5" | "courseChoice6" | "courseChoice7" | "createdAt" | "status" | "feesPaid", ExtArgs["result"]["studentApplication"]>
   export type StudentApplicationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     allocations?: boolean | StudentApplication$allocationsArgs<ExtArgs>
     _count?: boolean | StudentApplicationCountOutputTypeDefaultArgs<ExtArgs>
@@ -2712,6 +2734,8 @@ export namespace Prisma {
       courseChoice6: string | null
       courseChoice7: string | null
       createdAt: Date
+      status: string | null
+      feesPaid: boolean | null
     }, ExtArgs["result"]["studentApplication"]>
     composites: {}
   }
@@ -3156,6 +3180,8 @@ export namespace Prisma {
     readonly courseChoice6: FieldRef<"StudentApplication", 'String'>
     readonly courseChoice7: FieldRef<"StudentApplication", 'String'>
     readonly createdAt: FieldRef<"StudentApplication", 'DateTime'>
+    readonly status: FieldRef<"StudentApplication", 'String'>
+    readonly feesPaid: FieldRef<"StudentApplication", 'Boolean'>
   }
     
 
@@ -5914,7 +5940,9 @@ export namespace Prisma {
     courseChoice5: 'courseChoice5',
     courseChoice6: 'courseChoice6',
     courseChoice7: 'courseChoice7',
-    createdAt: 'createdAt'
+    createdAt: 'createdAt',
+    status: 'status',
+    feesPaid: 'feesPaid'
   };
 
   export type StudentApplicationScalarFieldEnum = (typeof StudentApplicationScalarFieldEnum)[keyof typeof StudentApplicationScalarFieldEnum]
@@ -6110,6 +6138,8 @@ export namespace Prisma {
     courseChoice6?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice7?: StringNullableFilter<"StudentApplication"> | string | null
     createdAt?: DateTimeFilter<"StudentApplication"> | Date | string
+    status?: StringNullableFilter<"StudentApplication"> | string | null
+    feesPaid?: BoolNullableFilter<"StudentApplication"> | boolean | null
     allocations?: AllocatedSeatListRelationFilter
   }
 
@@ -6134,6 +6164,8 @@ export namespace Prisma {
     courseChoice6?: SortOrderInput | SortOrder
     courseChoice7?: SortOrderInput | SortOrder
     createdAt?: SortOrder
+    status?: SortOrderInput | SortOrder
+    feesPaid?: SortOrderInput | SortOrder
     allocations?: AllocatedSeatOrderByRelationAggregateInput
   }
 
@@ -6161,6 +6193,8 @@ export namespace Prisma {
     courseChoice6?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice7?: StringNullableFilter<"StudentApplication"> | string | null
     createdAt?: DateTimeFilter<"StudentApplication"> | Date | string
+    status?: StringNullableFilter<"StudentApplication"> | string | null
+    feesPaid?: BoolNullableFilter<"StudentApplication"> | boolean | null
     allocations?: AllocatedSeatListRelationFilter
   }, "applicationNumber">
 
@@ -6185,6 +6219,8 @@ export namespace Prisma {
     courseChoice6?: SortOrderInput | SortOrder
     courseChoice7?: SortOrderInput | SortOrder
     createdAt?: SortOrder
+    status?: SortOrderInput | SortOrder
+    feesPaid?: SortOrderInput | SortOrder
     _count?: StudentApplicationCountOrderByAggregateInput
     _avg?: StudentApplicationAvgOrderByAggregateInput
     _max?: StudentApplicationMaxOrderByAggregateInput
@@ -6216,6 +6252,8 @@ export namespace Prisma {
     courseChoice6?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
     courseChoice7?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"StudentApplication"> | Date | string
+    status?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
+    feesPaid?: BoolNullableWithAggregatesFilter<"StudentApplication"> | boolean | null
   }
 
   export type SeatMatrixWhereInput = {
@@ -6430,6 +6468,8 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
+    status?: string | null
+    feesPaid?: boolean | null
     allocations?: AllocatedSeatCreateNestedManyWithoutStudentInput
   }
 
@@ -6454,6 +6494,8 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
+    status?: string | null
+    feesPaid?: boolean | null
     allocations?: AllocatedSeatUncheckedCreateNestedManyWithoutStudentInput
   }
 
@@ -6478,6 +6520,8 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     allocations?: AllocatedSeatUpdateManyWithoutStudentNestedInput
   }
 
@@ -6502,6 +6546,8 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     allocations?: AllocatedSeatUncheckedUpdateManyWithoutStudentNestedInput
   }
 
@@ -6526,6 +6572,8 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
+    status?: string | null
+    feesPaid?: boolean | null
   }
 
   export type StudentApplicationUpdateManyMutationInput = {
@@ -6549,6 +6597,8 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type StudentApplicationUncheckedUpdateManyInput = {
@@ -6572,6 +6622,8 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type SeatMatrixCreateInput = {
@@ -6835,6 +6887,11 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -6861,6 +6918,8 @@ export namespace Prisma {
     courseChoice6?: SortOrder
     courseChoice7?: SortOrder
     createdAt?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
   }
 
   export type StudentApplicationAvgOrderByAggregateInput = {
@@ -6892,6 +6951,8 @@ export namespace Prisma {
     courseChoice6?: SortOrder
     courseChoice7?: SortOrder
     createdAt?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
   }
 
   export type StudentApplicationMinOrderByAggregateInput = {
@@ -6915,6 +6976,8 @@ export namespace Prisma {
     courseChoice6?: SortOrder
     courseChoice7?: SortOrder
     createdAt?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
   }
 
   export type StudentApplicationSumOrderByAggregateInput = {
@@ -6989,6 +7052,14 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
   export type DepartmentScalarRelationFilter = {
     is?: DepartmentWhereInput
     isNot?: DepartmentWhereInput
@@ -7032,11 +7103,6 @@ export namespace Prisma {
   export type SeatMatrixSumOrderByAggregateInput = {
     id?: SortOrder
     totalSeats?: SortOrder
-  }
-
-  export type BoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
   export type StudentApplicationScalarRelationFilter = {
@@ -7098,14 +7164,6 @@ export namespace Prisma {
     allocationRound?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-  }
-
-  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type SeatMatrixCreateNestedManyWithoutDepartmentInput = {
@@ -7234,6 +7292,10 @@ export namespace Prisma {
     set?: Date | string
   }
 
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
   export type AllocatedSeatUpdateManyWithoutStudentNestedInput = {
     create?: XOR<AllocatedSeatCreateWithoutStudentInput, AllocatedSeatUncheckedCreateWithoutStudentInput> | AllocatedSeatCreateWithoutStudentInput[] | AllocatedSeatUncheckedCreateWithoutStudentInput[]
     connectOrCreate?: AllocatedSeatCreateOrConnectWithoutStudentInput | AllocatedSeatCreateOrConnectWithoutStudentInput[]
@@ -7286,10 +7348,6 @@ export namespace Prisma {
     create?: XOR<DepartmentCreateWithoutAllocationsInput, DepartmentUncheckedCreateWithoutAllocationsInput>
     connectOrCreate?: DepartmentCreateOrConnectWithoutAllocationsInput
     connect?: DepartmentWhereUniqueInput
-  }
-
-  export type NullableBoolFieldUpdateOperationsInput = {
-    set?: boolean | null
   }
 
   export type StudentApplicationUpdateOneRequiredWithoutAllocationsNestedInput = {
@@ -7386,6 +7444,11 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -7469,11 +7532,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type NestedBoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
   export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -7714,6 +7772,8 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
+    status?: string | null
+    feesPaid?: boolean | null
   }
 
   export type StudentApplicationUncheckedCreateWithoutAllocationsInput = {
@@ -7737,6 +7797,8 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
+    status?: string | null
+    feesPaid?: boolean | null
   }
 
   export type StudentApplicationCreateOrConnectWithoutAllocationsInput = {
@@ -7793,6 +7855,8 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type StudentApplicationUncheckedUpdateWithoutAllocationsInput = {
@@ -7816,6 +7880,8 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type DepartmentUpsertWithoutAllocationsInput = {

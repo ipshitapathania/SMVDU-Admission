@@ -6,14 +6,12 @@ import path from "path";
 
 const prisma = new PrismaClient();
 
-async function main() {
+async function main(round) {
   try {
-    const round = 1; // Typically run after initial allocation round
-
     console.log("Starting reserved category phase 2 allocation process...");
     const results = await runReservedCategoryPhase2(round);
 
-    console.log("\n=== PHASE 2 ALLOCATION RESULTS ===");
+    console.log(`\n=== PHASE ${round} ALLOCATION RESULTS ===`);
     console.log("Allocated Students:");
     results.allocated.forEach((allocation) => {
       console.log(
@@ -134,4 +132,4 @@ async function verifyAllocationQuality(results) {
   );
 }
 
-main();
+main(round);

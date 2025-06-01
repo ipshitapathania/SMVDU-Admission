@@ -1,63 +1,68 @@
-import { PrismaClient } from './prisma/generated/prisma/index.js';
-import { runInitialAllocation } from './iterations/initialAllocation.js';
-import fs from 'fs';
-import path from 'path';
+import { PrismaClient } from "./prisma/generated/prisma/index.js";
+import { runInitialAllocation } from "./iterations/initialAllocation.js";
+import fs from "fs";
+import path from "path";
 
 const prisma = new PrismaClient();
 
 async function main(round) {
-    try {
-        // Fetch all students from the database
-        const students = await prisma.studentApplication.findMany({
-            orderBy: {
-                jeeCRL: 'asc'
-            }
-        });
+  try {
+    // Fetch all students from the database
+    const students = await prisma.studentApplication.findMany({
+      orderBy: {
+        jeeCRL: "asc",
+      },
+    });
 
-        console.log(`Found ${students.length} students in database`);
+    console.log(`Found ${students.length} students in database`);
 
-        // Run initial allocation
-        const results = await runInitialAllocation(students, round);
+    // Run initial allocation
+    const results = await runInitialAllocation(students, round);
 
-        // Print results
-        console.log('\n=== Allocation Results ===');
-        console.log(`Successful allocations: ${results.success.length}`);
-        console.log(`Failed allocations: ${results.failures.length}`);
-        
-        // Print detailed results
-        console.log('\nSuccessful Allocations:');
-        results.success.forEach(allocation => {
-            console.log(`Student ${allocation.student} (Rank: ${allocation.jeeRank}) -> ${allocation.department} (Choice #${allocation.choiceNumber})`);
-        });
+    // Print results
+    console.log("\n=== Allocation Results ===");
+    console.log(`Successful allocations: ${results.success.length}`);
+    console.log(`Failed allocations: ${results.failures.length}`);
 
-        console.log('\nFailed Allocations:');
-        results.failures.forEach(failure => {
-            console.log(`Student ${failure.student} (Rank: ${failure.jeeRank}) - ${failure.reason}`);
-        });
+    // Print detailed results
+    console.log("\nSuccessful Allocations:");
+    results.success.forEach((allocation) => {
+      console.log(
+        `Student ${allocation.student} (Rank: ${allocation.jeeRank}) -> ${allocation.department} (Choice #${allocation.choiceNumber})`
+      );
+    });
 
-        // Generate CSV
-        const csvLines = [
-            'ApplicationNumber,JEE_Rank,Department,ChoiceNumber,Status,Reason'
-        ];
+    console.log("\nFailed Allocations:");
+    results.failures.forEach((failure) => {
+      console.log(
+        `Student ${failure.student} (Rank: ${failure.jeeRank}) - ${failure.reason}`
+      );
+    });
 
-        results.success.forEach(a => {
-            csvLines.push(`${a.student},${a.jeeRank},${a.department},${a.choiceNumber},Success,`);
-        });
+    // Generate CSV
+    const csvLines = [
+      "ApplicationNumber,JEE_Rank,Department,ChoiceNumber,Status,Reason",
+    ];
 
-        results.failures.forEach(f => {
-            csvLines.push(`${f.student},${f.jeeRank},,,Failure,${f.reason}`);
-        });
+    results.success.forEach((a) => {
+      csvLines.push(
+        `${a.student},${a.jeeRank},${a.department},${a.choiceNumber},Success,`
+      );
+    });
 
-        const csvOutput = csvLines.join('\n');
-        const outputPath = path.join('./', 'allocation_results.csv');
-        fs.writeFileSync(outputPath, csvOutput);
-        console.log(`\n✅ CSV saved to: ${outputPath}`);
+    results.failures.forEach((f) => {
+      csvLines.push(`${f.student},${f.jeeRank},,,Failure,${f.reason}`);
+    });
 
-    } catch (error) {
-        console.error('Error running initial allocation:', error);
-    } finally {
-        await prisma.$disconnect();
-    }
+    const csvOutput = csvLines.join("\n");
+    const outputPath = path.join("./", "allocation_results.csv");
+    fs.writeFileSync(outputPath, csvOutput);
+    console.log(`\n✅ CSV saved to: ${outputPath}`);
+  } catch (error) {
+    console.error("Error running initial allocation:", error);
+  } finally {
+    await prisma.$disconnect();
+  }
 }
 
-main();
+main(round);

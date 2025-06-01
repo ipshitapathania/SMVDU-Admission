@@ -6,7 +6,7 @@ import path from "path";
 
 const prisma = new PrismaClient();
 
-async function main() {
+async function main(round) {
   try {
     // Fetch all students with their current allocations
     const students = await prisma.studentApplication.findMany({
@@ -31,9 +31,11 @@ async function main() {
     const genStudents = students.filter((s) => s.category === "GEN");
     console.log(`Found ${genStudents.length} GEN category students`);
 
-    // Run general subcategory allocation (typically Round 2)
-    console.log("\n=== Starting General Subcategory Allocation ===");
-    const results = await runGeneralSubcategoryAllocation(genStudents, 1);
+    // Run general subcategory allocation with round parameter
+    console.log(
+      `\n=== Starting General Subcategory Allocation (Round ${round}) ===`
+    );
+    const results = await runGeneralSubcategoryAllocation(genStudents, round);
 
     // Generate detailed CSV report
     const csvLines = [
@@ -101,7 +103,9 @@ async function main() {
     const csvOutput = csvLines.join("\n");
     const outputPath = path.join(
       "./",
-      `general_subcategory_results_${new Date().toISOString().slice(0, 10)}.csv`
+      `general_subcategory_results_round_${round}_${new Date()
+        .toISOString()
+        .slice(0, 10)}.csv`
     );
     fs.writeFileSync(outputPath, csvOutput);
     console.log(`\n✅ Detailed CSV report saved to: ${outputPath}`);
@@ -146,7 +150,7 @@ async function main() {
 
     const matrixPath = path.join(
       "./",
-      `general_subcategory_seat_matrix_${new Date()
+      `general_subcategory_seat_matrix_round_${round}_${new Date()
         .toISOString()
         .slice(0, 10)}.csv`
     );
@@ -159,4 +163,4 @@ async function main() {
   }
 }
 
-main();
+main(round);

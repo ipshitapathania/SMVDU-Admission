@@ -103,7 +103,7 @@ async function generateAllocationCSV() {
 }
 
 // === Main runner ===
-export async function main() {
+async function main() {
   try {
     await runScript("testInitialAllocation.js");
     await runScript("testSubcategoryAllocation.js");

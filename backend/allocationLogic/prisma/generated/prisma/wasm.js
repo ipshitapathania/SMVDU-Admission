@@ -145,9 +145,7 @@ exports.Prisma.StudentApplicationScalarFieldEnum = {
   courseChoice5: 'courseChoice5',
   courseChoice6: 'courseChoice6',
   courseChoice7: 'courseChoice7',
-  createdAt: 'createdAt',
-  status: 'status',
-  feesPaid: 'feesPaid'
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.SeatMatrixScalarFieldEnum = {
@@ -167,9 +165,33 @@ exports.Prisma.AllocatedSeatScalarFieldEnum = {
   subCategory: 'subCategory',
   allocatedAt: 'allocatedAt',
   choiceNumber: 'choiceNumber',
+  jeeRank: 'jeeRank'
+};
+
+exports.Prisma.Round2inputScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  departmentId: 'departmentId',
+  allocationRound: 'allocationRound',
+  category: 'category',
+  subCategory: 'subCategory',
+  allocatedAt: 'allocatedAt',
+  choiceNumber: 'choiceNumber',
   jeeRank: 'jeeRank',
   status: 'status',
   feesPaid: 'feesPaid'
+};
+
+exports.Prisma.FreezeAllocationScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  departmentId: 'departmentId',
+  allocationRound: 'allocationRound',
+  category: 'category',
+  subCategory: 'subCategory',
+  allocatedAt: 'allocatedAt',
+  choiceNumber: 'choiceNumber',
+  jeeRank: 'jeeRank'
 };
 
 exports.Prisma.SortOrder = {
@@ -192,7 +214,9 @@ exports.Prisma.ModelName = {
   Department: 'Department',
   StudentApplication: 'StudentApplication',
   SeatMatrix: 'SeatMatrix',
-  AllocatedSeat: 'AllocatedSeat'
+  AllocatedSeat: 'AllocatedSeat',
+  round2input: 'round2input',
+  freezeAllocation: 'freezeAllocation'
 };
 
 /**

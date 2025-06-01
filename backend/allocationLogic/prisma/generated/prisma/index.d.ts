@@ -33,6 +33,16 @@ export type SeatMatrix = $Result.DefaultSelection<Prisma.$SeatMatrixPayload>
  * 
  */
 export type AllocatedSeat = $Result.DefaultSelection<Prisma.$AllocatedSeatPayload>
+/**
+ * Model round2input
+ * 
+ */
+export type round2input = $Result.DefaultSelection<Prisma.$round2inputPayload>
+/**
+ * Model freezeAllocation
+ * 
+ */
+export type freezeAllocation = $Result.DefaultSelection<Prisma.$freezeAllocationPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -198,6 +208,26 @@ export class PrismaClient<
     * ```
     */
   get allocatedSeat(): Prisma.AllocatedSeatDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.round2input`: Exposes CRUD operations for the **round2input** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Round2inputs
+    * const round2inputs = await prisma.round2input.findMany()
+    * ```
+    */
+  get round2input(): Prisma.round2inputDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.freezeAllocation`: Exposes CRUD operations for the **freezeAllocation** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FreezeAllocations
+    * const freezeAllocations = await prisma.freezeAllocation.findMany()
+    * ```
+    */
+  get freezeAllocation(): Prisma.freezeAllocationDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -641,7 +671,9 @@ export namespace Prisma {
     Department: 'Department',
     StudentApplication: 'StudentApplication',
     SeatMatrix: 'SeatMatrix',
-    AllocatedSeat: 'AllocatedSeat'
+    AllocatedSeat: 'AllocatedSeat',
+    round2input: 'round2input',
+    freezeAllocation: 'freezeAllocation'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -660,7 +692,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "department" | "studentApplication" | "seatMatrix" | "allocatedSeat"
+      modelProps: "department" | "studentApplication" | "seatMatrix" | "allocatedSeat" | "round2input" | "freezeAllocation"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -960,6 +992,154 @@ export namespace Prisma {
           }
         }
       }
+      round2input: {
+        payload: Prisma.$round2inputPayload<ExtArgs>
+        fields: Prisma.round2inputFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.round2inputFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.round2inputFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>
+          }
+          findFirst: {
+            args: Prisma.round2inputFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.round2inputFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>
+          }
+          findMany: {
+            args: Prisma.round2inputFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>[]
+          }
+          create: {
+            args: Prisma.round2inputCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>
+          }
+          createMany: {
+            args: Prisma.round2inputCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.round2inputCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>[]
+          }
+          delete: {
+            args: Prisma.round2inputDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>
+          }
+          update: {
+            args: Prisma.round2inputUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>
+          }
+          deleteMany: {
+            args: Prisma.round2inputDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.round2inputUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.round2inputUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>[]
+          }
+          upsert: {
+            args: Prisma.round2inputUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$round2inputPayload>
+          }
+          aggregate: {
+            args: Prisma.Round2inputAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRound2input>
+          }
+          groupBy: {
+            args: Prisma.round2inputGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Round2inputGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.round2inputCountArgs<ExtArgs>
+            result: $Utils.Optional<Round2inputCountAggregateOutputType> | number
+          }
+        }
+      }
+      freezeAllocation: {
+        payload: Prisma.$freezeAllocationPayload<ExtArgs>
+        fields: Prisma.freezeAllocationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.freezeAllocationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.freezeAllocationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>
+          }
+          findFirst: {
+            args: Prisma.freezeAllocationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.freezeAllocationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>
+          }
+          findMany: {
+            args: Prisma.freezeAllocationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>[]
+          }
+          create: {
+            args: Prisma.freezeAllocationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>
+          }
+          createMany: {
+            args: Prisma.freezeAllocationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.freezeAllocationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>[]
+          }
+          delete: {
+            args: Prisma.freezeAllocationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>
+          }
+          update: {
+            args: Prisma.freezeAllocationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>
+          }
+          deleteMany: {
+            args: Prisma.freezeAllocationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.freezeAllocationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.freezeAllocationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>[]
+          }
+          upsert: {
+            args: Prisma.freezeAllocationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$freezeAllocationPayload>
+          }
+          aggregate: {
+            args: Prisma.FreezeAllocationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFreezeAllocation>
+          }
+          groupBy: {
+            args: Prisma.freezeAllocationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FreezeAllocationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.freezeAllocationCountArgs<ExtArgs>
+            result: $Utils.Optional<FreezeAllocationCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1048,6 +1228,8 @@ export namespace Prisma {
     studentApplication?: StudentApplicationOmit
     seatMatrix?: SeatMatrixOmit
     allocatedSeat?: AllocatedSeatOmit
+    round2input?: round2inputOmit
+    freezeAllocation?: freezeAllocationOmit
   }
 
   /* Types for Logging */
@@ -2320,8 +2502,6 @@ export namespace Prisma {
     courseChoice6: string | null
     courseChoice7: string | null
     createdAt: Date | null
-    status: string | null
-    feesPaid: boolean | null
   }
 
   export type StudentApplicationMaxAggregateOutputType = {
@@ -2345,8 +2525,6 @@ export namespace Prisma {
     courseChoice6: string | null
     courseChoice7: string | null
     createdAt: Date | null
-    status: string | null
-    feesPaid: boolean | null
   }
 
   export type StudentApplicationCountAggregateOutputType = {
@@ -2370,8 +2548,6 @@ export namespace Prisma {
     courseChoice6: number
     courseChoice7: number
     createdAt: number
-    status: number
-    feesPaid: number
     _all: number
   }
 
@@ -2413,8 +2589,6 @@ export namespace Prisma {
     courseChoice6?: true
     courseChoice7?: true
     createdAt?: true
-    status?: true
-    feesPaid?: true
   }
 
   export type StudentApplicationMaxAggregateInputType = {
@@ -2438,8 +2612,6 @@ export namespace Prisma {
     courseChoice6?: true
     courseChoice7?: true
     createdAt?: true
-    status?: true
-    feesPaid?: true
   }
 
   export type StudentApplicationCountAggregateInputType = {
@@ -2463,8 +2635,6 @@ export namespace Prisma {
     courseChoice6?: true
     courseChoice7?: true
     createdAt?: true
-    status?: true
-    feesPaid?: true
     _all?: true
   }
 
@@ -2575,8 +2745,6 @@ export namespace Prisma {
     courseChoice6: string | null
     courseChoice7: string | null
     createdAt: Date
-    status: string | null
-    feesPaid: boolean | null
     _count: StudentApplicationCountAggregateOutputType | null
     _avg: StudentApplicationAvgAggregateOutputType | null
     _sum: StudentApplicationSumAggregateOutputType | null
@@ -2619,8 +2787,6 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
-    status?: boolean
-    feesPaid?: boolean
     allocations?: boolean | StudentApplication$allocationsArgs<ExtArgs>
     _count?: boolean | StudentApplicationCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["studentApplication"]>
@@ -2646,8 +2812,6 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
-    status?: boolean
-    feesPaid?: boolean
   }, ExtArgs["result"]["studentApplication"]>
 
   export type StudentApplicationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2671,8 +2835,6 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
-    status?: boolean
-    feesPaid?: boolean
   }, ExtArgs["result"]["studentApplication"]>
 
   export type StudentApplicationSelectScalar = {
@@ -2696,11 +2858,9 @@ export namespace Prisma {
     courseChoice6?: boolean
     courseChoice7?: boolean
     createdAt?: boolean
-    status?: boolean
-    feesPaid?: boolean
   }
 
-  export type StudentApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"applicationNumber" | "studentName" | "fatherMotherName" | "phoneNumber" | "email" | "jeeCRL" | "category" | "subCategory" | "categoryRank" | "sptMarks" | "cdpPriority" | "pwdRank" | "courseChoice1" | "courseChoice2" | "courseChoice3" | "courseChoice4" | "courseChoice5" | "courseChoice6" | "courseChoice7" | "createdAt" | "status" | "feesPaid", ExtArgs["result"]["studentApplication"]>
+  export type StudentApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"applicationNumber" | "studentName" | "fatherMotherName" | "phoneNumber" | "email" | "jeeCRL" | "category" | "subCategory" | "categoryRank" | "sptMarks" | "cdpPriority" | "pwdRank" | "courseChoice1" | "courseChoice2" | "courseChoice3" | "courseChoice4" | "courseChoice5" | "courseChoice6" | "courseChoice7" | "createdAt", ExtArgs["result"]["studentApplication"]>
   export type StudentApplicationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     allocations?: boolean | StudentApplication$allocationsArgs<ExtArgs>
     _count?: boolean | StudentApplicationCountOutputTypeDefaultArgs<ExtArgs>
@@ -2734,8 +2894,6 @@ export namespace Prisma {
       courseChoice6: string | null
       courseChoice7: string | null
       createdAt: Date
-      status: string | null
-      feesPaid: boolean | null
     }, ExtArgs["result"]["studentApplication"]>
     composites: {}
   }
@@ -3180,8 +3338,6 @@ export namespace Prisma {
     readonly courseChoice6: FieldRef<"StudentApplication", 'String'>
     readonly courseChoice7: FieldRef<"StudentApplication", 'String'>
     readonly createdAt: FieldRef<"StudentApplication", 'DateTime'>
-    readonly status: FieldRef<"StudentApplication", 'String'>
-    readonly feesPaid: FieldRef<"StudentApplication", 'Boolean'>
   }
     
 
@@ -4744,8 +4900,6 @@ export namespace Prisma {
     allocatedAt: Date | null
     choiceNumber: number | null
     jeeRank: number | null
-    status: string | null
-    feesPaid: boolean | null
   }
 
   export type AllocatedSeatMaxAggregateOutputType = {
@@ -4758,8 +4912,6 @@ export namespace Prisma {
     allocatedAt: Date | null
     choiceNumber: number | null
     jeeRank: number | null
-    status: string | null
-    feesPaid: boolean | null
   }
 
   export type AllocatedSeatCountAggregateOutputType = {
@@ -4772,8 +4924,6 @@ export namespace Prisma {
     allocatedAt: number
     choiceNumber: number
     jeeRank: number
-    status: number
-    feesPaid: number
     _all: number
   }
 
@@ -4802,8 +4952,6 @@ export namespace Prisma {
     allocatedAt?: true
     choiceNumber?: true
     jeeRank?: true
-    status?: true
-    feesPaid?: true
   }
 
   export type AllocatedSeatMaxAggregateInputType = {
@@ -4816,8 +4964,6 @@ export namespace Prisma {
     allocatedAt?: true
     choiceNumber?: true
     jeeRank?: true
-    status?: true
-    feesPaid?: true
   }
 
   export type AllocatedSeatCountAggregateInputType = {
@@ -4830,8 +4976,6 @@ export namespace Prisma {
     allocatedAt?: true
     choiceNumber?: true
     jeeRank?: true
-    status?: true
-    feesPaid?: true
     _all?: true
   }
 
@@ -4931,8 +5075,6 @@ export namespace Prisma {
     allocatedAt: Date
     choiceNumber: number
     jeeRank: number
-    status: string | null
-    feesPaid: boolean | null
     _count: AllocatedSeatCountAggregateOutputType | null
     _avg: AllocatedSeatAvgAggregateOutputType | null
     _sum: AllocatedSeatSumAggregateOutputType | null
@@ -4964,8 +5106,6 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    status?: boolean
-    feesPaid?: boolean
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["allocatedSeat"]>
@@ -4980,8 +5120,6 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    status?: boolean
-    feesPaid?: boolean
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["allocatedSeat"]>
@@ -4996,8 +5134,6 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    status?: boolean
-    feesPaid?: boolean
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["allocatedSeat"]>
@@ -5012,11 +5148,9 @@ export namespace Prisma {
     allocatedAt?: boolean
     choiceNumber?: boolean
     jeeRank?: boolean
-    status?: boolean
-    feesPaid?: boolean
   }
 
-  export type AllocatedSeatOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "studentId" | "departmentId" | "allocationRound" | "category" | "subCategory" | "allocatedAt" | "choiceNumber" | "jeeRank" | "status" | "feesPaid", ExtArgs["result"]["allocatedSeat"]>
+  export type AllocatedSeatOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "studentId" | "departmentId" | "allocationRound" | "category" | "subCategory" | "allocatedAt" | "choiceNumber" | "jeeRank", ExtArgs["result"]["allocatedSeat"]>
   export type AllocatedSeatInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     student?: boolean | StudentApplicationDefaultArgs<ExtArgs>
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
@@ -5046,8 +5180,6 @@ export namespace Prisma {
       allocatedAt: Date
       choiceNumber: number
       jeeRank: number
-      status: string | null
-      feesPaid: boolean | null
     }, ExtArgs["result"]["allocatedSeat"]>
     composites: {}
   }
@@ -5482,8 +5614,6 @@ export namespace Prisma {
     readonly allocatedAt: FieldRef<"AllocatedSeat", 'DateTime'>
     readonly choiceNumber: FieldRef<"AllocatedSeat", 'Int'>
     readonly jeeRank: FieldRef<"AllocatedSeat", 'Int'>
-    readonly status: FieldRef<"AllocatedSeat", 'String'>
-    readonly feesPaid: FieldRef<"AllocatedSeat", 'Boolean'>
   }
     
 
@@ -5899,6 +6029,2218 @@ export namespace Prisma {
 
 
   /**
+   * Model round2input
+   */
+
+  export type AggregateRound2input = {
+    _count: Round2inputCountAggregateOutputType | null
+    _avg: Round2inputAvgAggregateOutputType | null
+    _sum: Round2inputSumAggregateOutputType | null
+    _min: Round2inputMinAggregateOutputType | null
+    _max: Round2inputMaxAggregateOutputType | null
+  }
+
+  export type Round2inputAvgAggregateOutputType = {
+    id: number | null
+    allocationRound: number | null
+    choiceNumber: number | null
+    jeeRank: number | null
+  }
+
+  export type Round2inputSumAggregateOutputType = {
+    id: number | null
+    allocationRound: number | null
+    choiceNumber: number | null
+    jeeRank: number | null
+  }
+
+  export type Round2inputMinAggregateOutputType = {
+    id: number | null
+    studentId: string | null
+    departmentId: string | null
+    allocationRound: number | null
+    category: string | null
+    subCategory: string | null
+    allocatedAt: Date | null
+    choiceNumber: number | null
+    jeeRank: number | null
+    status: string | null
+    feesPaid: boolean | null
+  }
+
+  export type Round2inputMaxAggregateOutputType = {
+    id: number | null
+    studentId: string | null
+    departmentId: string | null
+    allocationRound: number | null
+    category: string | null
+    subCategory: string | null
+    allocatedAt: Date | null
+    choiceNumber: number | null
+    jeeRank: number | null
+    status: string | null
+    feesPaid: boolean | null
+  }
+
+  export type Round2inputCountAggregateOutputType = {
+    id: number
+    studentId: number
+    departmentId: number
+    allocationRound: number
+    category: number
+    subCategory: number
+    allocatedAt: number
+    choiceNumber: number
+    jeeRank: number
+    status: number
+    feesPaid: number
+    _all: number
+  }
+
+
+  export type Round2inputAvgAggregateInputType = {
+    id?: true
+    allocationRound?: true
+    choiceNumber?: true
+    jeeRank?: true
+  }
+
+  export type Round2inputSumAggregateInputType = {
+    id?: true
+    allocationRound?: true
+    choiceNumber?: true
+    jeeRank?: true
+  }
+
+  export type Round2inputMinAggregateInputType = {
+    id?: true
+    studentId?: true
+    departmentId?: true
+    allocationRound?: true
+    category?: true
+    subCategory?: true
+    allocatedAt?: true
+    choiceNumber?: true
+    jeeRank?: true
+    status?: true
+    feesPaid?: true
+  }
+
+  export type Round2inputMaxAggregateInputType = {
+    id?: true
+    studentId?: true
+    departmentId?: true
+    allocationRound?: true
+    category?: true
+    subCategory?: true
+    allocatedAt?: true
+    choiceNumber?: true
+    jeeRank?: true
+    status?: true
+    feesPaid?: true
+  }
+
+  export type Round2inputCountAggregateInputType = {
+    id?: true
+    studentId?: true
+    departmentId?: true
+    allocationRound?: true
+    category?: true
+    subCategory?: true
+    allocatedAt?: true
+    choiceNumber?: true
+    jeeRank?: true
+    status?: true
+    feesPaid?: true
+    _all?: true
+  }
+
+  export type Round2inputAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which round2input to aggregate.
+     */
+    where?: round2inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of round2inputs to fetch.
+     */
+    orderBy?: round2inputOrderByWithRelationInput | round2inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: round2inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` round2inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` round2inputs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned round2inputs
+    **/
+    _count?: true | Round2inputCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Round2inputAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Round2inputSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Round2inputMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Round2inputMaxAggregateInputType
+  }
+
+  export type GetRound2inputAggregateType<T extends Round2inputAggregateArgs> = {
+        [P in keyof T & keyof AggregateRound2input]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRound2input[P]>
+      : GetScalarType<T[P], AggregateRound2input[P]>
+  }
+
+
+
+
+  export type round2inputGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: round2inputWhereInput
+    orderBy?: round2inputOrderByWithAggregationInput | round2inputOrderByWithAggregationInput[]
+    by: Round2inputScalarFieldEnum[] | Round2inputScalarFieldEnum
+    having?: round2inputScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Round2inputCountAggregateInputType | true
+    _avg?: Round2inputAvgAggregateInputType
+    _sum?: Round2inputSumAggregateInputType
+    _min?: Round2inputMinAggregateInputType
+    _max?: Round2inputMaxAggregateInputType
+  }
+
+  export type Round2inputGroupByOutputType = {
+    id: number
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory: string | null
+    allocatedAt: Date
+    choiceNumber: number
+    jeeRank: number
+    status: string
+    feesPaid: boolean | null
+    _count: Round2inputCountAggregateOutputType | null
+    _avg: Round2inputAvgAggregateOutputType | null
+    _sum: Round2inputSumAggregateOutputType | null
+    _min: Round2inputMinAggregateOutputType | null
+    _max: Round2inputMaxAggregateOutputType | null
+  }
+
+  type GetRound2inputGroupByPayload<T extends round2inputGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Round2inputGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Round2inputGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Round2inputGroupByOutputType[P]>
+            : GetScalarType<T[P], Round2inputGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type round2inputSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }, ExtArgs["result"]["round2input"]>
+
+  export type round2inputSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }, ExtArgs["result"]["round2input"]>
+
+  export type round2inputSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }, ExtArgs["result"]["round2input"]>
+
+  export type round2inputSelectScalar = {
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }
+
+  export type round2inputOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "studentId" | "departmentId" | "allocationRound" | "category" | "subCategory" | "allocatedAt" | "choiceNumber" | "jeeRank" | "status" | "feesPaid", ExtArgs["result"]["round2input"]>
+
+  export type $round2inputPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "round2input"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      studentId: string
+      departmentId: string
+      allocationRound: number
+      category: string
+      subCategory: string | null
+      allocatedAt: Date
+      choiceNumber: number
+      jeeRank: number
+      status: string
+      feesPaid: boolean | null
+    }, ExtArgs["result"]["round2input"]>
+    composites: {}
+  }
+
+  type round2inputGetPayload<S extends boolean | null | undefined | round2inputDefaultArgs> = $Result.GetResult<Prisma.$round2inputPayload, S>
+
+  type round2inputCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<round2inputFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Round2inputCountAggregateInputType | true
+    }
+
+  export interface round2inputDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['round2input'], meta: { name: 'round2input' } }
+    /**
+     * Find zero or one Round2input that matches the filter.
+     * @param {round2inputFindUniqueArgs} args - Arguments to find a Round2input
+     * @example
+     * // Get one Round2input
+     * const round2input = await prisma.round2input.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends round2inputFindUniqueArgs>(args: SelectSubset<T, round2inputFindUniqueArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Round2input that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {round2inputFindUniqueOrThrowArgs} args - Arguments to find a Round2input
+     * @example
+     * // Get one Round2input
+     * const round2input = await prisma.round2input.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends round2inputFindUniqueOrThrowArgs>(args: SelectSubset<T, round2inputFindUniqueOrThrowArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Round2input that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {round2inputFindFirstArgs} args - Arguments to find a Round2input
+     * @example
+     * // Get one Round2input
+     * const round2input = await prisma.round2input.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends round2inputFindFirstArgs>(args?: SelectSubset<T, round2inputFindFirstArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Round2input that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {round2inputFindFirstOrThrowArgs} args - Arguments to find a Round2input
+     * @example
+     * // Get one Round2input
+     * const round2input = await prisma.round2input.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends round2inputFindFirstOrThrowArgs>(args?: SelectSubset<T, round2inputFindFirstOrThrowArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Round2inputs that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {round2inputFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Round2inputs
+     * const round2inputs = await prisma.round2input.findMany()
+     * 
+     * // Get first 10 Round2inputs
+     * const round2inputs = await prisma.round2input.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const round2inputWithIdOnly = await prisma.round2input.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends round2inputFindManyArgs>(args?: SelectSubset<T, round2inputFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Round2input.
+     * @param {round2inputCreateArgs} args - Arguments to create a Round2input.
+     * @example
+     * // Create one Round2input
+     * const Round2input = await prisma.round2input.create({
+     *   data: {
+     *     // ... data to create a Round2input
+     *   }
+     * })
+     * 
+     */
+    create<T extends round2inputCreateArgs>(args: SelectSubset<T, round2inputCreateArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Round2inputs.
+     * @param {round2inputCreateManyArgs} args - Arguments to create many Round2inputs.
+     * @example
+     * // Create many Round2inputs
+     * const round2input = await prisma.round2input.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends round2inputCreateManyArgs>(args?: SelectSubset<T, round2inputCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Round2inputs and returns the data saved in the database.
+     * @param {round2inputCreateManyAndReturnArgs} args - Arguments to create many Round2inputs.
+     * @example
+     * // Create many Round2inputs
+     * const round2input = await prisma.round2input.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Round2inputs and only return the `id`
+     * const round2inputWithIdOnly = await prisma.round2input.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends round2inputCreateManyAndReturnArgs>(args?: SelectSubset<T, round2inputCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Round2input.
+     * @param {round2inputDeleteArgs} args - Arguments to delete one Round2input.
+     * @example
+     * // Delete one Round2input
+     * const Round2input = await prisma.round2input.delete({
+     *   where: {
+     *     // ... filter to delete one Round2input
+     *   }
+     * })
+     * 
+     */
+    delete<T extends round2inputDeleteArgs>(args: SelectSubset<T, round2inputDeleteArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Round2input.
+     * @param {round2inputUpdateArgs} args - Arguments to update one Round2input.
+     * @example
+     * // Update one Round2input
+     * const round2input = await prisma.round2input.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends round2inputUpdateArgs>(args: SelectSubset<T, round2inputUpdateArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Round2inputs.
+     * @param {round2inputDeleteManyArgs} args - Arguments to filter Round2inputs to delete.
+     * @example
+     * // Delete a few Round2inputs
+     * const { count } = await prisma.round2input.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends round2inputDeleteManyArgs>(args?: SelectSubset<T, round2inputDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Round2inputs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {round2inputUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Round2inputs
+     * const round2input = await prisma.round2input.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends round2inputUpdateManyArgs>(args: SelectSubset<T, round2inputUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Round2inputs and returns the data updated in the database.
+     * @param {round2inputUpdateManyAndReturnArgs} args - Arguments to update many Round2inputs.
+     * @example
+     * // Update many Round2inputs
+     * const round2input = await prisma.round2input.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Round2inputs and only return the `id`
+     * const round2inputWithIdOnly = await prisma.round2input.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends round2inputUpdateManyAndReturnArgs>(args: SelectSubset<T, round2inputUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Round2input.
+     * @param {round2inputUpsertArgs} args - Arguments to update or create a Round2input.
+     * @example
+     * // Update or create a Round2input
+     * const round2input = await prisma.round2input.upsert({
+     *   create: {
+     *     // ... data to create a Round2input
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Round2input we want to update
+     *   }
+     * })
+     */
+    upsert<T extends round2inputUpsertArgs>(args: SelectSubset<T, round2inputUpsertArgs<ExtArgs>>): Prisma__round2inputClient<$Result.GetResult<Prisma.$round2inputPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Round2inputs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {round2inputCountArgs} args - Arguments to filter Round2inputs to count.
+     * @example
+     * // Count the number of Round2inputs
+     * const count = await prisma.round2input.count({
+     *   where: {
+     *     // ... the filter for the Round2inputs we want to count
+     *   }
+     * })
+    **/
+    count<T extends round2inputCountArgs>(
+      args?: Subset<T, round2inputCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Round2inputCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Round2input.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Round2inputAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Round2inputAggregateArgs>(args: Subset<T, Round2inputAggregateArgs>): Prisma.PrismaPromise<GetRound2inputAggregateType<T>>
+
+    /**
+     * Group by Round2input.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {round2inputGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends round2inputGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: round2inputGroupByArgs['orderBy'] }
+        : { orderBy?: round2inputGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, round2inputGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRound2inputGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the round2input model
+   */
+  readonly fields: round2inputFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for round2input.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__round2inputClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the round2input model
+   */
+  interface round2inputFieldRefs {
+    readonly id: FieldRef<"round2input", 'Int'>
+    readonly studentId: FieldRef<"round2input", 'String'>
+    readonly departmentId: FieldRef<"round2input", 'String'>
+    readonly allocationRound: FieldRef<"round2input", 'Int'>
+    readonly category: FieldRef<"round2input", 'String'>
+    readonly subCategory: FieldRef<"round2input", 'String'>
+    readonly allocatedAt: FieldRef<"round2input", 'DateTime'>
+    readonly choiceNumber: FieldRef<"round2input", 'Int'>
+    readonly jeeRank: FieldRef<"round2input", 'Int'>
+    readonly status: FieldRef<"round2input", 'String'>
+    readonly feesPaid: FieldRef<"round2input", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * round2input findUnique
+   */
+  export type round2inputFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * Filter, which round2input to fetch.
+     */
+    where: round2inputWhereUniqueInput
+  }
+
+  /**
+   * round2input findUniqueOrThrow
+   */
+  export type round2inputFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * Filter, which round2input to fetch.
+     */
+    where: round2inputWhereUniqueInput
+  }
+
+  /**
+   * round2input findFirst
+   */
+  export type round2inputFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * Filter, which round2input to fetch.
+     */
+    where?: round2inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of round2inputs to fetch.
+     */
+    orderBy?: round2inputOrderByWithRelationInput | round2inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for round2inputs.
+     */
+    cursor?: round2inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` round2inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` round2inputs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of round2inputs.
+     */
+    distinct?: Round2inputScalarFieldEnum | Round2inputScalarFieldEnum[]
+  }
+
+  /**
+   * round2input findFirstOrThrow
+   */
+  export type round2inputFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * Filter, which round2input to fetch.
+     */
+    where?: round2inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of round2inputs to fetch.
+     */
+    orderBy?: round2inputOrderByWithRelationInput | round2inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for round2inputs.
+     */
+    cursor?: round2inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` round2inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` round2inputs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of round2inputs.
+     */
+    distinct?: Round2inputScalarFieldEnum | Round2inputScalarFieldEnum[]
+  }
+
+  /**
+   * round2input findMany
+   */
+  export type round2inputFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * Filter, which round2inputs to fetch.
+     */
+    where?: round2inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of round2inputs to fetch.
+     */
+    orderBy?: round2inputOrderByWithRelationInput | round2inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing round2inputs.
+     */
+    cursor?: round2inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` round2inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` round2inputs.
+     */
+    skip?: number
+    distinct?: Round2inputScalarFieldEnum | Round2inputScalarFieldEnum[]
+  }
+
+  /**
+   * round2input create
+   */
+  export type round2inputCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * The data needed to create a round2input.
+     */
+    data: XOR<round2inputCreateInput, round2inputUncheckedCreateInput>
+  }
+
+  /**
+   * round2input createMany
+   */
+  export type round2inputCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many round2inputs.
+     */
+    data: round2inputCreateManyInput | round2inputCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * round2input createManyAndReturn
+   */
+  export type round2inputCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * The data used to create many round2inputs.
+     */
+    data: round2inputCreateManyInput | round2inputCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * round2input update
+   */
+  export type round2inputUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * The data needed to update a round2input.
+     */
+    data: XOR<round2inputUpdateInput, round2inputUncheckedUpdateInput>
+    /**
+     * Choose, which round2input to update.
+     */
+    where: round2inputWhereUniqueInput
+  }
+
+  /**
+   * round2input updateMany
+   */
+  export type round2inputUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update round2inputs.
+     */
+    data: XOR<round2inputUpdateManyMutationInput, round2inputUncheckedUpdateManyInput>
+    /**
+     * Filter which round2inputs to update
+     */
+    where?: round2inputWhereInput
+    /**
+     * Limit how many round2inputs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * round2input updateManyAndReturn
+   */
+  export type round2inputUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * The data used to update round2inputs.
+     */
+    data: XOR<round2inputUpdateManyMutationInput, round2inputUncheckedUpdateManyInput>
+    /**
+     * Filter which round2inputs to update
+     */
+    where?: round2inputWhereInput
+    /**
+     * Limit how many round2inputs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * round2input upsert
+   */
+  export type round2inputUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * The filter to search for the round2input to update in case it exists.
+     */
+    where: round2inputWhereUniqueInput
+    /**
+     * In case the round2input found by the `where` argument doesn't exist, create a new round2input with this data.
+     */
+    create: XOR<round2inputCreateInput, round2inputUncheckedCreateInput>
+    /**
+     * In case the round2input was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<round2inputUpdateInput, round2inputUncheckedUpdateInput>
+  }
+
+  /**
+   * round2input delete
+   */
+  export type round2inputDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+    /**
+     * Filter which round2input to delete.
+     */
+    where: round2inputWhereUniqueInput
+  }
+
+  /**
+   * round2input deleteMany
+   */
+  export type round2inputDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which round2inputs to delete
+     */
+    where?: round2inputWhereInput
+    /**
+     * Limit how many round2inputs to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * round2input without action
+   */
+  export type round2inputDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the round2input
+     */
+    select?: round2inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the round2input
+     */
+    omit?: round2inputOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model freezeAllocation
+   */
+
+  export type AggregateFreezeAllocation = {
+    _count: FreezeAllocationCountAggregateOutputType | null
+    _avg: FreezeAllocationAvgAggregateOutputType | null
+    _sum: FreezeAllocationSumAggregateOutputType | null
+    _min: FreezeAllocationMinAggregateOutputType | null
+    _max: FreezeAllocationMaxAggregateOutputType | null
+  }
+
+  export type FreezeAllocationAvgAggregateOutputType = {
+    id: number | null
+    allocationRound: number | null
+    choiceNumber: number | null
+    jeeRank: number | null
+  }
+
+  export type FreezeAllocationSumAggregateOutputType = {
+    id: number | null
+    allocationRound: number | null
+    choiceNumber: number | null
+    jeeRank: number | null
+  }
+
+  export type FreezeAllocationMinAggregateOutputType = {
+    id: number | null
+    studentId: string | null
+    departmentId: string | null
+    allocationRound: number | null
+    category: string | null
+    subCategory: string | null
+    allocatedAt: Date | null
+    choiceNumber: number | null
+    jeeRank: number | null
+  }
+
+  export type FreezeAllocationMaxAggregateOutputType = {
+    id: number | null
+    studentId: string | null
+    departmentId: string | null
+    allocationRound: number | null
+    category: string | null
+    subCategory: string | null
+    allocatedAt: Date | null
+    choiceNumber: number | null
+    jeeRank: number | null
+  }
+
+  export type FreezeAllocationCountAggregateOutputType = {
+    id: number
+    studentId: number
+    departmentId: number
+    allocationRound: number
+    category: number
+    subCategory: number
+    allocatedAt: number
+    choiceNumber: number
+    jeeRank: number
+    _all: number
+  }
+
+
+  export type FreezeAllocationAvgAggregateInputType = {
+    id?: true
+    allocationRound?: true
+    choiceNumber?: true
+    jeeRank?: true
+  }
+
+  export type FreezeAllocationSumAggregateInputType = {
+    id?: true
+    allocationRound?: true
+    choiceNumber?: true
+    jeeRank?: true
+  }
+
+  export type FreezeAllocationMinAggregateInputType = {
+    id?: true
+    studentId?: true
+    departmentId?: true
+    allocationRound?: true
+    category?: true
+    subCategory?: true
+    allocatedAt?: true
+    choiceNumber?: true
+    jeeRank?: true
+  }
+
+  export type FreezeAllocationMaxAggregateInputType = {
+    id?: true
+    studentId?: true
+    departmentId?: true
+    allocationRound?: true
+    category?: true
+    subCategory?: true
+    allocatedAt?: true
+    choiceNumber?: true
+    jeeRank?: true
+  }
+
+  export type FreezeAllocationCountAggregateInputType = {
+    id?: true
+    studentId?: true
+    departmentId?: true
+    allocationRound?: true
+    category?: true
+    subCategory?: true
+    allocatedAt?: true
+    choiceNumber?: true
+    jeeRank?: true
+    _all?: true
+  }
+
+  export type FreezeAllocationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which freezeAllocation to aggregate.
+     */
+    where?: freezeAllocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of freezeAllocations to fetch.
+     */
+    orderBy?: freezeAllocationOrderByWithRelationInput | freezeAllocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: freezeAllocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` freezeAllocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` freezeAllocations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned freezeAllocations
+    **/
+    _count?: true | FreezeAllocationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FreezeAllocationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FreezeAllocationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FreezeAllocationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FreezeAllocationMaxAggregateInputType
+  }
+
+  export type GetFreezeAllocationAggregateType<T extends FreezeAllocationAggregateArgs> = {
+        [P in keyof T & keyof AggregateFreezeAllocation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFreezeAllocation[P]>
+      : GetScalarType<T[P], AggregateFreezeAllocation[P]>
+  }
+
+
+
+
+  export type freezeAllocationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: freezeAllocationWhereInput
+    orderBy?: freezeAllocationOrderByWithAggregationInput | freezeAllocationOrderByWithAggregationInput[]
+    by: FreezeAllocationScalarFieldEnum[] | FreezeAllocationScalarFieldEnum
+    having?: freezeAllocationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FreezeAllocationCountAggregateInputType | true
+    _avg?: FreezeAllocationAvgAggregateInputType
+    _sum?: FreezeAllocationSumAggregateInputType
+    _min?: FreezeAllocationMinAggregateInputType
+    _max?: FreezeAllocationMaxAggregateInputType
+  }
+
+  export type FreezeAllocationGroupByOutputType = {
+    id: number
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory: string | null
+    allocatedAt: Date
+    choiceNumber: number
+    jeeRank: number
+    _count: FreezeAllocationCountAggregateOutputType | null
+    _avg: FreezeAllocationAvgAggregateOutputType | null
+    _sum: FreezeAllocationSumAggregateOutputType | null
+    _min: FreezeAllocationMinAggregateOutputType | null
+    _max: FreezeAllocationMaxAggregateOutputType | null
+  }
+
+  type GetFreezeAllocationGroupByPayload<T extends freezeAllocationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FreezeAllocationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FreezeAllocationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FreezeAllocationGroupByOutputType[P]>
+            : GetScalarType<T[P], FreezeAllocationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type freezeAllocationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+  }, ExtArgs["result"]["freezeAllocation"]>
+
+  export type freezeAllocationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+  }, ExtArgs["result"]["freezeAllocation"]>
+
+  export type freezeAllocationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+  }, ExtArgs["result"]["freezeAllocation"]>
+
+  export type freezeAllocationSelectScalar = {
+    id?: boolean
+    studentId?: boolean
+    departmentId?: boolean
+    allocationRound?: boolean
+    category?: boolean
+    subCategory?: boolean
+    allocatedAt?: boolean
+    choiceNumber?: boolean
+    jeeRank?: boolean
+  }
+
+  export type freezeAllocationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "studentId" | "departmentId" | "allocationRound" | "category" | "subCategory" | "allocatedAt" | "choiceNumber" | "jeeRank", ExtArgs["result"]["freezeAllocation"]>
+
+  export type $freezeAllocationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "freezeAllocation"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      studentId: string
+      departmentId: string
+      allocationRound: number
+      category: string
+      subCategory: string | null
+      allocatedAt: Date
+      choiceNumber: number
+      jeeRank: number
+    }, ExtArgs["result"]["freezeAllocation"]>
+    composites: {}
+  }
+
+  type freezeAllocationGetPayload<S extends boolean | null | undefined | freezeAllocationDefaultArgs> = $Result.GetResult<Prisma.$freezeAllocationPayload, S>
+
+  type freezeAllocationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<freezeAllocationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FreezeAllocationCountAggregateInputType | true
+    }
+
+  export interface freezeAllocationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['freezeAllocation'], meta: { name: 'freezeAllocation' } }
+    /**
+     * Find zero or one FreezeAllocation that matches the filter.
+     * @param {freezeAllocationFindUniqueArgs} args - Arguments to find a FreezeAllocation
+     * @example
+     * // Get one FreezeAllocation
+     * const freezeAllocation = await prisma.freezeAllocation.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends freezeAllocationFindUniqueArgs>(args: SelectSubset<T, freezeAllocationFindUniqueArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FreezeAllocation that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {freezeAllocationFindUniqueOrThrowArgs} args - Arguments to find a FreezeAllocation
+     * @example
+     * // Get one FreezeAllocation
+     * const freezeAllocation = await prisma.freezeAllocation.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends freezeAllocationFindUniqueOrThrowArgs>(args: SelectSubset<T, freezeAllocationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FreezeAllocation that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {freezeAllocationFindFirstArgs} args - Arguments to find a FreezeAllocation
+     * @example
+     * // Get one FreezeAllocation
+     * const freezeAllocation = await prisma.freezeAllocation.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends freezeAllocationFindFirstArgs>(args?: SelectSubset<T, freezeAllocationFindFirstArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FreezeAllocation that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {freezeAllocationFindFirstOrThrowArgs} args - Arguments to find a FreezeAllocation
+     * @example
+     * // Get one FreezeAllocation
+     * const freezeAllocation = await prisma.freezeAllocation.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends freezeAllocationFindFirstOrThrowArgs>(args?: SelectSubset<T, freezeAllocationFindFirstOrThrowArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FreezeAllocations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {freezeAllocationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FreezeAllocations
+     * const freezeAllocations = await prisma.freezeAllocation.findMany()
+     * 
+     * // Get first 10 FreezeAllocations
+     * const freezeAllocations = await prisma.freezeAllocation.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const freezeAllocationWithIdOnly = await prisma.freezeAllocation.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends freezeAllocationFindManyArgs>(args?: SelectSubset<T, freezeAllocationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FreezeAllocation.
+     * @param {freezeAllocationCreateArgs} args - Arguments to create a FreezeAllocation.
+     * @example
+     * // Create one FreezeAllocation
+     * const FreezeAllocation = await prisma.freezeAllocation.create({
+     *   data: {
+     *     // ... data to create a FreezeAllocation
+     *   }
+     * })
+     * 
+     */
+    create<T extends freezeAllocationCreateArgs>(args: SelectSubset<T, freezeAllocationCreateArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FreezeAllocations.
+     * @param {freezeAllocationCreateManyArgs} args - Arguments to create many FreezeAllocations.
+     * @example
+     * // Create many FreezeAllocations
+     * const freezeAllocation = await prisma.freezeAllocation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends freezeAllocationCreateManyArgs>(args?: SelectSubset<T, freezeAllocationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FreezeAllocations and returns the data saved in the database.
+     * @param {freezeAllocationCreateManyAndReturnArgs} args - Arguments to create many FreezeAllocations.
+     * @example
+     * // Create many FreezeAllocations
+     * const freezeAllocation = await prisma.freezeAllocation.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FreezeAllocations and only return the `id`
+     * const freezeAllocationWithIdOnly = await prisma.freezeAllocation.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends freezeAllocationCreateManyAndReturnArgs>(args?: SelectSubset<T, freezeAllocationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FreezeAllocation.
+     * @param {freezeAllocationDeleteArgs} args - Arguments to delete one FreezeAllocation.
+     * @example
+     * // Delete one FreezeAllocation
+     * const FreezeAllocation = await prisma.freezeAllocation.delete({
+     *   where: {
+     *     // ... filter to delete one FreezeAllocation
+     *   }
+     * })
+     * 
+     */
+    delete<T extends freezeAllocationDeleteArgs>(args: SelectSubset<T, freezeAllocationDeleteArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FreezeAllocation.
+     * @param {freezeAllocationUpdateArgs} args - Arguments to update one FreezeAllocation.
+     * @example
+     * // Update one FreezeAllocation
+     * const freezeAllocation = await prisma.freezeAllocation.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends freezeAllocationUpdateArgs>(args: SelectSubset<T, freezeAllocationUpdateArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FreezeAllocations.
+     * @param {freezeAllocationDeleteManyArgs} args - Arguments to filter FreezeAllocations to delete.
+     * @example
+     * // Delete a few FreezeAllocations
+     * const { count } = await prisma.freezeAllocation.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends freezeAllocationDeleteManyArgs>(args?: SelectSubset<T, freezeAllocationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FreezeAllocations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {freezeAllocationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FreezeAllocations
+     * const freezeAllocation = await prisma.freezeAllocation.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends freezeAllocationUpdateManyArgs>(args: SelectSubset<T, freezeAllocationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FreezeAllocations and returns the data updated in the database.
+     * @param {freezeAllocationUpdateManyAndReturnArgs} args - Arguments to update many FreezeAllocations.
+     * @example
+     * // Update many FreezeAllocations
+     * const freezeAllocation = await prisma.freezeAllocation.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FreezeAllocations and only return the `id`
+     * const freezeAllocationWithIdOnly = await prisma.freezeAllocation.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends freezeAllocationUpdateManyAndReturnArgs>(args: SelectSubset<T, freezeAllocationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FreezeAllocation.
+     * @param {freezeAllocationUpsertArgs} args - Arguments to update or create a FreezeAllocation.
+     * @example
+     * // Update or create a FreezeAllocation
+     * const freezeAllocation = await prisma.freezeAllocation.upsert({
+     *   create: {
+     *     // ... data to create a FreezeAllocation
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FreezeAllocation we want to update
+     *   }
+     * })
+     */
+    upsert<T extends freezeAllocationUpsertArgs>(args: SelectSubset<T, freezeAllocationUpsertArgs<ExtArgs>>): Prisma__freezeAllocationClient<$Result.GetResult<Prisma.$freezeAllocationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FreezeAllocations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {freezeAllocationCountArgs} args - Arguments to filter FreezeAllocations to count.
+     * @example
+     * // Count the number of FreezeAllocations
+     * const count = await prisma.freezeAllocation.count({
+     *   where: {
+     *     // ... the filter for the FreezeAllocations we want to count
+     *   }
+     * })
+    **/
+    count<T extends freezeAllocationCountArgs>(
+      args?: Subset<T, freezeAllocationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FreezeAllocationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FreezeAllocation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FreezeAllocationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FreezeAllocationAggregateArgs>(args: Subset<T, FreezeAllocationAggregateArgs>): Prisma.PrismaPromise<GetFreezeAllocationAggregateType<T>>
+
+    /**
+     * Group by FreezeAllocation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {freezeAllocationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends freezeAllocationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: freezeAllocationGroupByArgs['orderBy'] }
+        : { orderBy?: freezeAllocationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, freezeAllocationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFreezeAllocationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the freezeAllocation model
+   */
+  readonly fields: freezeAllocationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for freezeAllocation.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__freezeAllocationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the freezeAllocation model
+   */
+  interface freezeAllocationFieldRefs {
+    readonly id: FieldRef<"freezeAllocation", 'Int'>
+    readonly studentId: FieldRef<"freezeAllocation", 'String'>
+    readonly departmentId: FieldRef<"freezeAllocation", 'String'>
+    readonly allocationRound: FieldRef<"freezeAllocation", 'Int'>
+    readonly category: FieldRef<"freezeAllocation", 'String'>
+    readonly subCategory: FieldRef<"freezeAllocation", 'String'>
+    readonly allocatedAt: FieldRef<"freezeAllocation", 'DateTime'>
+    readonly choiceNumber: FieldRef<"freezeAllocation", 'Int'>
+    readonly jeeRank: FieldRef<"freezeAllocation", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * freezeAllocation findUnique
+   */
+  export type freezeAllocationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * Filter, which freezeAllocation to fetch.
+     */
+    where: freezeAllocationWhereUniqueInput
+  }
+
+  /**
+   * freezeAllocation findUniqueOrThrow
+   */
+  export type freezeAllocationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * Filter, which freezeAllocation to fetch.
+     */
+    where: freezeAllocationWhereUniqueInput
+  }
+
+  /**
+   * freezeAllocation findFirst
+   */
+  export type freezeAllocationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * Filter, which freezeAllocation to fetch.
+     */
+    where?: freezeAllocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of freezeAllocations to fetch.
+     */
+    orderBy?: freezeAllocationOrderByWithRelationInput | freezeAllocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for freezeAllocations.
+     */
+    cursor?: freezeAllocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` freezeAllocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` freezeAllocations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of freezeAllocations.
+     */
+    distinct?: FreezeAllocationScalarFieldEnum | FreezeAllocationScalarFieldEnum[]
+  }
+
+  /**
+   * freezeAllocation findFirstOrThrow
+   */
+  export type freezeAllocationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * Filter, which freezeAllocation to fetch.
+     */
+    where?: freezeAllocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of freezeAllocations to fetch.
+     */
+    orderBy?: freezeAllocationOrderByWithRelationInput | freezeAllocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for freezeAllocations.
+     */
+    cursor?: freezeAllocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` freezeAllocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` freezeAllocations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of freezeAllocations.
+     */
+    distinct?: FreezeAllocationScalarFieldEnum | FreezeAllocationScalarFieldEnum[]
+  }
+
+  /**
+   * freezeAllocation findMany
+   */
+  export type freezeAllocationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * Filter, which freezeAllocations to fetch.
+     */
+    where?: freezeAllocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of freezeAllocations to fetch.
+     */
+    orderBy?: freezeAllocationOrderByWithRelationInput | freezeAllocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing freezeAllocations.
+     */
+    cursor?: freezeAllocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` freezeAllocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` freezeAllocations.
+     */
+    skip?: number
+    distinct?: FreezeAllocationScalarFieldEnum | FreezeAllocationScalarFieldEnum[]
+  }
+
+  /**
+   * freezeAllocation create
+   */
+  export type freezeAllocationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * The data needed to create a freezeAllocation.
+     */
+    data: XOR<freezeAllocationCreateInput, freezeAllocationUncheckedCreateInput>
+  }
+
+  /**
+   * freezeAllocation createMany
+   */
+  export type freezeAllocationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many freezeAllocations.
+     */
+    data: freezeAllocationCreateManyInput | freezeAllocationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * freezeAllocation createManyAndReturn
+   */
+  export type freezeAllocationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * The data used to create many freezeAllocations.
+     */
+    data: freezeAllocationCreateManyInput | freezeAllocationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * freezeAllocation update
+   */
+  export type freezeAllocationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * The data needed to update a freezeAllocation.
+     */
+    data: XOR<freezeAllocationUpdateInput, freezeAllocationUncheckedUpdateInput>
+    /**
+     * Choose, which freezeAllocation to update.
+     */
+    where: freezeAllocationWhereUniqueInput
+  }
+
+  /**
+   * freezeAllocation updateMany
+   */
+  export type freezeAllocationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update freezeAllocations.
+     */
+    data: XOR<freezeAllocationUpdateManyMutationInput, freezeAllocationUncheckedUpdateManyInput>
+    /**
+     * Filter which freezeAllocations to update
+     */
+    where?: freezeAllocationWhereInput
+    /**
+     * Limit how many freezeAllocations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * freezeAllocation updateManyAndReturn
+   */
+  export type freezeAllocationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * The data used to update freezeAllocations.
+     */
+    data: XOR<freezeAllocationUpdateManyMutationInput, freezeAllocationUncheckedUpdateManyInput>
+    /**
+     * Filter which freezeAllocations to update
+     */
+    where?: freezeAllocationWhereInput
+    /**
+     * Limit how many freezeAllocations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * freezeAllocation upsert
+   */
+  export type freezeAllocationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * The filter to search for the freezeAllocation to update in case it exists.
+     */
+    where: freezeAllocationWhereUniqueInput
+    /**
+     * In case the freezeAllocation found by the `where` argument doesn't exist, create a new freezeAllocation with this data.
+     */
+    create: XOR<freezeAllocationCreateInput, freezeAllocationUncheckedCreateInput>
+    /**
+     * In case the freezeAllocation was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<freezeAllocationUpdateInput, freezeAllocationUncheckedUpdateInput>
+  }
+
+  /**
+   * freezeAllocation delete
+   */
+  export type freezeAllocationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+    /**
+     * Filter which freezeAllocation to delete.
+     */
+    where: freezeAllocationWhereUniqueInput
+  }
+
+  /**
+   * freezeAllocation deleteMany
+   */
+  export type freezeAllocationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which freezeAllocations to delete
+     */
+    where?: freezeAllocationWhereInput
+    /**
+     * Limit how many freezeAllocations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * freezeAllocation without action
+   */
+  export type freezeAllocationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the freezeAllocation
+     */
+    select?: freezeAllocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the freezeAllocation
+     */
+    omit?: freezeAllocationOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -5940,9 +8282,7 @@ export namespace Prisma {
     courseChoice5: 'courseChoice5',
     courseChoice6: 'courseChoice6',
     courseChoice7: 'courseChoice7',
-    createdAt: 'createdAt',
-    status: 'status',
-    feesPaid: 'feesPaid'
+    createdAt: 'createdAt'
   };
 
   export type StudentApplicationScalarFieldEnum = (typeof StudentApplicationScalarFieldEnum)[keyof typeof StudentApplicationScalarFieldEnum]
@@ -5968,12 +8308,42 @@ export namespace Prisma {
     subCategory: 'subCategory',
     allocatedAt: 'allocatedAt',
     choiceNumber: 'choiceNumber',
+    jeeRank: 'jeeRank'
+  };
+
+  export type AllocatedSeatScalarFieldEnum = (typeof AllocatedSeatScalarFieldEnum)[keyof typeof AllocatedSeatScalarFieldEnum]
+
+
+  export const Round2inputScalarFieldEnum: {
+    id: 'id',
+    studentId: 'studentId',
+    departmentId: 'departmentId',
+    allocationRound: 'allocationRound',
+    category: 'category',
+    subCategory: 'subCategory',
+    allocatedAt: 'allocatedAt',
+    choiceNumber: 'choiceNumber',
     jeeRank: 'jeeRank',
     status: 'status',
     feesPaid: 'feesPaid'
   };
 
-  export type AllocatedSeatScalarFieldEnum = (typeof AllocatedSeatScalarFieldEnum)[keyof typeof AllocatedSeatScalarFieldEnum]
+  export type Round2inputScalarFieldEnum = (typeof Round2inputScalarFieldEnum)[keyof typeof Round2inputScalarFieldEnum]
+
+
+  export const FreezeAllocationScalarFieldEnum: {
+    id: 'id',
+    studentId: 'studentId',
+    departmentId: 'departmentId',
+    allocationRound: 'allocationRound',
+    category: 'category',
+    subCategory: 'subCategory',
+    allocatedAt: 'allocatedAt',
+    choiceNumber: 'choiceNumber',
+    jeeRank: 'jeeRank'
+  };
+
+  export type FreezeAllocationScalarFieldEnum = (typeof FreezeAllocationScalarFieldEnum)[keyof typeof FreezeAllocationScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -6138,8 +8508,6 @@ export namespace Prisma {
     courseChoice6?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice7?: StringNullableFilter<"StudentApplication"> | string | null
     createdAt?: DateTimeFilter<"StudentApplication"> | Date | string
-    status?: StringNullableFilter<"StudentApplication"> | string | null
-    feesPaid?: BoolNullableFilter<"StudentApplication"> | boolean | null
     allocations?: AllocatedSeatListRelationFilter
   }
 
@@ -6164,8 +8532,6 @@ export namespace Prisma {
     courseChoice6?: SortOrderInput | SortOrder
     courseChoice7?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    status?: SortOrderInput | SortOrder
-    feesPaid?: SortOrderInput | SortOrder
     allocations?: AllocatedSeatOrderByRelationAggregateInput
   }
 
@@ -6193,8 +8559,6 @@ export namespace Prisma {
     courseChoice6?: StringNullableFilter<"StudentApplication"> | string | null
     courseChoice7?: StringNullableFilter<"StudentApplication"> | string | null
     createdAt?: DateTimeFilter<"StudentApplication"> | Date | string
-    status?: StringNullableFilter<"StudentApplication"> | string | null
-    feesPaid?: BoolNullableFilter<"StudentApplication"> | boolean | null
     allocations?: AllocatedSeatListRelationFilter
   }, "applicationNumber">
 
@@ -6219,8 +8583,6 @@ export namespace Prisma {
     courseChoice6?: SortOrderInput | SortOrder
     courseChoice7?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    status?: SortOrderInput | SortOrder
-    feesPaid?: SortOrderInput | SortOrder
     _count?: StudentApplicationCountOrderByAggregateInput
     _avg?: StudentApplicationAvgOrderByAggregateInput
     _max?: StudentApplicationMaxOrderByAggregateInput
@@ -6252,8 +8614,6 @@ export namespace Prisma {
     courseChoice6?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
     courseChoice7?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"StudentApplication"> | Date | string
-    status?: StringNullableWithAggregatesFilter<"StudentApplication"> | string | null
-    feesPaid?: BoolNullableWithAggregatesFilter<"StudentApplication"> | boolean | null
   }
 
   export type SeatMatrixWhereInput = {
@@ -6327,8 +8687,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
-    status?: StringNullableFilter<"AllocatedSeat"> | string | null
-    feesPaid?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
     student?: XOR<StudentApplicationScalarRelationFilter, StudentApplicationWhereInput>
     department?: XOR<DepartmentScalarRelationFilter, DepartmentWhereInput>
   }
@@ -6343,8 +8701,6 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    status?: SortOrderInput | SortOrder
-    feesPaid?: SortOrderInput | SortOrder
     student?: StudentApplicationOrderByWithRelationInput
     department?: DepartmentOrderByWithRelationInput
   }
@@ -6362,8 +8718,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
-    status?: StringNullableFilter<"AllocatedSeat"> | string | null
-    feesPaid?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
     student?: XOR<StudentApplicationScalarRelationFilter, StudentApplicationWhereInput>
     department?: XOR<DepartmentScalarRelationFilter, DepartmentWhereInput>
   }, "id">
@@ -6378,8 +8732,6 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    status?: SortOrderInput | SortOrder
-    feesPaid?: SortOrderInput | SortOrder
     _count?: AllocatedSeatCountOrderByAggregateInput
     _avg?: AllocatedSeatAvgOrderByAggregateInput
     _max?: AllocatedSeatMaxOrderByAggregateInput
@@ -6400,8 +8752,164 @@ export namespace Prisma {
     allocatedAt?: DateTimeWithAggregatesFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntWithAggregatesFilter<"AllocatedSeat"> | number
     jeeRank?: IntWithAggregatesFilter<"AllocatedSeat"> | number
-    status?: StringNullableWithAggregatesFilter<"AllocatedSeat"> | string | null
-    feesPaid?: BoolNullableWithAggregatesFilter<"AllocatedSeat"> | boolean | null
+  }
+
+  export type round2inputWhereInput = {
+    AND?: round2inputWhereInput | round2inputWhereInput[]
+    OR?: round2inputWhereInput[]
+    NOT?: round2inputWhereInput | round2inputWhereInput[]
+    id?: IntFilter<"round2input"> | number
+    studentId?: StringFilter<"round2input"> | string
+    departmentId?: StringFilter<"round2input"> | string
+    allocationRound?: IntFilter<"round2input"> | number
+    category?: StringFilter<"round2input"> | string
+    subCategory?: StringNullableFilter<"round2input"> | string | null
+    allocatedAt?: DateTimeFilter<"round2input"> | Date | string
+    choiceNumber?: IntFilter<"round2input"> | number
+    jeeRank?: IntFilter<"round2input"> | number
+    status?: StringFilter<"round2input"> | string
+    feesPaid?: BoolNullableFilter<"round2input"> | boolean | null
+  }
+
+  export type round2inputOrderByWithRelationInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrderInput | SortOrder
+  }
+
+  export type round2inputWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: round2inputWhereInput | round2inputWhereInput[]
+    OR?: round2inputWhereInput[]
+    NOT?: round2inputWhereInput | round2inputWhereInput[]
+    studentId?: StringFilter<"round2input"> | string
+    departmentId?: StringFilter<"round2input"> | string
+    allocationRound?: IntFilter<"round2input"> | number
+    category?: StringFilter<"round2input"> | string
+    subCategory?: StringNullableFilter<"round2input"> | string | null
+    allocatedAt?: DateTimeFilter<"round2input"> | Date | string
+    choiceNumber?: IntFilter<"round2input"> | number
+    jeeRank?: IntFilter<"round2input"> | number
+    status?: StringFilter<"round2input"> | string
+    feesPaid?: BoolNullableFilter<"round2input"> | boolean | null
+  }, "id">
+
+  export type round2inputOrderByWithAggregationInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrderInput | SortOrder
+    _count?: round2inputCountOrderByAggregateInput
+    _avg?: round2inputAvgOrderByAggregateInput
+    _max?: round2inputMaxOrderByAggregateInput
+    _min?: round2inputMinOrderByAggregateInput
+    _sum?: round2inputSumOrderByAggregateInput
+  }
+
+  export type round2inputScalarWhereWithAggregatesInput = {
+    AND?: round2inputScalarWhereWithAggregatesInput | round2inputScalarWhereWithAggregatesInput[]
+    OR?: round2inputScalarWhereWithAggregatesInput[]
+    NOT?: round2inputScalarWhereWithAggregatesInput | round2inputScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"round2input"> | number
+    studentId?: StringWithAggregatesFilter<"round2input"> | string
+    departmentId?: StringWithAggregatesFilter<"round2input"> | string
+    allocationRound?: IntWithAggregatesFilter<"round2input"> | number
+    category?: StringWithAggregatesFilter<"round2input"> | string
+    subCategory?: StringNullableWithAggregatesFilter<"round2input"> | string | null
+    allocatedAt?: DateTimeWithAggregatesFilter<"round2input"> | Date | string
+    choiceNumber?: IntWithAggregatesFilter<"round2input"> | number
+    jeeRank?: IntWithAggregatesFilter<"round2input"> | number
+    status?: StringWithAggregatesFilter<"round2input"> | string
+    feesPaid?: BoolNullableWithAggregatesFilter<"round2input"> | boolean | null
+  }
+
+  export type freezeAllocationWhereInput = {
+    AND?: freezeAllocationWhereInput | freezeAllocationWhereInput[]
+    OR?: freezeAllocationWhereInput[]
+    NOT?: freezeAllocationWhereInput | freezeAllocationWhereInput[]
+    id?: IntFilter<"freezeAllocation"> | number
+    studentId?: StringFilter<"freezeAllocation"> | string
+    departmentId?: StringFilter<"freezeAllocation"> | string
+    allocationRound?: IntFilter<"freezeAllocation"> | number
+    category?: StringFilter<"freezeAllocation"> | string
+    subCategory?: StringNullableFilter<"freezeAllocation"> | string | null
+    allocatedAt?: DateTimeFilter<"freezeAllocation"> | Date | string
+    choiceNumber?: IntFilter<"freezeAllocation"> | number
+    jeeRank?: IntFilter<"freezeAllocation"> | number
+  }
+
+  export type freezeAllocationOrderByWithRelationInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type freezeAllocationWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: freezeAllocationWhereInput | freezeAllocationWhereInput[]
+    OR?: freezeAllocationWhereInput[]
+    NOT?: freezeAllocationWhereInput | freezeAllocationWhereInput[]
+    studentId?: StringFilter<"freezeAllocation"> | string
+    departmentId?: StringFilter<"freezeAllocation"> | string
+    allocationRound?: IntFilter<"freezeAllocation"> | number
+    category?: StringFilter<"freezeAllocation"> | string
+    subCategory?: StringNullableFilter<"freezeAllocation"> | string | null
+    allocatedAt?: DateTimeFilter<"freezeAllocation"> | Date | string
+    choiceNumber?: IntFilter<"freezeAllocation"> | number
+    jeeRank?: IntFilter<"freezeAllocation"> | number
+  }, "id">
+
+  export type freezeAllocationOrderByWithAggregationInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+    _count?: freezeAllocationCountOrderByAggregateInput
+    _avg?: freezeAllocationAvgOrderByAggregateInput
+    _max?: freezeAllocationMaxOrderByAggregateInput
+    _min?: freezeAllocationMinOrderByAggregateInput
+    _sum?: freezeAllocationSumOrderByAggregateInput
+  }
+
+  export type freezeAllocationScalarWhereWithAggregatesInput = {
+    AND?: freezeAllocationScalarWhereWithAggregatesInput | freezeAllocationScalarWhereWithAggregatesInput[]
+    OR?: freezeAllocationScalarWhereWithAggregatesInput[]
+    NOT?: freezeAllocationScalarWhereWithAggregatesInput | freezeAllocationScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"freezeAllocation"> | number
+    studentId?: StringWithAggregatesFilter<"freezeAllocation"> | string
+    departmentId?: StringWithAggregatesFilter<"freezeAllocation"> | string
+    allocationRound?: IntWithAggregatesFilter<"freezeAllocation"> | number
+    category?: StringWithAggregatesFilter<"freezeAllocation"> | string
+    subCategory?: StringNullableWithAggregatesFilter<"freezeAllocation"> | string | null
+    allocatedAt?: DateTimeWithAggregatesFilter<"freezeAllocation"> | Date | string
+    choiceNumber?: IntWithAggregatesFilter<"freezeAllocation"> | number
+    jeeRank?: IntWithAggregatesFilter<"freezeAllocation"> | number
   }
 
   export type DepartmentCreateInput = {
@@ -6468,8 +8976,6 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
-    status?: string | null
-    feesPaid?: boolean | null
     allocations?: AllocatedSeatCreateNestedManyWithoutStudentInput
   }
 
@@ -6494,8 +9000,6 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
-    status?: string | null
-    feesPaid?: boolean | null
     allocations?: AllocatedSeatUncheckedCreateNestedManyWithoutStudentInput
   }
 
@@ -6520,8 +9024,6 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     allocations?: AllocatedSeatUpdateManyWithoutStudentNestedInput
   }
 
@@ -6546,8 +9048,6 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     allocations?: AllocatedSeatUncheckedUpdateManyWithoutStudentNestedInput
   }
 
@@ -6572,8 +9072,6 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type StudentApplicationUpdateManyMutationInput = {
@@ -6597,8 +9095,6 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type StudentApplicationUncheckedUpdateManyInput = {
@@ -6622,8 +9118,6 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type SeatMatrixCreateInput = {
@@ -6685,8 +9179,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
     student: StudentApplicationCreateNestedOneWithoutAllocationsInput
     department: DepartmentCreateNestedOneWithoutAllocationsInput
   }
@@ -6701,8 +9193,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type AllocatedSeatUpdateInput = {
@@ -6712,8 +9202,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     student?: StudentApplicationUpdateOneRequiredWithoutAllocationsNestedInput
     department?: DepartmentUpdateOneRequiredWithoutAllocationsNestedInput
   }
@@ -6728,8 +9216,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type AllocatedSeatCreateManyInput = {
@@ -6742,8 +9228,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type AllocatedSeatUpdateManyMutationInput = {
@@ -6753,8 +9237,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type AllocatedSeatUncheckedUpdateManyInput = {
@@ -6767,8 +9249,182 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type round2inputCreateInput = {
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory?: string | null
+    allocatedAt?: Date | string
+    choiceNumber: number
+    jeeRank: number
+    status: string
+    feesPaid?: boolean | null
+  }
+
+  export type round2inputUncheckedCreateInput = {
+    id?: number
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory?: string | null
+    allocatedAt?: Date | string
+    choiceNumber: number
+    jeeRank: number
+    status: string
+    feesPaid?: boolean | null
+  }
+
+  export type round2inputUpdateInput = {
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type round2inputUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type round2inputCreateManyInput = {
+    id?: number
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory?: string | null
+    allocatedAt?: Date | string
+    choiceNumber: number
+    jeeRank: number
+    status: string
+    feesPaid?: boolean | null
+  }
+
+  export type round2inputUpdateManyMutationInput = {
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type round2inputUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type freezeAllocationCreateInput = {
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory?: string | null
+    allocatedAt?: Date | string
+    choiceNumber: number
+    jeeRank: number
+  }
+
+  export type freezeAllocationUncheckedCreateInput = {
+    id?: number
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory?: string | null
+    allocatedAt?: Date | string
+    choiceNumber: number
+    jeeRank: number
+  }
+
+  export type freezeAllocationUpdateInput = {
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type freezeAllocationUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type freezeAllocationCreateManyInput = {
+    id?: number
+    studentId: string
+    departmentId: string
+    allocationRound: number
+    category: string
+    subCategory?: string | null
+    allocatedAt?: Date | string
+    choiceNumber: number
+    jeeRank: number
+  }
+
+  export type freezeAllocationUpdateManyMutationInput = {
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type freezeAllocationUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    studentId?: StringFieldUpdateOperationsInput | string
+    departmentId?: StringFieldUpdateOperationsInput | string
+    allocationRound?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeRank?: IntFieldUpdateOperationsInput | number
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -6887,11 +9543,6 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type BoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
-  }
-
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -6918,8 +9569,6 @@ export namespace Prisma {
     courseChoice6?: SortOrder
     courseChoice7?: SortOrder
     createdAt?: SortOrder
-    status?: SortOrder
-    feesPaid?: SortOrder
   }
 
   export type StudentApplicationAvgOrderByAggregateInput = {
@@ -6951,8 +9600,6 @@ export namespace Prisma {
     courseChoice6?: SortOrder
     courseChoice7?: SortOrder
     createdAt?: SortOrder
-    status?: SortOrder
-    feesPaid?: SortOrder
   }
 
   export type StudentApplicationMinOrderByAggregateInput = {
@@ -6976,8 +9623,6 @@ export namespace Prisma {
     courseChoice6?: SortOrder
     courseChoice7?: SortOrder
     createdAt?: SortOrder
-    status?: SortOrder
-    feesPaid?: SortOrder
   }
 
   export type StudentApplicationSumOrderByAggregateInput = {
@@ -7052,14 +9697,6 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
-  }
-
   export type DepartmentScalarRelationFilter = {
     is?: DepartmentWhereInput
     isNot?: DepartmentWhereInput
@@ -7120,8 +9757,6 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    status?: SortOrder
-    feesPaid?: SortOrder
   }
 
   export type AllocatedSeatAvgOrderByAggregateInput = {
@@ -7141,11 +9776,33 @@ export namespace Prisma {
     allocatedAt?: SortOrder
     choiceNumber?: SortOrder
     jeeRank?: SortOrder
-    status?: SortOrder
-    feesPaid?: SortOrder
   }
 
   export type AllocatedSeatMinOrderByAggregateInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type AllocatedSeatSumOrderByAggregateInput = {
+    id?: SortOrder
+    allocationRound?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type round2inputCountOrderByAggregateInput = {
     id?: SortOrder
     studentId?: SortOrder
     departmentId?: SortOrder
@@ -7159,7 +9816,100 @@ export namespace Prisma {
     feesPaid?: SortOrder
   }
 
-  export type AllocatedSeatSumOrderByAggregateInput = {
+  export type round2inputAvgOrderByAggregateInput = {
+    id?: SortOrder
+    allocationRound?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type round2inputMaxOrderByAggregateInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
+  }
+
+  export type round2inputMinOrderByAggregateInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
+  }
+
+  export type round2inputSumOrderByAggregateInput = {
+    id?: SortOrder
+    allocationRound?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type freezeAllocationCountOrderByAggregateInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type freezeAllocationAvgOrderByAggregateInput = {
+    id?: SortOrder
+    allocationRound?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type freezeAllocationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type freezeAllocationMinOrderByAggregateInput = {
+    id?: SortOrder
+    studentId?: SortOrder
+    departmentId?: SortOrder
+    allocationRound?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    allocatedAt?: SortOrder
+    choiceNumber?: SortOrder
+    jeeRank?: SortOrder
+  }
+
+  export type freezeAllocationSumOrderByAggregateInput = {
     id?: SortOrder
     allocationRound?: SortOrder
     choiceNumber?: SortOrder
@@ -7292,10 +10042,6 @@ export namespace Prisma {
     set?: Date | string
   }
 
-  export type NullableBoolFieldUpdateOperationsInput = {
-    set?: boolean | null
-  }
-
   export type AllocatedSeatUpdateManyWithoutStudentNestedInput = {
     create?: XOR<AllocatedSeatCreateWithoutStudentInput, AllocatedSeatUncheckedCreateWithoutStudentInput> | AllocatedSeatCreateWithoutStudentInput[] | AllocatedSeatUncheckedCreateWithoutStudentInput[]
     connectOrCreate?: AllocatedSeatCreateOrConnectWithoutStudentInput | AllocatedSeatCreateOrConnectWithoutStudentInput[]
@@ -7364,6 +10110,10 @@ export namespace Prisma {
     upsert?: DepartmentUpsertWithoutAllocationsInput
     connect?: DepartmentWhereUniqueInput
     update?: XOR<XOR<DepartmentUpdateToOneWithWhereWithoutAllocationsInput, DepartmentUpdateWithoutAllocationsInput>, DepartmentUncheckedUpdateWithoutAllocationsInput>
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -7442,11 +10192,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type NestedBoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -7534,6 +10279,11 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
     not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
@@ -7572,8 +10322,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
     student: StudentApplicationCreateNestedOneWithoutAllocationsInput
   }
 
@@ -7586,8 +10334,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type AllocatedSeatCreateOrConnectWithoutDepartmentInput = {
@@ -7656,8 +10402,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFilter<"AllocatedSeat"> | Date | string
     choiceNumber?: IntFilter<"AllocatedSeat"> | number
     jeeRank?: IntFilter<"AllocatedSeat"> | number
-    status?: StringNullableFilter<"AllocatedSeat"> | string | null
-    feesPaid?: BoolNullableFilter<"AllocatedSeat"> | boolean | null
   }
 
   export type AllocatedSeatCreateWithoutStudentInput = {
@@ -7667,8 +10411,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
     department: DepartmentCreateNestedOneWithoutAllocationsInput
   }
 
@@ -7681,8 +10423,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type AllocatedSeatCreateOrConnectWithoutStudentInput = {
@@ -7772,8 +10512,6 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type StudentApplicationUncheckedCreateWithoutAllocationsInput = {
@@ -7797,8 +10535,6 @@ export namespace Prisma {
     courseChoice6?: string | null
     courseChoice7?: string | null
     createdAt?: Date | string
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type StudentApplicationCreateOrConnectWithoutAllocationsInput = {
@@ -7855,8 +10591,6 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type StudentApplicationUncheckedUpdateWithoutAllocationsInput = {
@@ -7880,8 +10614,6 @@ export namespace Prisma {
     courseChoice6?: NullableStringFieldUpdateOperationsInput | string | null
     courseChoice7?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type DepartmentUpsertWithoutAllocationsInput = {
@@ -7923,8 +10655,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type SeatMatrixUpdateWithoutDepartmentInput = {
@@ -7954,8 +10684,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     student?: StudentApplicationUpdateOneRequiredWithoutAllocationsNestedInput
   }
 
@@ -7968,8 +10696,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type AllocatedSeatUncheckedUpdateManyWithoutDepartmentInput = {
@@ -7981,8 +10707,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type AllocatedSeatCreateManyStudentInput = {
@@ -7994,8 +10718,6 @@ export namespace Prisma {
     allocatedAt?: Date | string
     choiceNumber: number
     jeeRank: number
-    status?: string | null
-    feesPaid?: boolean | null
   }
 
   export type AllocatedSeatUpdateWithoutStudentInput = {
@@ -8005,8 +10727,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
     department?: DepartmentUpdateOneRequiredWithoutAllocationsNestedInput
   }
 
@@ -8019,8 +10739,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type AllocatedSeatUncheckedUpdateManyWithoutStudentInput = {
@@ -8032,8 +10750,6 @@ export namespace Prisma {
     allocatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     choiceNumber?: IntFieldUpdateOperationsInput | number
     jeeRank?: IntFieldUpdateOperationsInput | number
-    status?: NullableStringFieldUpdateOperationsInput | string | null
-    feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
 

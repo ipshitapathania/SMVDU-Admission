@@ -8,60 +8,49 @@ const round = 2;
 
 async function main() {
   try {
-    console.log(`\n=== Starting Round ${round} Allocation ===`);
+    console.log(`\n=== 🚀 Starting Round ${round} Allocation ===`);
 
-    // Step 1: Get all allocations from round 1
+    // Step 1: Fetch previous allocations (from Round 1)
     const previousAllocations = await prisma.allocatedSeat.findMany({
       where: { allocationRound: 1 },
       include: { student: true },
     });
 
-    // Step 2: Determine students to retain from Round 1
-    const validAllocatedStudentsDetails = previousAllocations
-      .filter(
-        (alloc) =>
-          alloc.student.feesPaid === true &&
-          (alloc.student.status === "FREEZE" ||
-            alloc.student.status === "FLOAT")
-      )
-      .map((alloc) => ({
-        applicationNumber: alloc.student.applicationNumber,
-        status: alloc.student.status,
-        feesPaid: alloc.student.feesPaid,
-        source: "PrevAlloc-FREEZE/FLOAT",
-      }));
+    // Step 2: Separate retained and removed students
+    const validAllocatedStudents = [];
+    const removedStudents = [];
 
-    const validAllocatedStudentIds = validAllocatedStudentsDetails.map(
-      (s) => s.applicationNumber
-    );
+    for (const alloc of previousAllocations) {
+      const { student } = alloc;
+      if (student.feesPaid && ["FREEZE", "FLOAT"].includes(student.status)) {
+        validAllocatedStudents.push({
+          applicationNumber: student.applicationNumber,
+          status: student.status,
+          feesPaid: student.feesPaid,
+          source: "PrevAlloc-FREEZE/FLOAT",
+        });
+      } else {
+        removedStudents.push({
+          applicationNumber: student.applicationNumber,
+          status: student.status,
+          feesPaid: student.feesPaid,
+        });
+      }
+    }
 
-    const removedStudentDetails = previousAllocations
-      .filter((alloc) => alloc.student.feesPaid !== true)
-      .map((alloc) => ({
-        applicationNumber: alloc.student.applicationNumber,
-        status: alloc.student.status,
-        feesPaid: alloc.student.feesPaid,
-      }));
-
-    const removedStudentIds = removedStudentDetails.map(
-      (s) => s.applicationNumber
-    );
+    const removedStudentIds = removedStudents.map((s) => s.applicationNumber);
 
     console.log(
-      `\n✅ Retaining ${validAllocatedStudentIds.length} students from Round 1`
+      `\n✅ Retaining ${validAllocatedStudents.length} students from Round 1`
     );
     console.log(
       `🚫 Removing ${removedStudentIds.length} students (fees not paid)`
     );
 
-    // Step 3: Find students who were never allotted (allocations == [])
-    const neverAllottedStudents = await prisma.studentApplication.findMany({
+    // Step 3: Find students who were never allotted in Round 1
+    const neverAllotted = await prisma.studentApplication.findMany({
       where: {
-        allocations: {
-          none: {
-            allocationRound: 1,
-          },
-        },
+        allocations: { none: { allocationRound: 1 } },
       },
       select: {
         applicationNumber: true,
@@ -70,7 +59,7 @@ async function main() {
       },
     });
 
-    const neverAllottedStudentsDetails = neverAllottedStudents.map((s) => ({
+    const neverAllottedDetails = neverAllotted.map((s) => ({
       applicationNumber: s.applicationNumber,
       status: s.status,
       feesPaid: s.feesPaid,
@@ -78,19 +67,15 @@ async function main() {
     }));
 
     console.log(
-      `\n🆕 Including ${neverAllottedStudentsDetails.length} never-allotted students from Round 1`
+      `\n🆕 Including ${neverAllottedDetails.length} never-allotted students from Round 1`
     );
 
-    // Step 4: All generally eligible students with fees paid and not removed
-    const allEligibleStudentsRaw = await prisma.studentApplication.findMany({
+    // Step 4: Fetch generally eligible students who paid and are not removed
+    const generallyEligible = await prisma.studentApplication.findMany({
       where: {
         feesPaid: true,
-        status: {
-          in: ["FREEZE", "FLOAT"],
-        },
-        applicationNumber: {
-          notIn: removedStudentIds,
-        },
+        status: { in: ["FREEZE", "FLOAT"] },
+        applicationNumber: { notIn: removedStudentIds },
       },
       select: {
         applicationNumber: true,
@@ -99,7 +84,7 @@ async function main() {
       },
     });
 
-    const allEligibleStudentsFiltered = allEligibleStudentsRaw.map((s) => ({
+    const eligibleDetails = generallyEligible.map((s) => ({
       applicationNumber: s.applicationNumber,
       status: s.status,
       feesPaid: s.feesPaid,
@@ -107,69 +92,69 @@ async function main() {
     }));
 
     console.log(
-      `\n📋 ${allEligibleStudentsFiltered.length} generally eligible students`
+      `\n📋 Found ${eligibleDetails.length} generally eligible students`
     );
 
-    // Step 5: Combine all valid students into a unique set
-    const allDetails = [
-      ...validAllocatedStudentsDetails,
-      ...neverAllottedStudentsDetails,
-      ...allEligibleStudentsFiltered,
+    // Step 5: Combine and deduplicate students
+    const allCandidates = [
+      ...validAllocatedStudents,
+      ...neverAllottedDetails,
+      ...eligibleDetails,
     ];
 
-    const finalValidStudentsDetailsMap = new Map();
-    for (const student of allDetails) {
-      if (!removedStudentIds.includes(student.applicationNumber)) {
-        finalValidStudentsDetailsMap.set(student.applicationNumber, student);
+    const validStudentsMap = new Map();
+    allCandidates.forEach((s) => {
+      if (!removedStudentIds.includes(s.applicationNumber)) {
+        validStudentsMap.set(s.applicationNumber, s);
       }
-    }
+    });
 
-    const validStudentIds = Array.from(finalValidStudentsDetailsMap.keys());
+    const finalStudentIds = Array.from(validStudentsMap.keys());
 
     console.log(
-      `\n📊 Total valid students for Round ${round}: ${validStudentIds.length}`
+      `\n📊 Total valid students for Round ${round}: ${finalStudentIds.length}`
     );
+<<<<<<< Updated upstream
     return;
     console.log(`\n✅ Final valid students for Round ${round}:`);
     validStudentIds.forEach((id) => {
       const student = finalValidStudentsDetailsMap.get(id);
+=======
+    console.log(`✅ Final valid students:`);
+    finalStudentIds.forEach((id) => {
+      const s = validStudentsMap.get(id);
+>>>>>>> Stashed changes
       console.log(
-        `  App: ${student.applicationNumber}, Status: ${student.status}, Fees: ${student.feesPaid}, Source: ${student.source}`
+        `  App: ${s.applicationNumber}, Status: ${s.status}, Fees: ${s.feesPaid}, Source: ${s.source}`
       );
     });
 
     // Step 6: Delete previous unpaid allocations
     if (removedStudentIds.length > 0) {
-      const deleted = await prisma.allocatedSeat.deleteMany({
+      const { count } = await prisma.allocatedSeat.deleteMany({
         where: {
           allocationRound: 1,
-          student: {
-            applicationNumber: {
-              in: removedStudentIds,
-            },
-          },
+          student: { applicationNumber: { in: removedStudentIds } },
         },
       });
-      console.log(
-        `\n🗑️ Deleted ${deleted.count} allocations for unpaid students from Round 1`
-      );
+      console.log(`\n🗑️ Deleted ${count} unpaid allocations from Round 1`);
     }
 
-    // Step 7: Run new allocation
-    const round2Results = await runInitialAllocation(round, validStudentIds);
-    console.log(`\n✅ Round ${round} Allocation Complete`);
+    // Step 7: Run allocation script
+    const roundResults = await runInitialAllocation(round, finalStudentIds);
+    console.log(`\n✅ Round ${round} Allocation Completed`);
 
-    // Step 8: Save results as JSON
-    if (round2Results) {
+    // Step 8: Save JSON output
+    if (roundResults) {
       const jsonPath = path.join(
         process.cwd(),
         `round${round}-allocation-results.json`
       );
-      fs.writeFileSync(jsonPath, JSON.stringify(round2Results, null, 2));
+      fs.writeFileSync(jsonPath, JSON.stringify(roundResults, null, 2));
       console.log(`📁 JSON saved at ${jsonPath}`);
     }
 
-    // Step 9: Export results to CSV
+    // Step 9: Export final allocations to CSV
     const allocations = await prisma.allocatedSeat.findMany({
       where: { allocationRound: round },
       include: { student: true, department: true },
@@ -189,17 +174,17 @@ async function main() {
         "ChoiceNumber",
       ].join(",");
 
-      const rows = allocations.map((allocation) =>
+      const rows = allocations.map((a) =>
         [
-          allocation.student.applicationNumber,
-          `"${allocation.student.studentName.replace(/"/g, '""')}"`,
-          allocation.student.jeeCRL,
-          allocation.student.category,
-          allocation.student.subCategory,
-          allocation.category,
-          allocation.subCategory,
-          allocation.department.name,
-          allocation.choiceNumber,
+          a.student.applicationNumber,
+          `"${a.student.studentName.replace(/"/g, '""')}"`,
+          a.student.jeeCRL,
+          a.student.category,
+          a.student.subCategory,
+          a.category,
+          a.subCategory,
+          a.department.name,
+          a.choiceNumber,
         ].join(",")
       );
 

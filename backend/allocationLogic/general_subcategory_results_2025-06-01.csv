@@ -1,8 +1,16 @@
 ApplicationNumber,Category,SubCategory,JEE_Rank,Category_Rank,Special_Criteria,Previous_Department,Previous_Choice,New_Department,New_Choice,Status
+<<<<<<< Updated upstream:backend/allocationLogic/general_subcategory_results_2025-05-30.csv
 20250000656,GEN,GNSPT,167506,167506,1,None,2,,,Failed,No better allocation possible
 20250000699,GEN,GNCDP,145242,145242,6,None,2,,,Failed,No better allocation possible
 20250001200,GEN,GNCDP,285429,285429,6,None,3,,,Failed,No better allocation possible
 20250000550,GEN,GNCDP,349564,349564,6,None,4,,,Failed,No better allocation possible
+=======
+20250000656,GEN,GNSPT,167506,167506,1,None,3,,,Failed,No better allocation possible
+20250000672,GEN,GNCDP,139611,139611,6,None,None,,,Failed,No better allocation possible
+20250000699,GEN,GNCDP,145242,145242,6,None,None,,,Failed,No better allocation possible
+20250001200,GEN,GNCDP,285429,285429,6,None,3,,,Failed,No better allocation possible
+20250000550,GEN,GNCDP,349564,349564,6,None,None,,,Failed,No better allocation possible
+>>>>>>> Stashed changes:backend/allocationLogic/general_subcategory_results_2025-06-01.csv
 20250000464,GEN,GNCDP,385788,385788,6,None,None,,,Failed,No better allocation possible
 20250000561,GEN,GNCDP,746547,746547,6,None,None,,,Failed,No better allocation possible
 20250000335,GEN,GNCDP,844757,844757,6,None,None,,,Failed,No better allocation possible

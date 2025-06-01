@@ -14,6 +14,7 @@
     {
       "student": "20250000071",
       "error": "Existing department allocation",
+<<<<<<< Updated upstream
       "details": "Already has ai_robotics"
     },
     {
@@ -25,6 +26,14 @@
       "student": "20250000447",
       "error": "Existing department allocation",
       "details": "Already has mnc"
+=======
+      "details": "Already has ce"
+    },
+    {
+      "student": "20250001149",
+      "error": "Existing department allocation",
+      "details": "Already has ce"
+>>>>>>> Stashed changes
     }
   ],
   "vacated": []

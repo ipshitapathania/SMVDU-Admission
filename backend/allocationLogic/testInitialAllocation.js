@@ -5,7 +5,7 @@ import path from 'path';
 
 const prisma = new PrismaClient();
 
-async function main() {
+async function main(round) {
     try {
         // Fetch all students from the database
         const students = await prisma.studentApplication.findMany({
@@ -17,7 +17,7 @@ async function main() {
         console.log(`Found ${students.length} students in database`);
 
         // Run initial allocation
-        const results = await runInitialAllocation(students, 1);
+        const results = await runInitialAllocation(students, round);
 
         // Print results
         console.log('\n=== Allocation Results ===');

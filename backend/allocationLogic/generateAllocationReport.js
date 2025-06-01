@@ -4,15 +4,25 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// Setup __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const prisma = new PrismaClient();
 
+// Parse round number from command line
+const round = parseInt(process.argv[2], 10);
+if (!round || isNaN(round)) {
+  console.error(
+    "❌ Please provide a valid round number: `node thisfile.js <round>`"
+  );
+  process.exit(1);
+}
+
 // === Utility to run allocation scripts ===
-function runScript(scriptName) {
+function runScript(scriptName, round) {
   return new Promise((resolve, reject) => {
-    console.log(`\n=== Running ${scriptName} ===`);
-    exec(`node ${scriptName}`, (error, stdout, stderr) => {
+    console.log(`\n=== Running ${scriptName} for Round ${round} ===`);
+    exec(`node ${scriptName} ${round}`, (error, stdout, stderr) => {
       if (error) {
         console.error(`Error in ${scriptName}:`, error);
         return reject(error);
@@ -31,10 +41,10 @@ function runScript(scriptName) {
 }
 
 // === Run a script repeatedly until no more allocations ===
-async function runUntilNoMoreAllocations(scriptName) {
+async function runUntilNoMoreAllocations(scriptName, round) {
   let totalAllocated = 0;
   while (true) {
-    const { allocatedCount } = await runScript(scriptName);
+    const { allocatedCount } = await runScript(scriptName, round);
     if (!allocatedCount || allocatedCount === 0) {
       console.log(`No new allocations from ${scriptName}. Moving on.`);
       break;
@@ -51,6 +61,9 @@ async function generateAllocationCSV() {
     console.log("\n=== Generating allocation report ===");
 
     const allocations = await prisma.allocatedSeat.findMany({
+      where: {
+        allocationRound: round,
+      },
       include: {
         student: true,
         department: true,
@@ -91,7 +104,10 @@ async function generateAllocationCSV() {
     });
 
     const csvContent = [headers, ...rows].join("\n");
-    const filePath = path.join(__dirname, "allocation_report.csv");
+    const filePath = path.join(
+      __dirname,
+      `round${round}-allocation_report.csv`
+    );
     fs.writeFileSync(filePath, csvContent);
 
     console.log(`✅ Report saved to: ${filePath}`);
@@ -105,18 +121,20 @@ async function generateAllocationCSV() {
 // === Main runner ===
 export async function main() {
   try {
-    await runScript("testInitialAllocation.js");
-    await runScript("testSubcategoryAllocation.js");
-    await runUntilNoMoreAllocations("testnewInitial.js");
-    await runScript("testReservedLogic.js");
-    await runUntilNoMoreAllocations("testnewInitial.js");
-    await runScript("testReservedSubcategory.js");
-    await runScript("testnewReserved.js");
-    await runScript("testnewInitial.js");
+    await runScript("testInitialAllocation.js", round);
+    await runScript("testSubcategoryAllocation.js", round);
+    await runUntilNoMoreAllocations("testnewInitial.js", round);
+    await runScript("testReservedLogic.js", round);
+    await runUntilNoMoreAllocations("testnewInitial.js", round);
+    await runScript("testReservedSubcategory.js", round);
+    await runScript("testnewReserved.js", round);
+    await runScript("testnewInitial.js", round);
 
     await generateAllocationCSV();
 
-    console.log("\n=== Full allocation + report complete ===");
+    console.log(
+      `\n=== Full allocation + report complete for Round ${round} ===`
+    );
   } catch (error) {
     console.error("Error during allocation process:", error);
     await prisma.$disconnect();

@@ -39,13 +39,21 @@
   "failures": [],
   "vacated": [
     {
+<<<<<<< Updated upstream
       "id": 82,
+=======
+      "id": 973,
+>>>>>>> Stashed changes
       "studentId": "20250000825",
       "departmentId": "ai_robotics",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
+<<<<<<< Updated upstream
       "allocatedAt": "2025-05-30T07:48:25.657Z",
+=======
+      "allocatedAt": "2025-06-01T18:20:14.266Z",
+>>>>>>> Stashed changes
       "choiceNumber": 3,
       "jeeRank": 177098,
       "status": null,
@@ -56,13 +64,21 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "id": 89,
+=======
+      "id": 980,
+>>>>>>> Stashed changes
       "studentId": "20250000709",
       "departmentId": "ee",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
+<<<<<<< Updated upstream
       "allocatedAt": "2025-05-30T07:48:25.678Z",
+=======
+      "allocatedAt": "2025-06-01T18:20:14.286Z",
+>>>>>>> Stashed changes
       "choiceNumber": 5,
       "jeeRank": 228792,
       "status": null,
@@ -73,13 +89,21 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "id": 95,
+=======
+      "id": 986,
+>>>>>>> Stashed changes
       "studentId": "20250000708",
       "departmentId": "me",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
+<<<<<<< Updated upstream
       "allocatedAt": "2025-05-30T07:48:25.697Z",
+=======
+      "allocatedAt": "2025-06-01T18:20:14.302Z",
+>>>>>>> Stashed changes
       "choiceNumber": 6,
       "jeeRank": 274350,
       "status": null,
@@ -90,13 +114,21 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "id": 97,
+=======
+      "id": 988,
+>>>>>>> Stashed changes
       "studentId": "20250001023",
       "departmentId": "ce",
       "allocationRound": 1,
       "category": "EWS",
       "subCategory": "EWS",
+<<<<<<< Updated upstream
       "allocatedAt": "2025-05-30T07:48:25.705Z",
+=======
+      "allocatedAt": "2025-06-01T18:20:14.308Z",
+>>>>>>> Stashed changes
       "choiceNumber": 7,
       "jeeRank": 302015,
       "status": null,

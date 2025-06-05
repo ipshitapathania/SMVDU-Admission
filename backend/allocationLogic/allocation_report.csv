@@ -78,6 +78,7 @@ ApplicationNumber,StudentName,JEE_CRL,StudentCategory,StudentSubCategory,Allocat
 20250001012,"VARNIKA GOVIND",208271,GEN,GNGN,GEN,GNGN,	Civil Engineering,7
 20250000378,"JIVIKA KOUL",211350,GEN,GNGN,GEN,GNGN,	Civil Engineering,6
 20250000804,"TARANG KUMAR SINGH",211826,GEN,GNGN,GEN,GNGN,	Civil Engineering,7
+<<<<<<< Updated upstream
 =======
 20250000234,"DHRUV SABRAJ",56124,GEN,GNGN,GEN,GNGN,	Computer Science,1
 20250000746,"ANISHKA SINHA",67067,EWS,EWS,GEN,GNGN,	Computer Science,1
@@ -90,6 +91,8 @@ ApplicationNumber,StudentName,JEE_CRL,StudentCategory,StudentSubCategory,Allocat
 20250000545,"BRAHMANSH",186129,RLAC,RLAC,RLAC,RLAC,	Computer Science,1
 20250000463,"ARSALAN FAIZAN",193705,ST1,ST1,ST1,ST1,	Electronics and Communication Engineering,2
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 20250001126,"PRADEEP SARASWAT",211938,EWS,EWS,EWS,EWS,	Artificial Intelligence and Robotics,1
 20250000920,"DIVYANSHU",219051,GEN,GNGN,GEN,GNGN,	Civil Engineering,7
 20250000789,"SAYERA GUPTA",220630,GEN,GNGN,GEN,GNGN,	Civil Engineering,7
@@ -100,6 +103,9 @@ ApplicationNumber,StudentName,JEE_CRL,StudentCategory,StudentSubCategory,Allocat
 20250000563,"MOMIN JAN",238723,ST1,ST1,ST1,ST1,	Computer Science,1
 20250000350,"SAKSHAM",244085,SC,SCCDP,SC,SC,	Computer Science,1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 20250000627,"ADITYA BISHT",251445,EWS,EWS,EWS,EWS,	Electrical and Electronics Engineering,5
 20250000765,"NIKITA GUPTA",265460,EWS,EWS,EWS,EWS,	Electrical and Electronics Engineering,4
 20250000708,"MD UMER ALAM",274350,EWS,EWS,EWS,EWS,	Electrical and Electronics Engineering,5
@@ -111,15 +117,21 @@ ApplicationNumber,StudentName,JEE_CRL,StudentCategory,StudentSubCategory,Allocat
 20250000550,"MANIK SINGH",349564,GEN,GNCDP,GEN,GNCDP,	Civil Engineering,4
 20250000882,"ARNAV KUMAR",358209,EWS,EWS,EWS,EWS,	Civil Engineering,7
 20250000807,"SHIVAM KUMAR",365238,EWS,EWS,EWS,EWS,	Civil Engineering,7
+<<<<<<< Updated upstream
 =======
 20250001200,"ANIRUDHYA SHOW",285429,GEN,GNCDP,GEN,GNCDP,	Mathematics and Computing,3
 20250001191,"MANNAT GOUTAM",315403,OBC,OBC,OBC,OBC,	Artificial Intelligence and Robotics,3
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 20250000217,"DANISH THAKUR",374302,RBA,RBA,RBA,RBA,	Computer Science,1
 20250000417,"FAIZAAN AHMED MIRZA",382653,ST2,ST2,ST2,ST2,	Artificial Intelligence and Robotics,1
 20250000645,"KARANJEET SINGH",384815,RBA,RBA,RBA,RBA,	Computer Science,1
 20250001068,"SHARIA SADIQ",471610,ST1,ST1,ST1,ST1,	Artificial Intelligence and Robotics,1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 20250000253,"PRATEEK SHARMA",505577,OBC,OBC,OBC,OBC,	Mathematics and Computing,2
 20250000326,"SUMIT SINGH MANHAS",510820,RBA,RBA,RBA,RBA,	Computer Science,1
 20250000286,"MONAIB AHMED BANDAY",596940,ST2,ST2,ST2,ST2,	Computer Science,1
@@ -139,6 +151,7 @@ ApplicationNumber,StudentName,JEE_CRL,StudentCategory,StudentSubCategory,Allocat
 20250000683,"SHAAN BHAGAT",989254,SC,SC,SC,SC,	Civil Engineering,2
 20250000701,"PANKAJ SAMBYAL",1326935,SC,SC,SC,SC,	Electrical and Electronics Engineering,4
 20250001149,"TRIDUSH RAINA",1333932,RBA,RBA,RBA,RBA,	Mechanical Engineering,2
+<<<<<<< Updated upstream
 20250000447,"MRIGAANKA BHAGAT",1351537,SC,SC,SC,SC,	Mathematics and Computing,4
 =======
 20250000253,"PRATEEK SHARMA",505577,OBC,OBC,OBC,OBC,	Artificial Intelligence and Robotics,3
@@ -156,4 +169,7 @@ ApplicationNumber,StudentName,JEE_CRL,StudentCategory,StudentSubCategory,Allocat
 20250000226,"MUMTAZ AHMED",912247,ST2,ST2,ST2,ST2,	Civil Engineering,1
 20250001194,"AKSHIT GOUR",931022,RBA,RBA,RBA,RBA,	Electronics and Communication Engineering,2
 20250001149,"TRIDUSH RAINA",1333932,RBA,RBA,RBA,RBA,	Civil Engineering,3
+>>>>>>> Stashed changes
+=======
+20250000447,"MRIGAANKA BHAGAT",1351537,SC,SC,SC,SC,	Mathematics and Computing,4
 >>>>>>> Stashed changes

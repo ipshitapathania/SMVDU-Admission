@@ -6,7 +6,8 @@ import path from "path";
 
 const prisma = new PrismaClient();
 
-async function main(round) {
+export async function main(round) {
+  round = round || 1; // Default to round 1 if not provided
   console.log(
     `\n=== Starting Reserved Category Allocation for Round ${round} ===`
   );
@@ -53,4 +54,4 @@ async function main(round) {
   }
 }
 
-main(round);
+

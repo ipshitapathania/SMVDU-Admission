@@ -6,7 +6,11 @@ import path from "path";
 
 const prisma = new PrismaClient();
 
-async function main(round) {
+export async function main(round) {
+  round = round || 1; // Default to round 1 if not provided
+  console.log(
+    `\n=== Starting Reserved Subcategory Allocation Test (Round ${round}) ===`
+  );
   try {
     // Fetch all students with allocations
     const students = await prisma.studentApplication.findMany({
@@ -65,4 +69,4 @@ async function main(round) {
   }
 }
 
-main(round);
+

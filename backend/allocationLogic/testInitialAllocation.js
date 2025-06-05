@@ -1,3 +1,4 @@
+// testInitialAllocation.js
 import { PrismaClient } from "./prisma/generated/prisma/index.js";
 import { runInitialAllocation } from "./iterations/initialAllocation.js";
 import fs from "fs";
@@ -5,8 +6,10 @@ import path from "path";
 
 const prisma = new PrismaClient();
 
-async function main(round) {
+export async function main(round) {
   try {
+    round = round || 1; // Default to round 1 if not provided
+    console.log(`\n=== Running Initial Allocation for Round ${round} ===`);
     // Fetch all students from the database
     const students = await prisma.studentApplication.findMany({
       orderBy: {
@@ -65,4 +68,4 @@ async function main(round) {
   }
 }
 
-main(round);
+

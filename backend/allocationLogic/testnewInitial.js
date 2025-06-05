@@ -4,7 +4,9 @@ import fillVacatedGENSeats from "./iterations/newInitialAllocation.js";
 
 const prisma = new PrismaClient();
 
-async function main(round) {
+export async function main(round) {
+  round = round || 1; // Default to round 1 if not provided
+  console.log(`\n=== Starting GEN-GNGN Seat Filling Test (Round ${round}) ===`);
   try {
     const results = await fillVacatedGENSeats(round); // Use appropriate round number
 
@@ -24,6 +26,7 @@ async function main(round) {
     results.vacated.forEach((v) => {
       console.log(`- ${v.departmentId} (${v.category}-${v.subCategory})`);
     });
+    return results;
   } catch (error) {
     console.error("Error:", error);
   } finally {
@@ -31,4 +34,4 @@ async function main(round) {
   }
 }
 
-main(round);
+

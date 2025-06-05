@@ -6,7 +6,8 @@ import path from "path";
 
 const prisma = new PrismaClient();
 
-async function main(round) {
+export async function main(round) {
+  round = round || 1; // Default to round 1 if not provided
   try {
     console.log("Starting reserved category phase 2 allocation process...");
     const results = await runReservedCategoryPhase2(round);
@@ -132,4 +133,4 @@ async function verifyAllocationQuality(results) {
   );
 }
 
-main(round);
+

@@ -75,3 +75,17 @@ model AllocatedSeat {
   feesPaid        Boolean?          // true = fees paid 
 
 }
+
+model FrozenStudent {
+  id                Int      @id @default(autoincrement())
+  studentName       String
+  applicationNumber String
+  round             Int
+  departmentId      String
+  category          String
+  subCategory       String?
+  choiceNumber      Int
+  jeeCRL            Int
+  status            String    // Always FREEZE
+  feesPaid          Boolean   // true
+}

@@ -1,52 +1,30 @@
-import { exec } from "child_process";
 import { PrismaClient } from "./prisma/generated/prisma/index.js";
 import fs from "fs";
-import path from "path";
+import path, { resolve } from "path";
 import { fileURLToPath } from "url";
+import { main as runInitial } from "./testInitialAllocation.js";
+import { main as runSubcategory } from "./testSubcategoryAllocation.js";
+import { main as runReserved } from "./testReservedLogic.js";
+import { main as runReservedSub } from "./testReservedSubcategory.js";
+import { main as runNewInitial } from "./testnewInitial.js";
+import { main as runNewReserved } from "./testnewReserved.js";
 
-// Setup __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const prisma = new PrismaClient();
 
-// Parse round number from command line
-const round = parseInt(process.argv[2], 10);
-if (!round || isNaN(round)) {
-  console.error(
-    "❌ Please provide a valid round number: `node thisfile.js <round>`"
-  );
-  process.exit(1);
-}
-
-// === Utility to run allocation scripts ===
-function runScript(scriptName, round) {
-  return new Promise((resolve, reject) => {
-    console.log(`\n=== Running ${scriptName} for Round ${round} ===`);
-    exec(`node ${scriptName} ${round}`, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error in ${scriptName}:`, error);
-        return reject(error);
-      }
-      if (stderr) console.error(`Stderr from ${scriptName}:`, stderr);
-      console.log(stdout);
-
-      const allocatedMatch = stdout.match(/Allocated:\s*(\d+)/i);
-      const allocatedCount = allocatedMatch
-        ? parseInt(allocatedMatch[1], 10)
-        : null;
-
-      resolve({ allocatedCount });
-    });
-  });
-}
+// Define the round statically here
+const round = 1;
 
 // === Run a script repeatedly until no more allocations ===
-async function runUntilNoMoreAllocations(scriptName, round) {
+async function runUntilNoMoreAllocations(fn, round) {
   let totalAllocated = 0;
   while (true) {
-    const { allocatedCount } = await runScript(scriptName, round);
-    if (!allocatedCount || allocatedCount === 0) {
-      console.log(`No new allocations from ${scriptName}. Moving on.`);
+    const result = await fn(round);
+    console.log(`Round ${round} allocations:`, result);
+    const allocatedCount = result?.allocated.length ?? 0;
+    if (allocatedCount === 0) {
+      console.log("No more allocations. Moving on.");
       break;
     }
     totalAllocated += allocatedCount;
@@ -54,16 +32,13 @@ async function runUntilNoMoreAllocations(scriptName, round) {
   }
   return totalAllocated;
 }
-
 // === Generate final CSV report ===
 async function generateAllocationCSV() {
   try {
     console.log("\n=== Generating allocation report ===");
 
     const allocations = await prisma.allocatedSeat.findMany({
-      where: {
-        allocationRound: round,
-      },
+      where: { allocationRound: round },
       include: {
         student: true,
         department: true,
@@ -89,17 +64,17 @@ async function generateAllocationCSV() {
       "ChoiceNumber",
     ].join(",");
 
-    const rows = allocations.map((allocation) => {
+    const rows = allocations.map((a) => {
       return [
-        allocation.student.applicationNumber,
-        `"${allocation.student.studentName.replace(/"/g, '""')}"`,
-        allocation.student.jeeCRL,
-        allocation.student.category,
-        allocation.student.subCategory,
-        allocation.category,
-        allocation.subCategory,
-        allocation.department.name,
-        allocation.choiceNumber,
+        a.student.applicationNumber,
+        `"${a.student.studentName.replace(/"/g, '""')}"`,
+        a.student.jeeCRL,
+        a.student.category,
+        a.student.subCategory,
+        a.category,
+        a.subCategory,
+        a.department.name,
+        a.choiceNumber,
       ].join(",");
     });
 
@@ -118,17 +93,18 @@ async function generateAllocationCSV() {
   }
 }
 
-// === Main runner ===
-export async function main() {
+// === Main Runner ===
+export async function main(round) {
   try {
-    await runScript("testInitialAllocation.js", round);
-    await runScript("testSubcategoryAllocation.js", round);
-    await runUntilNoMoreAllocations("testnewInitial.js", round);
-    await runScript("testReservedLogic.js", round);
-    await runUntilNoMoreAllocations("testnewInitial.js", round);
-    await runScript("testReservedSubcategory.js", round);
-    await runScript("testnewReserved.js", round);
-    await runScript("testnewInitial.js", round);
+    console.log(`\n=== Allocation Report Generation: Round ${round} ===`);
+    await runInitial(round);
+    await runSubcategory(round);
+    await runUntilNoMoreAllocations(runNewInitial, round);
+    await runReserved(round);
+    await runUntilNoMoreAllocations(runNewInitial, round);
+    await runReservedSub(round);
+    await runNewReserved(round);
+    await runNewInitial(round);
 
     await generateAllocationCSV();
 

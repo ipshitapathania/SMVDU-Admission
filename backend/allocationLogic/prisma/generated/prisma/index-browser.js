@@ -172,6 +172,19 @@ exports.Prisma.AllocatedSeatScalarFieldEnum = {
   feesPaid: 'feesPaid'
 };
 
+exports.Prisma.FrozenStudentScalarFieldEnum = {
+  id: 'id',
+  applicationNumber: 'applicationNumber',
+  round: 'round',
+  departmentId: 'departmentId',
+  category: 'category',
+  subCategory: 'subCategory',
+  choiceNumber: 'choiceNumber',
+  jeeCRL: 'jeeCRL',
+  status: 'status',
+  feesPaid: 'feesPaid'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -192,7 +205,8 @@ exports.Prisma.ModelName = {
   Department: 'Department',
   StudentApplication: 'StudentApplication',
   SeatMatrix: 'SeatMatrix',
-  AllocatedSeat: 'AllocatedSeat'
+  AllocatedSeat: 'AllocatedSeat',
+  FrozenStudent: 'FrozenStudent'
 };
 
 /**

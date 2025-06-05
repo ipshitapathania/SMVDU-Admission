@@ -33,6 +33,11 @@ export type SeatMatrix = $Result.DefaultSelection<Prisma.$SeatMatrixPayload>
  * 
  */
 export type AllocatedSeat = $Result.DefaultSelection<Prisma.$AllocatedSeatPayload>
+/**
+ * Model FrozenStudent
+ * 
+ */
+export type FrozenStudent = $Result.DefaultSelection<Prisma.$FrozenStudentPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -198,6 +203,16 @@ export class PrismaClient<
     * ```
     */
   get allocatedSeat(): Prisma.AllocatedSeatDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.frozenStudent`: Exposes CRUD operations for the **FrozenStudent** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FrozenStudents
+    * const frozenStudents = await prisma.frozenStudent.findMany()
+    * ```
+    */
+  get frozenStudent(): Prisma.FrozenStudentDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -641,7 +656,8 @@ export namespace Prisma {
     Department: 'Department',
     StudentApplication: 'StudentApplication',
     SeatMatrix: 'SeatMatrix',
-    AllocatedSeat: 'AllocatedSeat'
+    AllocatedSeat: 'AllocatedSeat',
+    FrozenStudent: 'FrozenStudent'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -660,7 +676,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "department" | "studentApplication" | "seatMatrix" | "allocatedSeat"
+      modelProps: "department" | "studentApplication" | "seatMatrix" | "allocatedSeat" | "frozenStudent"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -960,6 +976,80 @@ export namespace Prisma {
           }
         }
       }
+      FrozenStudent: {
+        payload: Prisma.$FrozenStudentPayload<ExtArgs>
+        fields: Prisma.FrozenStudentFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FrozenStudentFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FrozenStudentFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>
+          }
+          findFirst: {
+            args: Prisma.FrozenStudentFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FrozenStudentFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>
+          }
+          findMany: {
+            args: Prisma.FrozenStudentFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>[]
+          }
+          create: {
+            args: Prisma.FrozenStudentCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>
+          }
+          createMany: {
+            args: Prisma.FrozenStudentCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FrozenStudentCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>[]
+          }
+          delete: {
+            args: Prisma.FrozenStudentDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>
+          }
+          update: {
+            args: Prisma.FrozenStudentUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>
+          }
+          deleteMany: {
+            args: Prisma.FrozenStudentDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FrozenStudentUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FrozenStudentUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>[]
+          }
+          upsert: {
+            args: Prisma.FrozenStudentUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FrozenStudentPayload>
+          }
+          aggregate: {
+            args: Prisma.FrozenStudentAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFrozenStudent>
+          }
+          groupBy: {
+            args: Prisma.FrozenStudentGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FrozenStudentGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FrozenStudentCountArgs<ExtArgs>
+            result: $Utils.Optional<FrozenStudentCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1048,6 +1138,7 @@ export namespace Prisma {
     studentApplication?: StudentApplicationOmit
     seatMatrix?: SeatMatrixOmit
     allocatedSeat?: AllocatedSeatOmit
+    frozenStudent?: FrozenStudentOmit
   }
 
   /* Types for Logging */
@@ -5899,6 +5990,1112 @@ export namespace Prisma {
 
 
   /**
+   * Model FrozenStudent
+   */
+
+  export type AggregateFrozenStudent = {
+    _count: FrozenStudentCountAggregateOutputType | null
+    _avg: FrozenStudentAvgAggregateOutputType | null
+    _sum: FrozenStudentSumAggregateOutputType | null
+    _min: FrozenStudentMinAggregateOutputType | null
+    _max: FrozenStudentMaxAggregateOutputType | null
+  }
+
+  export type FrozenStudentAvgAggregateOutputType = {
+    id: number | null
+    round: number | null
+    choiceNumber: number | null
+    jeeCRL: number | null
+  }
+
+  export type FrozenStudentSumAggregateOutputType = {
+    id: number | null
+    round: number | null
+    choiceNumber: number | null
+    jeeCRL: number | null
+  }
+
+  export type FrozenStudentMinAggregateOutputType = {
+    id: number | null
+    applicationNumber: string | null
+    round: number | null
+    departmentId: string | null
+    category: string | null
+    subCategory: string | null
+    choiceNumber: number | null
+    jeeCRL: number | null
+    status: string | null
+    feesPaid: boolean | null
+  }
+
+  export type FrozenStudentMaxAggregateOutputType = {
+    id: number | null
+    applicationNumber: string | null
+    round: number | null
+    departmentId: string | null
+    category: string | null
+    subCategory: string | null
+    choiceNumber: number | null
+    jeeCRL: number | null
+    status: string | null
+    feesPaid: boolean | null
+  }
+
+  export type FrozenStudentCountAggregateOutputType = {
+    id: number
+    applicationNumber: number
+    round: number
+    departmentId: number
+    category: number
+    subCategory: number
+    choiceNumber: number
+    jeeCRL: number
+    status: number
+    feesPaid: number
+    _all: number
+  }
+
+
+  export type FrozenStudentAvgAggregateInputType = {
+    id?: true
+    round?: true
+    choiceNumber?: true
+    jeeCRL?: true
+  }
+
+  export type FrozenStudentSumAggregateInputType = {
+    id?: true
+    round?: true
+    choiceNumber?: true
+    jeeCRL?: true
+  }
+
+  export type FrozenStudentMinAggregateInputType = {
+    id?: true
+    applicationNumber?: true
+    round?: true
+    departmentId?: true
+    category?: true
+    subCategory?: true
+    choiceNumber?: true
+    jeeCRL?: true
+    status?: true
+    feesPaid?: true
+  }
+
+  export type FrozenStudentMaxAggregateInputType = {
+    id?: true
+    applicationNumber?: true
+    round?: true
+    departmentId?: true
+    category?: true
+    subCategory?: true
+    choiceNumber?: true
+    jeeCRL?: true
+    status?: true
+    feesPaid?: true
+  }
+
+  export type FrozenStudentCountAggregateInputType = {
+    id?: true
+    applicationNumber?: true
+    round?: true
+    departmentId?: true
+    category?: true
+    subCategory?: true
+    choiceNumber?: true
+    jeeCRL?: true
+    status?: true
+    feesPaid?: true
+    _all?: true
+  }
+
+  export type FrozenStudentAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FrozenStudent to aggregate.
+     */
+    where?: FrozenStudentWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FrozenStudents to fetch.
+     */
+    orderBy?: FrozenStudentOrderByWithRelationInput | FrozenStudentOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FrozenStudentWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FrozenStudents from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FrozenStudents.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FrozenStudents
+    **/
+    _count?: true | FrozenStudentCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FrozenStudentAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FrozenStudentSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FrozenStudentMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FrozenStudentMaxAggregateInputType
+  }
+
+  export type GetFrozenStudentAggregateType<T extends FrozenStudentAggregateArgs> = {
+        [P in keyof T & keyof AggregateFrozenStudent]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFrozenStudent[P]>
+      : GetScalarType<T[P], AggregateFrozenStudent[P]>
+  }
+
+
+
+
+  export type FrozenStudentGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrozenStudentWhereInput
+    orderBy?: FrozenStudentOrderByWithAggregationInput | FrozenStudentOrderByWithAggregationInput[]
+    by: FrozenStudentScalarFieldEnum[] | FrozenStudentScalarFieldEnum
+    having?: FrozenStudentScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FrozenStudentCountAggregateInputType | true
+    _avg?: FrozenStudentAvgAggregateInputType
+    _sum?: FrozenStudentSumAggregateInputType
+    _min?: FrozenStudentMinAggregateInputType
+    _max?: FrozenStudentMaxAggregateInputType
+  }
+
+  export type FrozenStudentGroupByOutputType = {
+    id: number
+    applicationNumber: string
+    round: number
+    departmentId: string
+    category: string
+    subCategory: string | null
+    choiceNumber: number
+    jeeCRL: number
+    status: string
+    feesPaid: boolean
+    _count: FrozenStudentCountAggregateOutputType | null
+    _avg: FrozenStudentAvgAggregateOutputType | null
+    _sum: FrozenStudentSumAggregateOutputType | null
+    _min: FrozenStudentMinAggregateOutputType | null
+    _max: FrozenStudentMaxAggregateOutputType | null
+  }
+
+  type GetFrozenStudentGroupByPayload<T extends FrozenStudentGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FrozenStudentGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FrozenStudentGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FrozenStudentGroupByOutputType[P]>
+            : GetScalarType<T[P], FrozenStudentGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FrozenStudentSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    applicationNumber?: boolean
+    round?: boolean
+    departmentId?: boolean
+    category?: boolean
+    subCategory?: boolean
+    choiceNumber?: boolean
+    jeeCRL?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }, ExtArgs["result"]["frozenStudent"]>
+
+  export type FrozenStudentSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    applicationNumber?: boolean
+    round?: boolean
+    departmentId?: boolean
+    category?: boolean
+    subCategory?: boolean
+    choiceNumber?: boolean
+    jeeCRL?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }, ExtArgs["result"]["frozenStudent"]>
+
+  export type FrozenStudentSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    applicationNumber?: boolean
+    round?: boolean
+    departmentId?: boolean
+    category?: boolean
+    subCategory?: boolean
+    choiceNumber?: boolean
+    jeeCRL?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }, ExtArgs["result"]["frozenStudent"]>
+
+  export type FrozenStudentSelectScalar = {
+    id?: boolean
+    applicationNumber?: boolean
+    round?: boolean
+    departmentId?: boolean
+    category?: boolean
+    subCategory?: boolean
+    choiceNumber?: boolean
+    jeeCRL?: boolean
+    status?: boolean
+    feesPaid?: boolean
+  }
+
+  export type FrozenStudentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "applicationNumber" | "round" | "departmentId" | "category" | "subCategory" | "choiceNumber" | "jeeCRL" | "status" | "feesPaid", ExtArgs["result"]["frozenStudent"]>
+
+  export type $FrozenStudentPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FrozenStudent"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      applicationNumber: string
+      round: number
+      departmentId: string
+      category: string
+      subCategory: string | null
+      choiceNumber: number
+      jeeCRL: number
+      status: string
+      feesPaid: boolean
+    }, ExtArgs["result"]["frozenStudent"]>
+    composites: {}
+  }
+
+  type FrozenStudentGetPayload<S extends boolean | null | undefined | FrozenStudentDefaultArgs> = $Result.GetResult<Prisma.$FrozenStudentPayload, S>
+
+  type FrozenStudentCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FrozenStudentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FrozenStudentCountAggregateInputType | true
+    }
+
+  export interface FrozenStudentDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FrozenStudent'], meta: { name: 'FrozenStudent' } }
+    /**
+     * Find zero or one FrozenStudent that matches the filter.
+     * @param {FrozenStudentFindUniqueArgs} args - Arguments to find a FrozenStudent
+     * @example
+     * // Get one FrozenStudent
+     * const frozenStudent = await prisma.frozenStudent.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FrozenStudentFindUniqueArgs>(args: SelectSubset<T, FrozenStudentFindUniqueArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FrozenStudent that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FrozenStudentFindUniqueOrThrowArgs} args - Arguments to find a FrozenStudent
+     * @example
+     * // Get one FrozenStudent
+     * const frozenStudent = await prisma.frozenStudent.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FrozenStudentFindUniqueOrThrowArgs>(args: SelectSubset<T, FrozenStudentFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FrozenStudent that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrozenStudentFindFirstArgs} args - Arguments to find a FrozenStudent
+     * @example
+     * // Get one FrozenStudent
+     * const frozenStudent = await prisma.frozenStudent.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FrozenStudentFindFirstArgs>(args?: SelectSubset<T, FrozenStudentFindFirstArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FrozenStudent that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrozenStudentFindFirstOrThrowArgs} args - Arguments to find a FrozenStudent
+     * @example
+     * // Get one FrozenStudent
+     * const frozenStudent = await prisma.frozenStudent.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FrozenStudentFindFirstOrThrowArgs>(args?: SelectSubset<T, FrozenStudentFindFirstOrThrowArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FrozenStudents that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrozenStudentFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FrozenStudents
+     * const frozenStudents = await prisma.frozenStudent.findMany()
+     * 
+     * // Get first 10 FrozenStudents
+     * const frozenStudents = await prisma.frozenStudent.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const frozenStudentWithIdOnly = await prisma.frozenStudent.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FrozenStudentFindManyArgs>(args?: SelectSubset<T, FrozenStudentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FrozenStudent.
+     * @param {FrozenStudentCreateArgs} args - Arguments to create a FrozenStudent.
+     * @example
+     * // Create one FrozenStudent
+     * const FrozenStudent = await prisma.frozenStudent.create({
+     *   data: {
+     *     // ... data to create a FrozenStudent
+     *   }
+     * })
+     * 
+     */
+    create<T extends FrozenStudentCreateArgs>(args: SelectSubset<T, FrozenStudentCreateArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FrozenStudents.
+     * @param {FrozenStudentCreateManyArgs} args - Arguments to create many FrozenStudents.
+     * @example
+     * // Create many FrozenStudents
+     * const frozenStudent = await prisma.frozenStudent.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FrozenStudentCreateManyArgs>(args?: SelectSubset<T, FrozenStudentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FrozenStudents and returns the data saved in the database.
+     * @param {FrozenStudentCreateManyAndReturnArgs} args - Arguments to create many FrozenStudents.
+     * @example
+     * // Create many FrozenStudents
+     * const frozenStudent = await prisma.frozenStudent.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FrozenStudents and only return the `id`
+     * const frozenStudentWithIdOnly = await prisma.frozenStudent.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FrozenStudentCreateManyAndReturnArgs>(args?: SelectSubset<T, FrozenStudentCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FrozenStudent.
+     * @param {FrozenStudentDeleteArgs} args - Arguments to delete one FrozenStudent.
+     * @example
+     * // Delete one FrozenStudent
+     * const FrozenStudent = await prisma.frozenStudent.delete({
+     *   where: {
+     *     // ... filter to delete one FrozenStudent
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FrozenStudentDeleteArgs>(args: SelectSubset<T, FrozenStudentDeleteArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FrozenStudent.
+     * @param {FrozenStudentUpdateArgs} args - Arguments to update one FrozenStudent.
+     * @example
+     * // Update one FrozenStudent
+     * const frozenStudent = await prisma.frozenStudent.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FrozenStudentUpdateArgs>(args: SelectSubset<T, FrozenStudentUpdateArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FrozenStudents.
+     * @param {FrozenStudentDeleteManyArgs} args - Arguments to filter FrozenStudents to delete.
+     * @example
+     * // Delete a few FrozenStudents
+     * const { count } = await prisma.frozenStudent.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FrozenStudentDeleteManyArgs>(args?: SelectSubset<T, FrozenStudentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FrozenStudents.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrozenStudentUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FrozenStudents
+     * const frozenStudent = await prisma.frozenStudent.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FrozenStudentUpdateManyArgs>(args: SelectSubset<T, FrozenStudentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FrozenStudents and returns the data updated in the database.
+     * @param {FrozenStudentUpdateManyAndReturnArgs} args - Arguments to update many FrozenStudents.
+     * @example
+     * // Update many FrozenStudents
+     * const frozenStudent = await prisma.frozenStudent.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FrozenStudents and only return the `id`
+     * const frozenStudentWithIdOnly = await prisma.frozenStudent.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FrozenStudentUpdateManyAndReturnArgs>(args: SelectSubset<T, FrozenStudentUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FrozenStudent.
+     * @param {FrozenStudentUpsertArgs} args - Arguments to update or create a FrozenStudent.
+     * @example
+     * // Update or create a FrozenStudent
+     * const frozenStudent = await prisma.frozenStudent.upsert({
+     *   create: {
+     *     // ... data to create a FrozenStudent
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FrozenStudent we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FrozenStudentUpsertArgs>(args: SelectSubset<T, FrozenStudentUpsertArgs<ExtArgs>>): Prisma__FrozenStudentClient<$Result.GetResult<Prisma.$FrozenStudentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FrozenStudents.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrozenStudentCountArgs} args - Arguments to filter FrozenStudents to count.
+     * @example
+     * // Count the number of FrozenStudents
+     * const count = await prisma.frozenStudent.count({
+     *   where: {
+     *     // ... the filter for the FrozenStudents we want to count
+     *   }
+     * })
+    **/
+    count<T extends FrozenStudentCountArgs>(
+      args?: Subset<T, FrozenStudentCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FrozenStudentCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FrozenStudent.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrozenStudentAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FrozenStudentAggregateArgs>(args: Subset<T, FrozenStudentAggregateArgs>): Prisma.PrismaPromise<GetFrozenStudentAggregateType<T>>
+
+    /**
+     * Group by FrozenStudent.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrozenStudentGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FrozenStudentGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FrozenStudentGroupByArgs['orderBy'] }
+        : { orderBy?: FrozenStudentGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FrozenStudentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFrozenStudentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FrozenStudent model
+   */
+  readonly fields: FrozenStudentFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FrozenStudent.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FrozenStudentClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FrozenStudent model
+   */
+  interface FrozenStudentFieldRefs {
+    readonly id: FieldRef<"FrozenStudent", 'Int'>
+    readonly applicationNumber: FieldRef<"FrozenStudent", 'String'>
+    readonly round: FieldRef<"FrozenStudent", 'Int'>
+    readonly departmentId: FieldRef<"FrozenStudent", 'String'>
+    readonly category: FieldRef<"FrozenStudent", 'String'>
+    readonly subCategory: FieldRef<"FrozenStudent", 'String'>
+    readonly choiceNumber: FieldRef<"FrozenStudent", 'Int'>
+    readonly jeeCRL: FieldRef<"FrozenStudent", 'Int'>
+    readonly status: FieldRef<"FrozenStudent", 'String'>
+    readonly feesPaid: FieldRef<"FrozenStudent", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FrozenStudent findUnique
+   */
+  export type FrozenStudentFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * Filter, which FrozenStudent to fetch.
+     */
+    where: FrozenStudentWhereUniqueInput
+  }
+
+  /**
+   * FrozenStudent findUniqueOrThrow
+   */
+  export type FrozenStudentFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * Filter, which FrozenStudent to fetch.
+     */
+    where: FrozenStudentWhereUniqueInput
+  }
+
+  /**
+   * FrozenStudent findFirst
+   */
+  export type FrozenStudentFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * Filter, which FrozenStudent to fetch.
+     */
+    where?: FrozenStudentWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FrozenStudents to fetch.
+     */
+    orderBy?: FrozenStudentOrderByWithRelationInput | FrozenStudentOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FrozenStudents.
+     */
+    cursor?: FrozenStudentWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FrozenStudents from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FrozenStudents.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FrozenStudents.
+     */
+    distinct?: FrozenStudentScalarFieldEnum | FrozenStudentScalarFieldEnum[]
+  }
+
+  /**
+   * FrozenStudent findFirstOrThrow
+   */
+  export type FrozenStudentFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * Filter, which FrozenStudent to fetch.
+     */
+    where?: FrozenStudentWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FrozenStudents to fetch.
+     */
+    orderBy?: FrozenStudentOrderByWithRelationInput | FrozenStudentOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FrozenStudents.
+     */
+    cursor?: FrozenStudentWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FrozenStudents from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FrozenStudents.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FrozenStudents.
+     */
+    distinct?: FrozenStudentScalarFieldEnum | FrozenStudentScalarFieldEnum[]
+  }
+
+  /**
+   * FrozenStudent findMany
+   */
+  export type FrozenStudentFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * Filter, which FrozenStudents to fetch.
+     */
+    where?: FrozenStudentWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FrozenStudents to fetch.
+     */
+    orderBy?: FrozenStudentOrderByWithRelationInput | FrozenStudentOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FrozenStudents.
+     */
+    cursor?: FrozenStudentWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FrozenStudents from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FrozenStudents.
+     */
+    skip?: number
+    distinct?: FrozenStudentScalarFieldEnum | FrozenStudentScalarFieldEnum[]
+  }
+
+  /**
+   * FrozenStudent create
+   */
+  export type FrozenStudentCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * The data needed to create a FrozenStudent.
+     */
+    data: XOR<FrozenStudentCreateInput, FrozenStudentUncheckedCreateInput>
+  }
+
+  /**
+   * FrozenStudent createMany
+   */
+  export type FrozenStudentCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FrozenStudents.
+     */
+    data: FrozenStudentCreateManyInput | FrozenStudentCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FrozenStudent createManyAndReturn
+   */
+  export type FrozenStudentCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * The data used to create many FrozenStudents.
+     */
+    data: FrozenStudentCreateManyInput | FrozenStudentCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FrozenStudent update
+   */
+  export type FrozenStudentUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * The data needed to update a FrozenStudent.
+     */
+    data: XOR<FrozenStudentUpdateInput, FrozenStudentUncheckedUpdateInput>
+    /**
+     * Choose, which FrozenStudent to update.
+     */
+    where: FrozenStudentWhereUniqueInput
+  }
+
+  /**
+   * FrozenStudent updateMany
+   */
+  export type FrozenStudentUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FrozenStudents.
+     */
+    data: XOR<FrozenStudentUpdateManyMutationInput, FrozenStudentUncheckedUpdateManyInput>
+    /**
+     * Filter which FrozenStudents to update
+     */
+    where?: FrozenStudentWhereInput
+    /**
+     * Limit how many FrozenStudents to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FrozenStudent updateManyAndReturn
+   */
+  export type FrozenStudentUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * The data used to update FrozenStudents.
+     */
+    data: XOR<FrozenStudentUpdateManyMutationInput, FrozenStudentUncheckedUpdateManyInput>
+    /**
+     * Filter which FrozenStudents to update
+     */
+    where?: FrozenStudentWhereInput
+    /**
+     * Limit how many FrozenStudents to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FrozenStudent upsert
+   */
+  export type FrozenStudentUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * The filter to search for the FrozenStudent to update in case it exists.
+     */
+    where: FrozenStudentWhereUniqueInput
+    /**
+     * In case the FrozenStudent found by the `where` argument doesn't exist, create a new FrozenStudent with this data.
+     */
+    create: XOR<FrozenStudentCreateInput, FrozenStudentUncheckedCreateInput>
+    /**
+     * In case the FrozenStudent was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FrozenStudentUpdateInput, FrozenStudentUncheckedUpdateInput>
+  }
+
+  /**
+   * FrozenStudent delete
+   */
+  export type FrozenStudentDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+    /**
+     * Filter which FrozenStudent to delete.
+     */
+    where: FrozenStudentWhereUniqueInput
+  }
+
+  /**
+   * FrozenStudent deleteMany
+   */
+  export type FrozenStudentDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FrozenStudents to delete
+     */
+    where?: FrozenStudentWhereInput
+    /**
+     * Limit how many FrozenStudents to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FrozenStudent without action
+   */
+  export type FrozenStudentDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FrozenStudent
+     */
+    select?: FrozenStudentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FrozenStudent
+     */
+    omit?: FrozenStudentOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -5974,6 +7171,22 @@ export namespace Prisma {
   };
 
   export type AllocatedSeatScalarFieldEnum = (typeof AllocatedSeatScalarFieldEnum)[keyof typeof AllocatedSeatScalarFieldEnum]
+
+
+  export const FrozenStudentScalarFieldEnum: {
+    id: 'id',
+    applicationNumber: 'applicationNumber',
+    round: 'round',
+    departmentId: 'departmentId',
+    category: 'category',
+    subCategory: 'subCategory',
+    choiceNumber: 'choiceNumber',
+    jeeCRL: 'jeeCRL',
+    status: 'status',
+    feesPaid: 'feesPaid'
+  };
+
+  export type FrozenStudentScalarFieldEnum = (typeof FrozenStudentScalarFieldEnum)[keyof typeof FrozenStudentScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -6404,6 +7617,85 @@ export namespace Prisma {
     feesPaid?: BoolNullableWithAggregatesFilter<"AllocatedSeat"> | boolean | null
   }
 
+  export type FrozenStudentWhereInput = {
+    AND?: FrozenStudentWhereInput | FrozenStudentWhereInput[]
+    OR?: FrozenStudentWhereInput[]
+    NOT?: FrozenStudentWhereInput | FrozenStudentWhereInput[]
+    id?: IntFilter<"FrozenStudent"> | number
+    applicationNumber?: StringFilter<"FrozenStudent"> | string
+    round?: IntFilter<"FrozenStudent"> | number
+    departmentId?: StringFilter<"FrozenStudent"> | string
+    category?: StringFilter<"FrozenStudent"> | string
+    subCategory?: StringNullableFilter<"FrozenStudent"> | string | null
+    choiceNumber?: IntFilter<"FrozenStudent"> | number
+    jeeCRL?: IntFilter<"FrozenStudent"> | number
+    status?: StringFilter<"FrozenStudent"> | string
+    feesPaid?: BoolFilter<"FrozenStudent"> | boolean
+  }
+
+  export type FrozenStudentOrderByWithRelationInput = {
+    id?: SortOrder
+    applicationNumber?: SortOrder
+    round?: SortOrder
+    departmentId?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    choiceNumber?: SortOrder
+    jeeCRL?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
+  }
+
+  export type FrozenStudentWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: FrozenStudentWhereInput | FrozenStudentWhereInput[]
+    OR?: FrozenStudentWhereInput[]
+    NOT?: FrozenStudentWhereInput | FrozenStudentWhereInput[]
+    applicationNumber?: StringFilter<"FrozenStudent"> | string
+    round?: IntFilter<"FrozenStudent"> | number
+    departmentId?: StringFilter<"FrozenStudent"> | string
+    category?: StringFilter<"FrozenStudent"> | string
+    subCategory?: StringNullableFilter<"FrozenStudent"> | string | null
+    choiceNumber?: IntFilter<"FrozenStudent"> | number
+    jeeCRL?: IntFilter<"FrozenStudent"> | number
+    status?: StringFilter<"FrozenStudent"> | string
+    feesPaid?: BoolFilter<"FrozenStudent"> | boolean
+  }, "id">
+
+  export type FrozenStudentOrderByWithAggregationInput = {
+    id?: SortOrder
+    applicationNumber?: SortOrder
+    round?: SortOrder
+    departmentId?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrderInput | SortOrder
+    choiceNumber?: SortOrder
+    jeeCRL?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
+    _count?: FrozenStudentCountOrderByAggregateInput
+    _avg?: FrozenStudentAvgOrderByAggregateInput
+    _max?: FrozenStudentMaxOrderByAggregateInput
+    _min?: FrozenStudentMinOrderByAggregateInput
+    _sum?: FrozenStudentSumOrderByAggregateInput
+  }
+
+  export type FrozenStudentScalarWhereWithAggregatesInput = {
+    AND?: FrozenStudentScalarWhereWithAggregatesInput | FrozenStudentScalarWhereWithAggregatesInput[]
+    OR?: FrozenStudentScalarWhereWithAggregatesInput[]
+    NOT?: FrozenStudentScalarWhereWithAggregatesInput | FrozenStudentScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"FrozenStudent"> | number
+    applicationNumber?: StringWithAggregatesFilter<"FrozenStudent"> | string
+    round?: IntWithAggregatesFilter<"FrozenStudent"> | number
+    departmentId?: StringWithAggregatesFilter<"FrozenStudent"> | string
+    category?: StringWithAggregatesFilter<"FrozenStudent"> | string
+    subCategory?: StringNullableWithAggregatesFilter<"FrozenStudent"> | string | null
+    choiceNumber?: IntWithAggregatesFilter<"FrozenStudent"> | number
+    jeeCRL?: IntWithAggregatesFilter<"FrozenStudent"> | number
+    status?: StringWithAggregatesFilter<"FrozenStudent"> | string
+    feesPaid?: BoolWithAggregatesFilter<"FrozenStudent"> | boolean
+  }
+
   export type DepartmentCreateInput = {
     id: string
     name: string
@@ -6769,6 +8061,94 @@ export namespace Prisma {
     jeeRank?: IntFieldUpdateOperationsInput | number
     status?: NullableStringFieldUpdateOperationsInput | string | null
     feesPaid?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type FrozenStudentCreateInput = {
+    applicationNumber: string
+    round: number
+    departmentId: string
+    category: string
+    subCategory?: string | null
+    choiceNumber: number
+    jeeCRL: number
+    status: string
+    feesPaid: boolean
+  }
+
+  export type FrozenStudentUncheckedCreateInput = {
+    id?: number
+    applicationNumber: string
+    round: number
+    departmentId: string
+    category: string
+    subCategory?: string | null
+    choiceNumber: number
+    jeeCRL: number
+    status: string
+    feesPaid: boolean
+  }
+
+  export type FrozenStudentUpdateInput = {
+    applicationNumber?: StringFieldUpdateOperationsInput | string
+    round?: IntFieldUpdateOperationsInput | number
+    departmentId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeCRL?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    feesPaid?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type FrozenStudentUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    applicationNumber?: StringFieldUpdateOperationsInput | string
+    round?: IntFieldUpdateOperationsInput | number
+    departmentId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeCRL?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    feesPaid?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type FrozenStudentCreateManyInput = {
+    id?: number
+    applicationNumber: string
+    round: number
+    departmentId: string
+    category: string
+    subCategory?: string | null
+    choiceNumber: number
+    jeeCRL: number
+    status: string
+    feesPaid: boolean
+  }
+
+  export type FrozenStudentUpdateManyMutationInput = {
+    applicationNumber?: StringFieldUpdateOperationsInput | string
+    round?: IntFieldUpdateOperationsInput | number
+    departmentId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeCRL?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    feesPaid?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type FrozenStudentUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    applicationNumber?: StringFieldUpdateOperationsInput | string
+    round?: IntFieldUpdateOperationsInput | number
+    departmentId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    subCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    choiceNumber?: IntFieldUpdateOperationsInput | number
+    jeeCRL?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    feesPaid?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -7166,6 +8546,72 @@ export namespace Prisma {
     jeeRank?: SortOrder
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type FrozenStudentCountOrderByAggregateInput = {
+    id?: SortOrder
+    applicationNumber?: SortOrder
+    round?: SortOrder
+    departmentId?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    choiceNumber?: SortOrder
+    jeeCRL?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
+  }
+
+  export type FrozenStudentAvgOrderByAggregateInput = {
+    id?: SortOrder
+    round?: SortOrder
+    choiceNumber?: SortOrder
+    jeeCRL?: SortOrder
+  }
+
+  export type FrozenStudentMaxOrderByAggregateInput = {
+    id?: SortOrder
+    applicationNumber?: SortOrder
+    round?: SortOrder
+    departmentId?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    choiceNumber?: SortOrder
+    jeeCRL?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
+  }
+
+  export type FrozenStudentMinOrderByAggregateInput = {
+    id?: SortOrder
+    applicationNumber?: SortOrder
+    round?: SortOrder
+    departmentId?: SortOrder
+    category?: SortOrder
+    subCategory?: SortOrder
+    choiceNumber?: SortOrder
+    jeeCRL?: SortOrder
+    status?: SortOrder
+    feesPaid?: SortOrder
+  }
+
+  export type FrozenStudentSumOrderByAggregateInput = {
+    id?: SortOrder
+    round?: SortOrder
+    choiceNumber?: SortOrder
+    jeeCRL?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type SeatMatrixCreateNestedManyWithoutDepartmentInput = {
     create?: XOR<SeatMatrixCreateWithoutDepartmentInput, SeatMatrixUncheckedCreateWithoutDepartmentInput> | SeatMatrixCreateWithoutDepartmentInput[] | SeatMatrixUncheckedCreateWithoutDepartmentInput[]
     connectOrCreate?: SeatMatrixCreateOrConnectWithoutDepartmentInput | SeatMatrixCreateOrConnectWithoutDepartmentInput[]
@@ -7366,6 +8812,10 @@ export namespace Prisma {
     update?: XOR<XOR<DepartmentUpdateToOneWithWhereWithoutAllocationsInput, DepartmentUpdateWithoutAllocationsInput>, DepartmentUncheckedUpdateWithoutAllocationsInput>
   }
 
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -7540,6 +8990,19 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedBoolNullableFilter<$PrismaModel>
     _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type SeatMatrixCreateWithoutDepartmentInput = {
